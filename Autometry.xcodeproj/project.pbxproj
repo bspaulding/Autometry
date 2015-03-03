@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		65FDDC811AA5728C00EBF26E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDC801AA5728C00EBF26E /* AppDelegate.swift */; };
-		65FDDC831AA5728C00EBF26E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDC821AA5728C00EBF26E /* ViewController.swift */; };
 		65FDDC861AA5728C00EBF26E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FDDC841AA5728C00EBF26E /* Main.storyboard */; };
 		65FDDC881AA5728C00EBF26E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65FDDC871AA5728C00EBF26E /* Images.xcassets */; };
 		65FDDC8B1AA5728C00EBF26E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FDDC891AA5728C00EBF26E /* LaunchScreen.xib */; };
 		65FDDC971AA5728C00EBF26E /* AutometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDC961AA5728C00EBF26E /* AutometryTests.swift */; };
+		65FDDCA21AA572CE00EBF26E /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCA11AA572CE00EBF26E /* CoreDataStore.swift */; };
+		65FDDCA51AA572FA00EBF26E /* RefuelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCA41AA572FA00EBF26E /* RefuelStore.swift */; };
+		65FDDCA81AA5734500EBF26E /* RefuelStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCA61AA5734500EBF26E /* RefuelStore.xcdatamodeld */; };
+		65FDDCAB1AA5765200EBF26E /* Refuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCAA1AA5765200EBF26E /* Refuel.swift */; };
+		65FDDCAE1AA5771E00EBF26E /* RefuelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCAD1AA5771E00EBF26E /* RefuelListViewController.swift */; };
+		65FDDCB01AA579E900EBF26E /* NewRefuelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCAF1AA579E900EBF26E /* NewRefuelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +34,18 @@
 		65FDDC7B1AA5728C00EBF26E /* Autometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FDDC7F1AA5728C00EBF26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65FDDC801AA5728C00EBF26E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65FDDC821AA5728C00EBF26E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		65FDDC851AA5728C00EBF26E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65FDDC871AA5728C00EBF26E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		65FDDC8A1AA5728C00EBF26E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		65FDDC901AA5728C00EBF26E /* AutometryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutometryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FDDC951AA5728C00EBF26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65FDDC961AA5728C00EBF26E /* AutometryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutometryTests.swift; sourceTree = "<group>"; };
+		65FDDCA11AA572CE00EBF26E /* CoreDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		65FDDCA41AA572FA00EBF26E /* RefuelStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelStore.swift; sourceTree = "<group>"; };
+		65FDDCA71AA5734500EBF26E /* RefuelStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RefuelStore.xcdatamodel; sourceTree = "<group>"; };
+		65FDDCAA1AA5765200EBF26E /* Refuel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Refuel.swift; sourceTree = "<group>"; };
+		65FDDCAD1AA5771E00EBF26E /* RefuelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelListViewController.swift; sourceTree = "<group>"; };
+		65FDDCAF1AA579E900EBF26E /* NewRefuelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRefuelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +87,16 @@
 		65FDDC7D1AA5728C00EBF26E /* Autometry */ = {
 			isa = PBXGroup;
 			children = (
+				65FDDCAC1AA576E700EBF26E /* view_controllers */,
+				65FDDCA91AA5764400EBF26E /* models */,
+				65FDDCA31AA572E900EBF26E /* stores */,
+				65FDDCA01AA572BC00EBF26E /* lib */,
 				65FDDC801AA5728C00EBF26E /* AppDelegate.swift */,
-				65FDDC821AA5728C00EBF26E /* ViewController.swift */,
 				65FDDC841AA5728C00EBF26E /* Main.storyboard */,
 				65FDDC871AA5728C00EBF26E /* Images.xcassets */,
 				65FDDC891AA5728C00EBF26E /* LaunchScreen.xib */,
 				65FDDC7E1AA5728C00EBF26E /* Supporting Files */,
+				65FDDCA61AA5734500EBF26E /* RefuelStore.xcdatamodeld */,
 			);
 			path = Autometry;
 			sourceTree = "<group>";
@@ -110,6 +124,39 @@
 				65FDDC951AA5728C00EBF26E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65FDDCA01AA572BC00EBF26E /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				65FDDCA11AA572CE00EBF26E /* CoreDataStore.swift */,
+			);
+			name = lib;
+			sourceTree = "<group>";
+		};
+		65FDDCA31AA572E900EBF26E /* stores */ = {
+			isa = PBXGroup;
+			children = (
+				65FDDCA41AA572FA00EBF26E /* RefuelStore.swift */,
+			);
+			name = stores;
+			sourceTree = "<group>";
+		};
+		65FDDCA91AA5764400EBF26E /* models */ = {
+			isa = PBXGroup;
+			children = (
+				65FDDCAA1AA5765200EBF26E /* Refuel.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		65FDDCAC1AA576E700EBF26E /* view_controllers */ = {
+			isa = PBXGroup;
+			children = (
+				65FDDCAD1AA5771E00EBF26E /* RefuelListViewController.swift */,
+				65FDDCAF1AA579E900EBF26E /* NewRefuelViewController.swift */,
+			);
+			name = view_controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +259,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65FDDC831AA5728C00EBF26E /* ViewController.swift in Sources */,
+				65FDDCA81AA5734500EBF26E /* RefuelStore.xcdatamodeld in Sources */,
+				65FDDCB01AA579E900EBF26E /* NewRefuelViewController.swift in Sources */,
+				65FDDCA51AA572FA00EBF26E /* RefuelStore.swift in Sources */,
+				65FDDCAE1AA5771E00EBF26E /* RefuelListViewController.swift in Sources */,
+				65FDDCAB1AA5765200EBF26E /* Refuel.swift in Sources */,
+				65FDDCA21AA572CE00EBF26E /* CoreDataStore.swift in Sources */,
 				65FDDC811AA5728C00EBF26E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +469,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		65FDDCA61AA5734500EBF26E /* RefuelStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				65FDDCA71AA5734500EBF26E /* RefuelStore.xcdatamodel */,
+			);
+			currentVersion = 65FDDCA71AA5734500EBF26E /* RefuelStore.xcdatamodel */;
+			path = RefuelStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 65FDDC731AA5728C00EBF26E /* Project object */;
 }
