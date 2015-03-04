@@ -459,6 +459,7 @@
 				65FDDC9C1AA5728C00EBF26E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65FDDC9D1AA5728C00EBF26E /* Build configuration list for PBXNativeTarget "AutometryTests" */ = {
 			isa = XCConfigurationList;
@@ -467,6 +468,7 @@
 				65FDDC9F1AA5728C00EBF26E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

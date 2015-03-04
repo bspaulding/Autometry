@@ -31,7 +31,7 @@ class RefuelStore : CoreDataStore {
             id: object.objectID,
             odometer: object.valueForKey("odometer") as Int,
             pricePerGallon: object.valueForKey("pricePerGallon") as Float,
-            gallons: object.valueForKey("gallons") as Int
+            gallons: object.valueForKey("gallons") as Float
           )
         })
       } else {
