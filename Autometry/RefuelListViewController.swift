@@ -40,13 +40,16 @@ class RefuelListViewController : UITableViewController {
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("RefuelCellIdentifier", forIndexPath: indexPath) as UITableViewCell
     
-    let refuel = refuels[indexPath.row];
-    cell.textLabel!.text = String(refuel.odometer!);
-    println("odometer: \(refuel.odometer)")
+    let refuel = refuels[indexPath.row]
+    var text = ""
     if let station = refuel.station {
-      println("station: ", station.name)
+      text = station.name
+    } else {
+      text = "Unknown Location"
     }
+    cell.textLabel!.text = text
+    cell.detailTextLabel!.text = "\(refuel.odometer!) miles"
 
-    return cell;
+    return cell
   }
 }
