@@ -19,9 +19,14 @@ class RefuellingStationStore {
       if data != nil {
         let results = data!.valueForKey("results") as [NSDictionary]
         callback(results.map({ (var result) -> RefuellingStation in
+          let geometry = result.valueForKey("geometry") as NSDictionary
+          let location = geometry.valueForKey("location") as NSDictionary
+          
           return RefuellingStation(
             name: result.valueForKey("name") as String,
-            googlePlaceID: result.valueForKey("place_id") as String
+            googlePlaceID: result.valueForKey("place_id") as String,
+            latitude: location.valueForKey("lat") as Double,
+            longitude: location.valueForKey("lng") as Double
           )
         }))
       } else {
