@@ -32,12 +32,23 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
+    
+    refuellingStationStore.register({
+      self.locationDescriptionField.text = self.refuellingStationStore.getCurrentRefuellingStation()!.name
+    })
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
-    refuel.odometer = odometerField.text.toInt()
-    refuel.pricePerGallon = (pricePerGallonField.text as NSString).floatValue
-    refuel.gallons = (gallonsField.text as NSString).floatValue
+    switch segue.identifier {
+      case let .Some("RefuellingStationSelection"):
+        let destination = segue.destinationViewController as RefuellingStationsListViewController
+        destination.setStations(refuellingStations)
+        destination.stationStore = refuellingStationStore
+      default:
+        refuel.odometer = odometerField.text.toInt()
+        refuel.pricePerGallon = (pricePerGallonField.text as NSString).floatValue
+        refuel.gallons = (gallonsField.text as NSString).floatValue
+    }
   }
   
   func canSave() -> Bool {
@@ -50,9 +61,12 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   
   func updateRefuellingStations(stations:[RefuellingStation]) {
     refuellingStations = stations
+    
     if (refuellingStations.count > 0) {
       locationActivityIndicator.stopAnimating()
-      locationDescriptionField.text = refuellingStations[0].name
+      if refuellingStationStore.getCurrentRefuellingStation() == nil {
+        refuellingStationStore.setCurrentRefuellingStation(refuellingStations[0])
+      }
     } else {
       locationActivityIndicator.startAnimating()
       locationDescriptionField.text = ""
@@ -99,5 +113,6 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   
   func locationManager(manager:CLLocationManager, didFailWithError error:NSError) {
     println("didFailWithError: ", error)
+    locationActivityIndicator.stopAnimating()
   }
 }

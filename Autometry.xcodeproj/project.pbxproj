@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65094A7E1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65094A7D1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift */; };
 		65B4DE6F1AA787CC00FAC9ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */; };
 		65B4DE711AA7C14000FAC9ED /* RefuellingStationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */; };
 		65B4DE731AA7C17F00FAC9ED /* RefuellingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		65094A7D1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationsListViewController.swift; sourceTree = "<group>"; };
 		65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
 		65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStation.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			children = (
 				65FDDCAD1AA5771E00EBF26E /* RefuelListViewController.swift */,
 				65FDDCAF1AA579E900EBF26E /* NewRefuelViewController.swift */,
+				65094A7D1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift */,
 			);
 			name = view_controllers;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				65FDDCAE1AA5771E00EBF26E /* RefuelListViewController.swift in Sources */,
 				65B4DE711AA7C14000FAC9ED /* RefuellingStationStore.swift in Sources */,
 				65FDDCAB1AA5765200EBF26E /* Refuel.swift in Sources */,
+				65094A7E1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift in Sources */,
 				65B4DE731AA7C17F00FAC9ED /* RefuellingStation.swift in Sources */,
 				65FDDCA21AA572CE00EBF26E /* CoreDataStore.swift in Sources */,
 				65FDDC811AA5728C00EBF26E /* AppDelegate.swift in Sources */,

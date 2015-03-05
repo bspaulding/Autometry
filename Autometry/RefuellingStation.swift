@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RefuellingStation {
+struct RefuellingStation : Equatable {
   let name : String = ""
   let googlePlaceID : String = ""
   let latitude : Double
@@ -20,4 +20,8 @@ struct RefuellingStation {
     self.latitude = latitude
     self.longitude = longitude
   }
+}
+
+func ==(lhs:RefuellingStation, rhs:RefuellingStation) -> Bool {
+  return lhs.googlePlaceID == rhs.googlePlaceID
 }

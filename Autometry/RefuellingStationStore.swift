@@ -11,6 +11,24 @@ import Alamofire
 
 class RefuellingStationStore {
   let api_key = "AIzaSyCwOkPKuzciYQeHo3ICajljmmf6uFMBcOk"
+  private var currentRefuellingStation : RefuellingStation?
+  var listeners : [() -> ()] = []
+  
+  init() {}
+  
+  func register(callback:()->()) {
+    listeners.append(callback)
+  }
+  
+  func getCurrentRefuellingStation() -> RefuellingStation? {
+    return self.currentRefuellingStation
+  }
+  func setCurrentRefuellingStation(station:RefuellingStation) {
+    self.currentRefuellingStation = station
+    for listener in listeners {
+      listener()
+    }
+  }
   
   func nearby(latitude:Double, longitude:Double, callback:([RefuellingStation]) -> ()) {
     println("latitude: \(latitude), longitude: \(longitude)")
