@@ -13,6 +13,7 @@ class Refuel {
   var odometer : Int?
   var pricePerGallon : Float?
   var gallons : Float?
+  var station : RefuellingStation?
   
   init() {}
   init(id: AnyObject, odometer: Int, pricePerGallon: Float, gallons: Float) {

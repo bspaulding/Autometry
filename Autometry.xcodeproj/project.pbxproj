@@ -87,6 +87,7 @@
 
 /* Begin PBXFileReference section */
 		65094A7D1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationsListViewController.swift; sourceTree = "<group>"; };
+		65094A861AA8C65100B1FEB0 /* RefuelStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RefuelStore 2.xcdatamodel"; sourceTree = "<group>"; };
 		65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
 		65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStation.swift; sourceTree = "<group>"; };
@@ -601,9 +602,10 @@
 		65FDDCA61AA5734500EBF26E /* RefuelStore.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				65094A861AA8C65100B1FEB0 /* RefuelStore 2.xcdatamodel */,
 				65FDDCA71AA5734500EBF26E /* RefuelStore.xcdatamodel */,
 			);
-			currentVersion = 65FDDCA71AA5734500EBF26E /* RefuelStore.xcdatamodel */;
+			currentVersion = 65094A861AA8C65100B1FEB0 /* RefuelStore 2.xcdatamodel */;
 			path = RefuelStore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

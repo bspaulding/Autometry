@@ -27,12 +27,24 @@ class RefuelStore : CoreDataStore {
       
       if let results = fetchResult {
         return results.map({ (var object) -> Refuel in
-          return Refuel(
+          let refuel = Refuel(
             id: object.objectID,
             odometer: object.valueForKey("odometer") as Int,
             pricePerGallon: object.valueForKey("pricePerGallon") as Float,
             gallons: object.valueForKey("gallons") as Float
           )
+          
+          if let googlePlaceID = (object.valueForKey("google_place_id") as? String) {
+            let station = RefuellingStation(
+              name: object.valueForKey("stationName") as String,
+              googlePlaceID: googlePlaceID,
+              latitude: object.valueForKey("latitude") as Double,
+              longitude: object.valueForKey("longitude") as Double
+            )
+            refuel.station = station
+          }
+          
+          return refuel
         })
       } else {
         println("Could not fetch \(error), \(error!.userInfo)")
@@ -52,6 +64,12 @@ class RefuelStore : CoreDataStore {
     object.setValue(refuel.odometer, forKey: "odometer")
     object.setValue(refuel.pricePerGallon, forKey: "pricePerGallon")
     object.setValue(refuel.gallons, forKey: "gallons")
+    if let station = refuel.station {
+      object.setValue(station.googlePlaceID, forKey: "google_place_id")
+      object.setValue(station.latitude, forKey:"latitude")
+      object.setValue(station.longitude, forKey:"longitude")
+      object.setValue(station.name, forKey:"stationName")
+    }
     
     var error : NSError?
     if !context.save(&error) {

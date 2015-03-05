@@ -48,6 +48,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
         refuel.odometer = odometerField.text.toInt()
         refuel.pricePerGallon = (pricePerGallonField.text as NSString).floatValue
         refuel.gallons = (gallonsField.text as NSString).floatValue
+        refuel.station = refuellingStationStore.getCurrentRefuellingStation()
     }
   }
   

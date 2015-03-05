@@ -42,6 +42,10 @@ class RefuelListViewController : UITableViewController {
     
     let refuel = refuels[indexPath.row];
     cell.textLabel!.text = String(refuel.odometer!);
+    println("odometer: \(refuel.odometer)")
+    if let station = refuel.station {
+      println("station: ", station.name)
+    }
 
     return cell;
   }
