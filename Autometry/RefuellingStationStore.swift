@@ -14,7 +14,7 @@ class RefuellingStationStore {
   private var currentRefuellingStation : RefuellingStation?
   var listeners : [() -> ()] = []
   
-  init() {}
+  private init() {}
   
   func register(callback:()->()) {
     listeners.append(callback)
@@ -51,5 +51,20 @@ class RefuellingStationStore {
         callback([])
       }
     }
+  }
+  
+  // Singleton Pattern
+  
+  class var sharedInstance: RefuellingStationStore {
+    struct Static {
+      static var instance: RefuellingStationStore?
+      static var token: dispatch_once_t = 0
+    }
+    
+    dispatch_once(&Static.token) {
+      Static.instance = RefuellingStationStore()
+    }
+    
+    return Static.instance!
   }
 }

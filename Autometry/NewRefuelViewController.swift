@@ -20,7 +20,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   
   let refuel = Refuel()
   let locationManager = CLLocationManager()
-  let refuellingStationStore = RefuellingStationStore()
+  let refuellingStationStore = RefuellingStationStore.sharedInstance
   var refuellingStations : [RefuellingStation] = []
   
   override func viewDidLoad() {
