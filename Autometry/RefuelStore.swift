@@ -31,7 +31,8 @@ class RefuelStore : CoreDataStore {
             id: object.objectID,
             odometer: object.valueForKey("odometer") as Int,
             pricePerGallon: object.valueForKey("pricePerGallon") as Float,
-            gallons: object.valueForKey("gallons") as Float
+            gallons: object.valueForKey("gallons") as Float,
+            octane: object.valueForKey("octane") as Int
           )
           
           if let googlePlaceID = (object.valueForKey("google_place_id") as? String) {
@@ -64,6 +65,7 @@ class RefuelStore : CoreDataStore {
     object.setValue(refuel.odometer, forKey: "odometer")
     object.setValue(refuel.pricePerGallon, forKey: "pricePerGallon")
     object.setValue(refuel.gallons, forKey: "gallons")
+    object.setValue(refuel.octane, forKey: "octane")
     if let station = refuel.station {
       object.setValue(station.googlePlaceID, forKey: "google_place_id")
       object.setValue(station.latitude, forKey:"latitude")

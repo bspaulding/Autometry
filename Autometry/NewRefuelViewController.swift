@@ -17,6 +17,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   @IBOutlet weak var saveButton: UIBarButtonItem!
   @IBOutlet weak var locationActivityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var locationDescriptionField: UITextField!
+  @IBOutlet weak var octaneField: UITextField!
   
   let refuel = Refuel()
   let locationManager = CLLocationManager()
@@ -29,6 +30,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     odometerField.delegate = self
     pricePerGallonField.delegate = self
     gallonsField.delegate = self
+    octaneField.delegate = self
     
     locationManager.delegate = self
     locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -49,6 +51,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
         refuel.pricePerGallon = (pricePerGallonField.text as NSString).floatValue
         refuel.gallons = (gallonsField.text as NSString).floatValue
         refuel.station = refuellingStationStore.getCurrentRefuellingStation()
+        refuel.octane = octaneField.text.toInt()
     }
   }
   
