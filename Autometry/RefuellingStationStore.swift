@@ -7,10 +7,8 @@
 //
 
 import Foundation
-import Alamofire
 
 class RefuellingStationStore {
-  let api_key = "AIzaSyCwOkPKuzciYQeHo3ICajljmmf6uFMBcOk"
   private var currentRefuellingStation : RefuellingStation?
   var listeners : [() -> ()] = []
   
@@ -31,26 +29,20 @@ class RefuellingStationStore {
   }
   
   func nearby(latitude:Double, longitude:Double, callback:([RefuellingStation]) -> ()) {
-    println("latitude: \(latitude), longitude: \(longitude)")
-    let url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=\(api_key)&types=gas_station&rankby=distance&location=\(latitude),\(longitude)"
-    Alamofire.request(.GET, url).responseJSON {(request, response, data, error) in
-      if data != nil {
-        let results = data!.valueForKey("results") as [NSDictionary]
-        callback(results.map({ (var result) -> RefuellingStation in
-          let geometry = result.valueForKey("geometry") as NSDictionary
-          let location = geometry.valueForKey("location") as NSDictionary
-          
-          return RefuellingStation(
-            name: result.valueForKey("name") as String,
-            googlePlaceID: result.valueForKey("place_id") as String,
-            latitude: location.valueForKey("lat") as Double,
-            longitude: location.valueForKey("lng") as Double
-          )
-        }))
-      } else {
-        callback([])
-      }
-    }
+    GoogleMapsAPI.gasStationsNearby(latitude, longitude:longitude, callback:{(data) in
+      let results = data!.valueForKey("results") as [NSDictionary]
+      callback(results.map({ (var result) -> RefuellingStation in
+        let geometry = result.valueForKey("geometry") as NSDictionary
+        let location = geometry.valueForKey("location") as NSDictionary
+        
+        return RefuellingStation(
+          name: result.valueForKey("name") as String,
+          googlePlaceID: result.valueForKey("place_id") as String,
+          latitude: location.valueForKey("lat") as Double,
+          longitude: location.valueForKey("lng") as Double
+        )
+      }))
+    })
   }
   
   // Singleton Pattern

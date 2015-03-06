@@ -13,6 +13,8 @@
 		65B4DE731AA7C17F00FAC9ED /* RefuellingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */; };
 		65B4DE861AA7D4BC00FAC9ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE7C1AA7C57200FAC9ED /* Alamofire.framework */; };
 		65B4DE8B1AA7D57C00FAC9ED /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE7C1AA7C57200FAC9ED /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		65F96F241AAA1531003EBDCF /* RefuellingStationStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F96F231AAA1531003EBDCF /* RefuellingStationStoreTests.swift */; };
+		65F96F271AAA15A9003EBDCF /* GoogleMapsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F96F261AAA15A9003EBDCF /* GoogleMapsAPI.swift */; };
 		65FDDC811AA5728C00EBF26E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDC801AA5728C00EBF26E /* AppDelegate.swift */; };
 		65FDDC861AA5728C00EBF26E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FDDC841AA5728C00EBF26E /* Main.storyboard */; };
 		65FDDC881AA5728C00EBF26E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65FDDC871AA5728C00EBF26E /* Images.xcassets */; };
@@ -92,6 +94,8 @@
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
 		65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStation.swift; sourceTree = "<group>"; };
 		65B4DE741AA7C57200FAC9ED /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		65F96F231AAA1531003EBDCF /* RefuellingStationStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStoreTests.swift; sourceTree = "<group>"; };
+		65F96F261AAA15A9003EBDCF /* GoogleMapsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsAPI.swift; sourceTree = "<group>"; };
 		65FDDC7B1AA5728C00EBF26E /* Autometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FDDC7F1AA5728C00EBF26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65FDDC801AA5728C00EBF26E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		65F96F1F1AAA1516003EBDCF /* stores */ = {
+			isa = PBXGroup;
+			children = (
+				65F96F231AAA1531003EBDCF /* RefuellingStationStoreTests.swift */,
+			);
+			name = stores;
+			sourceTree = "<group>";
+		};
+		65F96F251AAA1597003EBDCF /* api */ = {
+			isa = PBXGroup;
+			children = (
+				65F96F261AAA15A9003EBDCF /* GoogleMapsAPI.swift */,
+			);
+			name = api;
+			sourceTree = "<group>";
+		};
 		65FDDC721AA5728C00EBF26E = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +183,7 @@
 		65FDDC7D1AA5728C00EBF26E /* Autometry */ = {
 			isa = PBXGroup;
 			children = (
+				65F96F251AAA1597003EBDCF /* api */,
 				65FDDCAC1AA576E700EBF26E /* view_controllers */,
 				65FDDCA91AA5764400EBF26E /* models */,
 				65FDDCA31AA572E900EBF26E /* stores */,
@@ -188,6 +209,7 @@
 		65FDDC931AA5728C00EBF26E /* AutometryTests */ = {
 			isa = PBXGroup;
 			children = (
+				65F96F1F1AAA1516003EBDCF /* stores */,
 				65FDDC961AA5728C00EBF26E /* AutometryTests.swift */,
 				65FDDC941AA5728C00EBF26E /* Supporting Files */,
 			);
@@ -379,6 +401,7 @@
 			files = (
 				65FDDCA81AA5734500EBF26E /* RefuelStore.xcdatamodeld in Sources */,
 				65FDDCB01AA579E900EBF26E /* NewRefuelViewController.swift in Sources */,
+				65F96F271AAA15A9003EBDCF /* GoogleMapsAPI.swift in Sources */,
 				65FDDCA51AA572FA00EBF26E /* RefuelStore.swift in Sources */,
 				65FDDCAE1AA5771E00EBF26E /* RefuelListViewController.swift in Sources */,
 				65B4DE711AA7C14000FAC9ED /* RefuellingStationStore.swift in Sources */,
@@ -395,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65FDDC971AA5728C00EBF26E /* AutometryTests.swift in Sources */,
+				65F96F241AAA1531003EBDCF /* RefuellingStationStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
