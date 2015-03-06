@@ -11,7 +11,7 @@ import UIKit
 
 class RefuelListViewController : UITableViewController {
   var refuels : [Refuel] = []
-  let refuelStore = RefuelStore()
+  let refuelStore = RefuelStore.sharedInstance
   
   override func viewDidLoad() {
     super.viewDidLoad()

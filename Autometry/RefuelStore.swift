@@ -12,7 +12,7 @@ import CoreData
 class RefuelStore : CoreDataStore {
   let entityName = "Refuel"
   
-  override init() {
+  private override init() {
     super.init()
     
     storeName = "RefuelStore"
@@ -77,5 +77,20 @@ class RefuelStore : CoreDataStore {
     } else {
       refuel.id = object.objectID
     }
+  }
+  
+  // Singleton Pattern
+  
+  class var sharedInstance: RefuelStore {
+    struct Static {
+      static var instance: RefuelStore?
+      static var token: dispatch_once_t = 0
+    }
+    
+    dispatch_once(&Static.token) {
+      Static.instance = RefuelStore()
+    }
+    
+    return Static.instance!
   }
 }
