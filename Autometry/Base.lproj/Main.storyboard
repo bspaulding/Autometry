@@ -208,8 +208,8 @@
                                                         <constraint firstAttribute="height" constant="20" id="ecb-zj-9by"/>
                                                     </constraints>
                                                 </activityIndicatorView>
-                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="byq-Hz-FsI">
-                                                    <rect key="frame" x="273" y="7" width="291" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="byq-Hz-FsI">
+                                                    <rect key="frame" x="83" y="7" width="481" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="NsP-uD-61R"/>
                                                     </constraints>
@@ -218,6 +218,7 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="byq-Hz-FsI" firstAttribute="leading" secondItem="7OG-jf-U13" secondAttribute="trailing" constant="8" id="DVH-iF-reH"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="byq-Hz-FsI" secondAttribute="trailing" constant="-5" id="IZQ-0s-epe"/>
                                                 <constraint firstAttribute="centerY" secondItem="c1K-mL-Osb" secondAttribute="centerY" id="gAs-n5-0j1"/>
                                                 <constraint firstItem="7OG-jf-U13" firstAttribute="leading" secondItem="gba-px-xdQ" secondAttribute="leadingMargin" id="hlj-fz-xuT"/>
