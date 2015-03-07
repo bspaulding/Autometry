@@ -20,6 +20,10 @@ class RefuelListViewController : UITableViewController {
     dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
     
     refuels = refuelStore.all()
+    refuelStore.register({
+      self.refuels = self.refuelStore.all()
+      self.tableView.reloadData()
+    })
   }
   
   @IBAction func cancel(segue: UIStoryboardSegue) {
@@ -27,9 +31,7 @@ class RefuelListViewController : UITableViewController {
   
   @IBAction func save(segue: UIStoryboardSegue) {
     let source = segue.sourceViewController as NewRefuelViewController
-    refuels.append(source.refuel)
     refuelStore.create(source.refuel)
-    self.tableView.reloadData()
   }
   
   // TableViewDataSource interface
