@@ -287,6 +287,47 @@
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="VXT-2Q-S2a">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VXT-2Q-S2a" id="Nmb-F1-2nW">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9B7-HS-e0W">
+                                                    <rect key="frame" x="495" y="7" width="97" height="30"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCV-ZL-bPa">
+                                                    <rect key="frame" x="8" y="11" width="40" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="58" id="ybR-B0-FfI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dollars" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="IAm-Xe-8tF">
+                                                    <rect key="frame" x="301" y="7" width="291" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" label="gallonsField"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="hLl-0m-7gl"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IAm-Xe-8tF" firstAttribute="top" secondItem="Nmb-F1-2nW" secondAttribute="topMargin" constant="-1" id="0fa-ci-9fv"/>
+                                                <constraint firstItem="SCV-ZL-bPa" firstAttribute="leading" secondItem="Nmb-F1-2nW" secondAttribute="leadingMargin" id="3ts-Tw-9J8"/>
+                                                <constraint firstItem="IAm-Xe-8tF" firstAttribute="trailing" secondItem="Nmb-F1-2nW" secondAttribute="trailingMargin" id="6ae-Yv-ZIe"/>
+                                                <constraint firstItem="IAm-Xe-8tF" firstAttribute="trailing" secondItem="Nmb-F1-2nW" secondAttribute="trailingMargin" id="SWy-u9-gDj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="IAm-Xe-8tF" secondAttribute="bottom" constant="-1.5" id="Zgu-Mv-uXG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="gallonsCell">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -315,6 +356,7 @@
                         <outlet property="odometerField" destination="2GD-Y3-3Fp" id="fOj-kk-7ZA"/>
                         <outlet property="pricePerGallonField" destination="bQK-zR-6Uc" id="FsX-aN-hYK"/>
                         <outlet property="saveButton" destination="u67-lH-sAN" id="r1d-kB-s3B"/>
+                        <outlet property="totalField" destination="IAm-Xe-8tF" id="dwu-An-rVx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f4x-5W-BTj" userLabel="First Responder" sceneMemberID="firstResponder"/>

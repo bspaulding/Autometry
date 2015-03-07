@@ -18,11 +18,14 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   @IBOutlet weak var locationActivityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var locationDescriptionField: UITextField!
   @IBOutlet weak var octaneField: UITextField!
+  @IBOutlet weak var totalField: UITextField!
   
   let refuel = Refuel()
   let locationManager = CLLocationManager()
   let refuellingStationStore = RefuellingStationStore.sharedInstance
   var refuellingStations : [RefuellingStation] = []
+  
+  var currencyFormatter = NSNumberFormatter()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,6 +41,8 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     refuellingStationStore.register({
       self.locationDescriptionField.text = self.refuellingStationStore.getCurrentRefuellingStation()!.name
     })
+    
+    currencyFormatter.numberStyle = .CurrencyStyle
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
@@ -59,8 +64,21 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     return countElements(odometerField.text) > 0 && countElements(pricePerGallonField.text) > 0 && countElements(gallonsField.text) > 0
   }
   
+  func total() -> String {
+    let ppgString = pricePerGallonField.text as NSString
+    let gallonsString = gallonsField.text as NSString
+    
+    if ppgString.length == 0 || gallonsString.length == 0 {
+      return ""
+    }
+    
+    let total = ppgString.floatValue * gallonsString.floatValue
+    return currencyFormatter.stringFromNumber(total)!
+  }
+  
   func textChanged() {
     saveButton.enabled = canSave()
+    totalField.text = total()
   }
   
   func updateRefuellingStations(stations:[RefuellingStation]) {
