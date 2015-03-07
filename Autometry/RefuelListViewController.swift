@@ -15,9 +15,21 @@ class RefuelListViewController : UITableViewController {
     currencyFormatter.numberStyle = .CurrencyStyle
     numberFormatter.numberStyle = .DecimalStyle
     
-    refuels = refuelStore.all()
+    let createdDateSorter : (Refuel,Refuel) -> Bool = {(a,b) in
+      switch (a.createdDate,b.createdDate) {
+      case let (.Some(aDate), .Some(bDate)):
+        return aDate.timeIntervalSinceNow > bDate.timeIntervalSinceNow
+      case let (.None, .Some(bDate)):
+        return false
+      case let (.Some(bDate), .None):
+        return true
+      case let (.None, .None):
+        return false
+      }
+    }
+    refuels = refuelStore.all().sorted(createdDateSorter)
     refuelStore.register({
-      self.refuels = self.refuelStore.all()
+      self.refuels = self.refuelStore.all().sorted(createdDateSorter)
       self.tableView.reloadData()
     })
   }
