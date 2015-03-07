@@ -12,9 +12,12 @@ import UIKit
 class RefuelListViewController : UITableViewController {
   var refuels : [Refuel] = []
   let refuelStore = RefuelStore.sharedInstance
+  let dateFormatter = NSDateFormatter()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
     
     refuels = refuelStore.all()
   }
@@ -42,13 +45,12 @@ class RefuelListViewController : UITableViewController {
     
     let refuel = refuels[indexPath.row]
     var text = ""
-    if let station = refuel.station {
-      text = station.name
+    if let date = refuel.createdDate {
+      text = dateFormatter.stringFromDate(date)
     } else {
-      text = "Unknown Location"
+      text = "Unknown Date"
     }
     (cell.viewWithTag(3000) as UILabel).text = text
-    println(cell.viewWithTag(3001))
     (cell.viewWithTag(3001) as UILabel).text = "\(refuel.odometer!) miles"
 
     return cell
