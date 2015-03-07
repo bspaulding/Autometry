@@ -47,8 +47,9 @@ class RefuelListViewController : UITableViewController {
     } else {
       text = "Unknown Location"
     }
-    cell.textLabel!.text = text
-    cell.detailTextLabel!.text = "\(refuel.odometer!) miles"
+    (cell.viewWithTag(3000) as UILabel).text = text
+    println(cell.viewWithTag(3001))
+    (cell.viewWithTag(3001) as UILabel).text = "\(refuel.odometer!) miles"
 
     return cell
   }
