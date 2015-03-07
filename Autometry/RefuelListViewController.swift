@@ -5,11 +5,15 @@ class RefuelListViewController : UITableViewController {
   var refuels : [Refuel] = []
   let refuelStore = RefuelStore.sharedInstance
   let dateFormatter = NSDateFormatter()
+  let currencyFormatter = NSNumberFormatter()
+  let numberFormatter = NSNumberFormatter()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+    currencyFormatter.numberStyle = .CurrencyStyle
+    numberFormatter.numberStyle = .DecimalStyle
     
     refuels = refuelStore.all()
     refuelStore.register({
@@ -45,7 +49,8 @@ class RefuelListViewController : UITableViewController {
       text = "Unknown Date"
     }
     (cell.viewWithTag(3000) as UILabel).text = text
-    (cell.viewWithTag(3001) as UILabel).text = "\(refuel.odometer!) miles"
+    (cell.viewWithTag(3001) as UILabel).text = "\(numberFormatter.stringFromNumber(refuel.odometer!)!) miles"
+    (cell.viewWithTag(3002) as UILabel).text = currencyFormatter.stringFromNumber(refuel.pricePerGallon!)
 
     return cell
   }

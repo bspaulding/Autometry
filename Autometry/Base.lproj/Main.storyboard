@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pgQ-0y-W3k">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -9,18 +10,18 @@
         <scene sceneID="UBL-xw-3Gu">
             <objects>
                 <tableViewController id="PJL-dB-rEM" customClass="RefuelListViewController" customModule="Autometry" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jvo-k3-LzB">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jvo-k3-LzB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RefuelCellIdentifier" id="gih-Ro-9C7">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RefuelCellIdentifier" rowHeight="88" id="gih-Ro-9C7">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gih-Ro-9C7" id="4lI-Zi-M9j">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="3000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Q9m-PJ-1Ob">
-                                            <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="March 5, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Q9m-PJ-1Ob">
+                                            <rect key="frame" x="13" y="11" width="111" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="k2R-PE-NA2"/>
                                             </constraints>
@@ -28,14 +29,23 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="3001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ap-RS-CRx">
-                                            <rect key="frame" x="545.5" y="11" width="41.5" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10000 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXX-OJ-UZY">
+                                            <rect key="frame" x="13" y="40" width="88" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="Sum-V3-4PA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ap-RS-CRx">
+                                            <rect key="frame" x="546" y="33" width="41.5" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="0l3-Ff-liW"/>
                                                 <constraint firstAttribute="height" constant="21" id="pIF-vW-qNv"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -47,17 +57,29 @@
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="Q9m-PJ-1Ob" secondAttribute="centerY" id="1PM-vk-Gud"/>
                                         <constraint firstItem="9ap-RS-CRx" firstAttribute="leading" secondItem="Q9m-PJ-1Ob" secondAttribute="trailing" constant="495.5" id="8Da-yg-hMF"/>
+                                        <constraint firstAttribute="centerY" secondItem="Q9m-PJ-1Ob" secondAttribute="bottom" constant="5" id="EXc-PQ-SPd"/>
+                                        <constraint firstItem="BXX-OJ-UZY" firstAttribute="centerY" secondItem="Q9m-PJ-1Ob" secondAttribute="centerY" constant="8" id="NMP-39-q9A"/>
                                         <constraint firstItem="Q9m-PJ-1Ob" firstAttribute="leading" secondItem="4lI-Zi-M9j" secondAttribute="leadingMargin" constant="5" id="QIM-Hr-Asa"/>
+                                        <constraint firstAttribute="centerY" secondItem="9ap-RS-CRx" secondAttribute="centerY" id="Qcu-Lx-Bqe"/>
+                                        <constraint firstItem="Q9m-PJ-1Ob" firstAttribute="top" secondItem="4lI-Zi-M9j" secondAttribute="topMargin" constant="3" id="SKJ-Fk-uDY"/>
                                         <constraint firstAttribute="centerY" secondItem="9ap-RS-CRx" secondAttribute="centerY" id="X9a-pm-rKe"/>
                                         <constraint firstItem="9ap-RS-CRx" firstAttribute="leading" secondItem="Q9m-PJ-1Ob" secondAttribute="trailing" constant="495.5" id="XKh-89-xba"/>
+                                        <constraint firstAttribute="centerY" secondItem="BXX-OJ-UZY" secondAttribute="top" constant="-5" id="aGK-JZ-pwc"/>
                                         <constraint firstItem="9ap-RS-CRx" firstAttribute="trailing" secondItem="4lI-Zi-M9j" secondAttribute="trailingMargin" constant="-5" id="f9m-At-ZfT"/>
+                                        <constraint firstItem="9ap-RS-CRx" firstAttribute="top" secondItem="4lI-Zi-M9j" secondAttribute="topMargin" constant="3" id="g6n-VZ-IwM"/>
+                                        <constraint firstItem="BXX-OJ-UZY" firstAttribute="leading" secondItem="4lI-Zi-M9j" secondAttribute="leadingMargin" constant="5" id="xG7-j7-jjx"/>
                                         <constraint firstItem="Q9m-PJ-1Ob" firstAttribute="leading" secondItem="4lI-Zi-M9j" secondAttribute="leadingMargin" id="xug-uy-Pdc"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="1PM-vk-Gud"/>
+                                            <exclude reference="SKJ-Fk-uDY"/>
                                             <exclude reference="xug-uy-Pdc"/>
+                                            <exclude reference="NMP-39-q9A"/>
                                             <exclude reference="8Da-yg-hMF"/>
+                                            <exclude reference="X9a-pm-rKe"/>
                                             <exclude reference="XKh-89-xba"/>
+                                            <exclude reference="g6n-VZ-IwM"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
