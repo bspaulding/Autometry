@@ -76,6 +76,7 @@
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="miles" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="2GD-Y3-3Fp">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" label="odometerField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="22a-pT-Ab9"/>
                                                     </constraints>
@@ -100,6 +101,9 @@
                                                 <constraint firstItem="2GD-Y3-3Fp" firstAttribute="top" secondItem="sNa-eG-f2A" secondAttribute="topMargin" constant="-1" id="uMF-8k-Ctq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="odometerCell">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -170,6 +174,7 @@
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="level" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="jhz-oi-oX9">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" label="octaneField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="8kJ-Tk-5qt"/>
                                                     </constraints>
@@ -194,6 +199,9 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="jhz-oi-oX9" secondAttribute="bottom" constant="-1.5" id="tLp-xU-le1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="octaneCell">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="J8M-a7-Jl3">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -208,6 +216,7 @@
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dollars" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="bQK-zR-6Uc">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" label="pricePerGallonField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="FoB-fe-BGu"/>
                                                     </constraints>
@@ -232,6 +241,9 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="bQK-zR-6Uc" secondAttribute="bottom" constant="-1.5" id="fre-tX-wDx"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="pricePerGallonCell">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="pai-4b-9hP">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -255,6 +267,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="gallons" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="3JA-0q-eAz">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
+                                                    <accessibility key="accessibilityConfiguration" label="gallonsField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Sk8-zP-Mfd"/>
                                                     </constraints>
@@ -270,6 +283,9 @@
                                                 <constraint firstItem="3JA-0q-eAz" firstAttribute="trailing" secondItem="DRW-N3-6DI" secondAttribute="trailingMargin" id="wex-97-2rS"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="gallonsCell">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
