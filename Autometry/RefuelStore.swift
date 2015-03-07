@@ -1,11 +1,3 @@
-//
-//  RefuelStore.swift
-//  Autometry
-//
-//  Created by Bradley Spaulding on 3/2/15.
-//  Copyright (c) 2015 Motingo. All rights reserved.
-//
-
 import Foundation
 import CoreData
 
