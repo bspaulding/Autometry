@@ -1,7 +1,8 @@
 import Foundation
 import UIKit
+import MessageUI
 
-class RefuelListViewController : UITableViewController {
+class RefuelListViewController : UITableViewController, MFMailComposeViewControllerDelegate {
   var refuels : [Refuel] = []
   let refuelStore = RefuelStore.sharedInstance
   let dateFormatter = NSDateFormatter()
@@ -32,6 +33,28 @@ class RefuelListViewController : UITableViewController {
       self.refuels = self.refuelStore.all().sorted(createdDateSorter)
       self.tableView.reloadData()
     })
+  }
+  
+  var picker : MFMailComposeViewController?
+  
+  @IBAction func export(sender: AnyObject) {
+    let picker = MFMailComposeViewController()
+    self.picker = picker
+    picker.mailComposeDelegate = self
+    picker.setSubject("Hello, Mail")
+    picker.setMessageBody("Autometry data export", isHTML: false)
+    
+    refuels.map({RefuelCSVWrapper.wrap($0)})
+    
+    presentViewController(picker, animated:true, completion:nil)
+  }
+  
+  func mailComposeController(controller: MFMailComposeViewController!,
+    didFinishWithResult result: MFMailComposeResult,
+    error: NSError!) {
+    if let picker = self.picker {
+      picker.dismissViewControllerAnimated(true, completion:nil)
+    }
   }
   
   @IBAction func cancel(segue: UIStoryboardSegue) {

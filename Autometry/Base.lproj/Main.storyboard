@@ -91,6 +91,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Autometry" id="ZUg-Hd-sZm">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="ruL-Lq-0pm">
+                            <connections>
+                                <action selector="export:" destination="PJL-dB-rEM" id="oYh-37-2vM"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="781-s6-poB">
                             <connections>
                                 <segue destination="jZ6-9K-vxr" kind="presentation" id="Sg6-aB-16o"/>
