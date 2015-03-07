@@ -17,15 +17,18 @@ class RefuellingStationStore {
   func register(callback:()->()) {
     listeners.append(callback)
   }
+  func emitChange() {
+    for listener in listeners {
+      listener()
+    }
+  }
   
   func getCurrentRefuellingStation() -> RefuellingStation? {
     return self.currentRefuellingStation
   }
   func setCurrentRefuellingStation(station:RefuellingStation) {
     self.currentRefuellingStation = station
-    for listener in listeners {
-      listener()
-    }
+    emitChange()
   }
   
   func nearby(latitude:Double, longitude:Double, callback:([RefuellingStation]) -> ()) {
