@@ -12,6 +12,29 @@ import CoreData
 class RefuelStore : CoreDataStore {
   let entityName = "Refuel"
   
+  private var unwrap : (NSManagedObject) -> (Refuel) = {object in
+    let refuel = Refuel(
+      id: object.objectID,
+      odometer: object.valueForKey("odometer") as Int,
+      pricePerGallon: object.valueForKey("pricePerGallon") as Float,
+      gallons: object.valueForKey("gallons") as Float,
+      octane: object.valueForKey("octane") as? Int,
+      createdDate: object.valueForKey("date") as? NSDate
+    )
+    
+    if let googlePlaceID = (object.valueForKey("google_place_id") as? String) {
+      let station = RefuellingStation(
+        name: object.valueForKey("stationName") as String,
+        googlePlaceID: googlePlaceID,
+        latitude: object.valueForKey("latitude") as Double,
+        longitude: object.valueForKey("longitude") as Double
+      )
+      refuel.station = station
+    }
+    
+    return refuel
+  }
+  
   private override init() {
     super.init()
     
@@ -26,28 +49,7 @@ class RefuelStore : CoreDataStore {
       let fetchResult = context.executeFetchRequest(request, error: &error) as [NSManagedObject]?
       
       if let results = fetchResult {
-        return results.map({ (var object) -> Refuel in
-          let refuel = Refuel(
-            id: object.objectID,
-            odometer: object.valueForKey("odometer") as Int,
-            pricePerGallon: object.valueForKey("pricePerGallon") as Float,
-            gallons: object.valueForKey("gallons") as Float,
-            octane: object.valueForKey("octane") as? Int,
-            createdDate: object.valueForKey("date") as? NSDate
-          )
-          
-          if let googlePlaceID = (object.valueForKey("google_place_id") as? String) {
-            let station = RefuellingStation(
-              name: object.valueForKey("stationName") as String,
-              googlePlaceID: googlePlaceID,
-              latitude: object.valueForKey("latitude") as Double,
-              longitude: object.valueForKey("longitude") as Double
-            )
-            refuel.station = station
-          }
-          
-          return refuel
-        })
+        return results.map(unwrap)
       } else {
         println("Could not fetch \(error), \(error!.userInfo)")
       }
