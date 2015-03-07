@@ -328,6 +328,7 @@
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCV-ZL-bPa">
                                                     <rect key="frame" x="8" y="11" width="40" height="21"/>
+                                                    <accessibility key="accessibilityConfiguration" label=""/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="58" id="ybR-B0-FfI"/>
                                                     </constraints>
@@ -336,7 +337,7 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dollars" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="IAm-Xe-8tF">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
-                                                    <accessibility key="accessibilityConfiguration" label="gallonsField"/>
+                                                    <accessibility key="accessibilityConfiguration" label="totalField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="hLl-0m-7gl"/>
                                                     </constraints>
@@ -352,7 +353,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="IAm-Xe-8tF" secondAttribute="bottom" constant="-1.5" id="Zgu-Mv-uXG"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" label="gallonsCell">
+                                        <accessibility key="accessibilityConfiguration" label="totalCell">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                     </tableViewCell>
