@@ -32,7 +32,8 @@ class RefuelStore : CoreDataStore {
             odometer: object.valueForKey("odometer") as Int,
             pricePerGallon: object.valueForKey("pricePerGallon") as Float,
             gallons: object.valueForKey("gallons") as Float,
-            octane: object.valueForKey("octane") as Int
+            octane: object.valueForKey("octane") as? Int,
+            createdDate: object.valueForKey("date") as? NSDate
           )
           
           if let googlePlaceID = (object.valueForKey("google_place_id") as? String) {
@@ -62,6 +63,8 @@ class RefuelStore : CoreDataStore {
     let entity = NSEntityDescription.entityForName(entityName, inManagedObjectContext:context)
     
     let object = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:context)
+    let createdDate = NSDate()
+    object.setValue(createdDate, forKey: "date")
     object.setValue(refuel.odometer, forKey: "odometer")
     object.setValue(refuel.pricePerGallon, forKey: "pricePerGallon")
     object.setValue(refuel.gallons, forKey: "gallons")
@@ -78,6 +81,7 @@ class RefuelStore : CoreDataStore {
       println("Could not save \(error), \(error?.userInfo)")
     } else {
       refuel.id = object.objectID
+      refuel.createdDate = createdDate
     }
   }
   
