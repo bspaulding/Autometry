@@ -107,8 +107,10 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
       manager.requestWhenInUseAuthorization()
     case .Restricted:
       println("Restricted")
+      locationActivityIndicator.stopAnimating()
     case .Denied:
       println("Denied")
+      locationActivityIndicator.stopAnimating()
     case .Authorized, .AuthorizedWhenInUse:
       println("starting location updates")
       manager.startUpdatingLocation()
