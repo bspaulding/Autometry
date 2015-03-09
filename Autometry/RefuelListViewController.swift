@@ -41,10 +41,12 @@ class RefuelListViewController : UITableViewController, MFMailComposeViewControl
     let picker = MFMailComposeViewController()
     self.picker = picker
     picker.mailComposeDelegate = self
-    picker.setSubject("Hello, Mail")
-    picker.setMessageBody("Autometry data export", isHTML: false)
+    picker.setSubject("Autometry Data Export")
+    picker.setMessageBody("Hi!\n\nAttached is a spreadshet export of your data. Thanks for using Autometry!", isHTML: false)
     
-    refuels.map({RefuelCSVWrapper.wrap($0)})
+    let csvString = RefuelCSVWrapper.wrapAll(refuels)
+    let csvData = csvString.dataUsingEncoding(NSUTF8StringEncoding)
+    picker.addAttachmentData(csvData, mimeType:"text/csv", fileName:"AutometryExport.csv")
     
     presentViewController(picker, animated:true, completion:nil)
   }
