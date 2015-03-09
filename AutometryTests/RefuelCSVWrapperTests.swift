@@ -3,24 +3,77 @@ import XCTest
 import Autometry
 
 class RefuelCSVWrapperTests: XCTestCase {
-  override func setUp() {
-    super.setUp()
-    // Put setup code here. This method is called before the invocation of each test method in the class.
-  }
-  
-  override func tearDown() {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    super.tearDown()
-  }
-  
-  func testCSVHeader() {
+  func testHeader() {
     let header = RefuelCSVWrapper.header
     println(header)
-    XCTAssert(header == ",".join(["Date", "Odometer", "Price Per Gallon", "Gallons", "Octane", "Latitude", "Longtidue"]))
+    XCTAssertEqual(header, ",".join(["Date", "Odometer", "Price Per Gallon", "Gallons", "Octane", "Location Name", "Latitude", "Longtidue", "Google Place ID"]))
   }
   
-  func testToCSV() {
+  func testBlank() {
     let csv = RefuelCSVWrapper.wrap(Refuel())
-    XCTAssert(csv == ",,,,,,", "Refuel with no data has empty cells")
+    XCTAssertEqual(csv, ",,,,,,,,", "Refuel with no data has empty cells")
+  }
+  
+  func testCreatedDate() {
+    let refuel = Refuel()
+    if let date = DateHelpers.dateWithYear(2015, month:1, day:1, hour:3, minute: 24, tz:"PST") {
+      refuel.createdDate = date
+      let csv = RefuelCSVWrapper.wrap(refuel)
+      XCTAssertEqual(csv, "2015-01-01T03:24-0800,,,,,,,,")
+    } else {
+      XCTAssert(false, "couldn't create new createdDate")
+    }
+  }
+  
+  func testOdometer() {
+    let refuel = Refuel()
+    refuel.odometer = 10000
+    let csv = RefuelCSVWrapper.wrap(refuel)
+    XCTAssertEqual(csv, ",10000,,,,,,,")
+  }
+  
+  func testPricePerGallon() {
+    let refuel = Refuel()
+    refuel.pricePerGallon = 2.539
+    let csv = RefuelCSVWrapper.wrap(refuel)
+    XCTAssertEqual(csv, ",,$2.539,,,,,,")
+  }
+  
+  func testGallons() {
+    let refuel = Refuel()
+    refuel.gallons = 11.2468
+    let csv = RefuelCSVWrapper.wrap(refuel)
+    XCTAssertEqual(csv, ",,,11.2468,,,,,")
+  }
+  
+  func testOctane() {
+    let refuel = Refuel()
+    refuel.octane = 91
+    let csv = RefuelCSVWrapper.wrap(refuel)
+    XCTAssertEqual(csv, ",,,,91,,,,")
+  }
+  
+  func testStation() {
+    let refuel = Refuel()
+    refuel.station = RefuellingStation(name: "Chevron", googlePlaceID: "GOOGLE_PLACE_ID", latitude:32.1245, longitude:-122.5436)
+    let csv = RefuelCSVWrapper.wrap(refuel)
+    XCTAssertEqual(csv, ",,,,,Chevron,32.1245,-122.5436,GOOGLE_PLACE_ID")
+  }
+  
+  func testWrapAll() {
+    let station = RefuellingStation(name: "Chevron", googlePlaceID: "GOOGLE_PLACE_ID", latitude:32.1245, longitude:-122.5436)
+    let dateA = DateHelpers.dateWithYear(2015, month:1, day:1, hour:3, minute: 24, tz:"PST")!
+    let refuelA = Refuel(id: "1", odometer: 10000, pricePerGallon: 2.349, gallons: 10.9876, octane: 91, createdDate: dateA)
+    refuelA.station = station
+    let dateB = DateHelpers.dateWithYear(2015, month:2, day:1, hour:3, minute: 24, tz:"PST")!
+    let refuelB = Refuel(id: "2", odometer: 10833, pricePerGallon: 2.749, gallons: 11.6789, octane: 91, createdDate: dateB)
+    refuelB.station = station
+    let actual = RefuelCSVWrapper.wrapAll([refuelA, refuelB])
+    let expected = "\n".join([
+      "Date,Odometer,Price Per Gallon,Gallons,Octane,Location Name,Latitude,Longtidue,Google Place ID",
+      "2015-01-01T03:24-0800,10000,$2.349,10.9876,91,Chevron,32.1245,-122.5436,GOOGLE_PLACE_ID",
+      "2015-02-01T03:24-0800,10833,$2.749,11.6789,91,Chevron,32.1245,-122.5436,GOOGLE_PLACE_ID"
+    ])
+    XCTAssertEqual(actual, expected)
   }
 }
