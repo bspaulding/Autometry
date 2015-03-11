@@ -1,20 +1,10 @@
 import Foundation
 
-class RefuellingStationStore {
+class RefuellingStationStore : Observable {
   private var currentRefuellingStation : RefuellingStation?
-  var listeners : [() -> ()] = []
   
-  private init() {}
-  
-  func register(callback:()->()) {
-    listeners.append(callback)
-  }
-  func emitChange() {
-    for listener in listeners {
-      listener()
-    }
-  }
-  
+  override private init() {}
+    
   func getCurrentRefuellingStation() -> RefuellingStation? {
     return self.currentRefuellingStation
   }

@@ -1,7 +1,7 @@
 import Foundation
 import CoreData
 
-class CoreDataStore: NSObject {
+class CoreDataStore: Observable {
   
   var storeName : String = "CoreDataStoreName";
   var storeFilename : String = "CoreDataStoreFilename";

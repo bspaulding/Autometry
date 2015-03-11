@@ -3,18 +3,7 @@ import CoreData
 
 class RefuelStore : CoreDataStore {
   let entityName = "Refuel"
-  
-  var listeners : [() -> ()] = []
-  
-  func register(callback:()->()) {
-    listeners.append(callback)
-  }
-  func emitChange() {
-    for listener in listeners {
-      listener()
-    }
-  }
-  
+    
   private var unwrap : (NSManagedObject) -> (Refuel) = {object in
     let refuel = Refuel(
       id: object.objectID,
