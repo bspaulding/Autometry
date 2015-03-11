@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65079DC01AAE0ECA009DFD2E /* GasPump.pxm in Resources */ = {isa = PBXBuildFile; fileRef = 65079DBD1AAE0ECA009DFD2E /* GasPump.pxm */; };
+		65079DC11AAE0ECA009DFD2E /* GasPumpBlank.png in Resources */ = {isa = PBXBuildFile; fileRef = 65079DBE1AAE0ECA009DFD2E /* GasPumpBlank.png */; };
+		65079DC21AAE0ECA009DFD2E /* GasPumpUnknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 65079DBF1AAE0ECA009DFD2E /* GasPumpUnknown.png */; };
 		65094A7E1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65094A7D1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift */; };
 		65269E0E1AAD66E500AA47D6 /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65269E0D1AAD66E500AA47D6 /* DateHelpers.swift */; };
+		65572FF41AAFEF1B0079739E /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 65572FF31AAFEF1B0079739E /* AppIcon.png */; };
+		65572FFA1AAFF1EA0079739E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65572FF91AAFF1EA0079739E /* Images.xcassets */; };
 		65B4DE6F1AA787CC00FAC9ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */; };
 		65B4DE711AA7C14000FAC9ED /* RefuellingStationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */; };
 		65B4DE731AA7C17F00FAC9ED /* RefuellingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */; };
@@ -35,7 +40,6 @@
 		65F96F291AAAF38A003EBDCF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F96F281AAAF38A003EBDCF /* MessageUI.framework */; };
 		65FDDC811AA5728C00EBF26E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDC801AA5728C00EBF26E /* AppDelegate.swift */; };
 		65FDDC861AA5728C00EBF26E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FDDC841AA5728C00EBF26E /* Main.storyboard */; };
-		65FDDC881AA5728C00EBF26E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65FDDC871AA5728C00EBF26E /* Images.xcassets */; };
 		65FDDC8B1AA5728C00EBF26E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FDDC891AA5728C00EBF26E /* LaunchScreen.xib */; };
 		65FDDC971AA5728C00EBF26E /* AutometryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDC961AA5728C00EBF26E /* AutometryTests.swift */; };
 		65FDDCA21AA572CE00EBF26E /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCA11AA572CE00EBF26E /* CoreDataStore.swift */; };
@@ -106,9 +110,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		65079DBD1AAE0ECA009DFD2E /* GasPump.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = GasPump.pxm; sourceTree = "<group>"; };
+		65079DBE1AAE0ECA009DFD2E /* GasPumpBlank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GasPumpBlank.png; sourceTree = "<group>"; };
+		65079DBF1AAE0ECA009DFD2E /* GasPumpUnknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GasPumpUnknown.png; sourceTree = "<group>"; };
 		65094A7D1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationsListViewController.swift; sourceTree = "<group>"; };
 		65094A861AA8C65100B1FEB0 /* RefuelStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RefuelStore 2.xcdatamodel"; sourceTree = "<group>"; };
 		65269E0D1AAD66E500AA47D6 /* DateHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
+		65572FF31AAFEF1B0079739E /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
+		65572FF81AAFEF220079739E /* AppIcon.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppIcon.pxm; sourceTree = "<group>"; };
+		65572FF91AAFF1EA0079739E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
 		65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStation.swift; sourceTree = "<group>"; };
@@ -122,7 +132,6 @@
 		65FDDC7F1AA5728C00EBF26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65FDDC801AA5728C00EBF26E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65FDDC851AA5728C00EBF26E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		65FDDC871AA5728C00EBF26E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		65FDDC8A1AA5728C00EBF26E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		65FDDC901AA5728C00EBF26E /* AutometryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AutometryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FDDC951AA5728C00EBF26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,6 +165,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65079DBC1AAE0ECA009DFD2E /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				65079DBD1AAE0ECA009DFD2E /* GasPump.pxm */,
+				65079DBE1AAE0ECA009DFD2E /* GasPumpBlank.png */,
+				65079DBF1AAE0ECA009DFD2E /* GasPumpUnknown.png */,
+				65572FF81AAFEF220079739E /* AppIcon.pxm */,
+				65572FF31AAFEF1B0079739E /* AppIcon.png */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
 		65B4DE751AA7C57200FAC9ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +230,7 @@
 				65FDDC7D1AA5728C00EBF26E /* Autometry */,
 				65FDDC931AA5728C00EBF26E /* AutometryTests */,
 				65FDDC7C1AA5728C00EBF26E /* Products */,
+				65079DBC1AAE0ECA009DFD2E /* Graphics */,
 			);
 			sourceTree = "<group>";
 		};
@@ -232,7 +254,7 @@
 				65FDDCA01AA572BC00EBF26E /* lib */,
 				65FDDC801AA5728C00EBF26E /* AppDelegate.swift */,
 				65FDDC841AA5728C00EBF26E /* Main.storyboard */,
-				65FDDC871AA5728C00EBF26E /* Images.xcassets */,
+				65572FF91AAFF1EA0079739E /* Images.xcassets */,
 				65FDDC891AA5728C00EBF26E /* LaunchScreen.xib */,
 				65FDDC7E1AA5728C00EBF26E /* Supporting Files */,
 				65FDDCA61AA5734500EBF26E /* RefuelStore.xcdatamodeld */,
@@ -422,9 +444,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65079DC21AAE0ECA009DFD2E /* GasPumpUnknown.png in Resources */,
 				65FDDC861AA5728C00EBF26E /* Main.storyboard in Resources */,
+				65572FFA1AAFF1EA0079739E /* Images.xcassets in Resources */,
 				65FDDC8B1AA5728C00EBF26E /* LaunchScreen.xib in Resources */,
-				65FDDC881AA5728C00EBF26E /* Images.xcassets in Resources */,
+				65079DC11AAE0ECA009DFD2E /* GasPumpBlank.png in Resources */,
+				65079DC01AAE0ECA009DFD2E /* GasPump.pxm in Resources */,
+				65572FF41AAFEF1B0079739E /* AppIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
