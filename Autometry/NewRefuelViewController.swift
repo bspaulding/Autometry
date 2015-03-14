@@ -111,7 +111,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     case .Denied:
       println("Denied")
       locationActivityIndicator.stopAnimating()
-    case .Authorized, .AuthorizedWhenInUse:
+    case .AuthorizedAlways, .AuthorizedWhenInUse:
       println("starting location updates")
       manager.startUpdatingLocation()
     default:
