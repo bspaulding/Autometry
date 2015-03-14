@@ -12,8 +12,12 @@
 		65079DC21AAE0ECA009DFD2E /* GasPumpUnknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 65079DBF1AAE0ECA009DFD2E /* GasPumpUnknown.png */; };
 		65094A7E1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65094A7D1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift */; };
 		65269E0E1AAD66E500AA47D6 /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65269E0D1AAD66E500AA47D6 /* DateHelpers.swift */; };
+		654E4EFB1AB0AA5600AAE994 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E4EFA1AB0AA5600AAE994 /* Observable.swift */; };
+		654E4EFF1AB0AC5200AAE994 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E4EFA1AB0AA5600AAE994 /* Observable.swift */; };
 		65572FF41AAFEF1B0079739E /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 65572FF31AAFEF1B0079739E /* AppIcon.png */; };
 		65572FFA1AAFF1EA0079739E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65572FF91AAFF1EA0079739E /* Images.xcassets */; };
+		656919A41AB4BED7000E9AC2 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 656919A21AB4BED7000E9AC2 /* Splash.png */; };
+		656919A51AB4BED7000E9AC2 /* Splash.pxm in Resources */ = {isa = PBXBuildFile; fileRef = 656919A31AB4BED7000E9AC2 /* Splash.pxm */; };
 		65B4DE6F1AA787CC00FAC9ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */; };
 		65B4DE711AA7C14000FAC9ED /* RefuellingStationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */; };
 		65B4DE731AA7C17F00FAC9ED /* RefuellingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */; };
@@ -116,9 +120,12 @@
 		65094A7D1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationsListViewController.swift; sourceTree = "<group>"; };
 		65094A861AA8C65100B1FEB0 /* RefuelStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RefuelStore 2.xcdatamodel"; sourceTree = "<group>"; };
 		65269E0D1AAD66E500AA47D6 /* DateHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
+		654E4EFA1AB0AA5600AAE994 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		65572FF31AAFEF1B0079739E /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		65572FF81AAFEF220079739E /* AppIcon.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppIcon.pxm; sourceTree = "<group>"; };
 		65572FF91AAFF1EA0079739E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
+		656919A21AB4BED7000E9AC2 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
+		656919A31AB4BED7000E9AC2 /* Splash.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splash.pxm; sourceTree = "<group>"; };
 		65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
 		65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStation.swift; sourceTree = "<group>"; };
@@ -173,6 +180,8 @@
 				65079DBF1AAE0ECA009DFD2E /* GasPumpUnknown.png */,
 				65572FF81AAFEF220079739E /* AppIcon.pxm */,
 				65572FF31AAFEF1B0079739E /* AppIcon.png */,
+				656919A21AB4BED7000E9AC2 /* Splash.png */,
+				656919A31AB4BED7000E9AC2 /* Splash.pxm */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -293,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				65FDDCA11AA572CE00EBF26E /* CoreDataStore.swift */,
+				654E4EFA1AB0AA5600AAE994 /* Observable.swift */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -444,10 +454,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				656919A41AB4BED7000E9AC2 /* Splash.png in Resources */,
 				65079DC21AAE0ECA009DFD2E /* GasPumpUnknown.png in Resources */,
 				65FDDC861AA5728C00EBF26E /* Main.storyboard in Resources */,
 				65572FFA1AAFF1EA0079739E /* Images.xcassets in Resources */,
 				65FDDC8B1AA5728C00EBF26E /* LaunchScreen.xib in Resources */,
+				656919A51AB4BED7000E9AC2 /* Splash.pxm in Resources */,
 				65079DC11AAE0ECA009DFD2E /* GasPumpBlank.png in Resources */,
 				65079DC01AAE0ECA009DFD2E /* GasPump.pxm in Resources */,
 				65572FF41AAFEF1B0079739E /* AppIcon.png in Resources */,
@@ -482,6 +494,7 @@
 				65B4DE731AA7C17F00FAC9ED /* RefuellingStation.swift in Sources */,
 				65FDDCA21AA572CE00EBF26E /* CoreDataStore.swift in Sources */,
 				65FDDC811AA5728C00EBF26E /* AppDelegate.swift in Sources */,
+				654E4EFB1AB0AA5600AAE994 /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +514,7 @@
 				65C5AEF91AABBE0000F97447 /* RefuelStore.xcdatamodeld in Sources */,
 				65C5AEF51AABBDE600F97447 /* RefuelListViewController.swift in Sources */,
 				65C5AEEE1AABBDA400F97447 /* RefuellingStation.swift in Sources */,
+				654E4EFF1AB0AC5200AAE994 /* Observable.swift in Sources */,
 				65C5AEF21AABBDDC00F97447 /* RefuellingStationStore.swift in Sources */,
 				65269E0E1AAD66E500AA47D6 /* DateHelpers.swift in Sources */,
 				65C5AEF31AABBDE100F97447 /* RefuellingStationsListViewController.swift in Sources */,
