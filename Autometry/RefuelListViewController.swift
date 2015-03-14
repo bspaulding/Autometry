@@ -86,8 +86,18 @@ class RefuelListViewController : UITableViewController, MFMailComposeViewControl
       text = "Unknown Date"
     }
     (cell.viewWithTag(3000) as UILabel).text = text
-    (cell.viewWithTag(3001) as UILabel).text = "\(numberFormatter.stringFromNumber(refuel.odometer!)!) miles"
+    
+    let odometerLabel = cell.viewWithTag(3001) as UILabel
+    let odometerValue = "\(numberFormatter.stringFromNumber(refuel.odometer!)!) miles"
+    odometerLabel.text = odometerValue
+    odometerLabel.accessibilityValue = odometerValue
+    
     (cell.viewWithTag(3002) as UILabel).text = currencyFormatter.stringFromNumber(refuel.pricePerGallon!)
+    // 3003 mpg
+    (cell.viewWithTag(3003) as UILabel).text = "\(numberFormatter.stringFromNumber(34)!) mpg"
+    // 3004 total price
+    let total = refuel.pricePerGallon! * refuel.gallons!
+    (cell.viewWithTag(3004) as UILabel).text = currencyFormatter.stringFromNumber(total)
 
     return cell
   }
