@@ -1,32 +1,7 @@
 import Foundation
 
-class Dashboard : Observable {
-  var refuels : [Refuel] = []
-  let refuelStore = RefuelStore.sharedInstance
-  let createdDateSorter : (Refuel,Refuel) -> Bool = {(a,b) in
-    switch (a.createdDate,b.createdDate) {
-    case let (.Some(aDate), .Some(bDate)):
-      return aDate.timeIntervalSinceNow > bDate.timeIntervalSinceNow
-    case let (.None, .Some(bDate)):
-      return false
-    case let (.Some(bDate), .None):
-      return true
-    case let (.None, .None):
-      return false
-    }
-  }
-
-  override init() {
-    super.init()
-    
-    refuels = refuelStore.all().sorted(createdDateSorter)
-    refuelStore.register({
-      self.refuels = self.refuelStore.all().sorted(self.createdDateSorter)
-      self.emitChange()
-    })
-  }
-
-  func mpg() -> String {
+class Dashboard {
+  func mpg(refuels : [Refuel]) -> String {
     if refuels.count <= 1 {
       return "N/A"
     }
@@ -38,17 +13,17 @@ class Dashboard : Observable {
     return "\(mpg)"
   }
   
-  func averagePPG() -> String {
+  func averagePPG(refuels : [Refuel]) -> String {
     let averagePPG = refuels.reduce(0, { $0 + $1.pricePerGallon! }) / Float(refuels.count)
     return formatters.currencyFormatter.stringFromNumber(averagePPG)!
   }
   
-  func totalSpent() -> String {
+  func totalSpent(refuels : [Refuel]) -> String {
     let totalSpent = refuels.reduce(0, { $0 + $1.totalSpent() })
     return formatters.currencyFormatter.stringFromNumber(totalSpent)!
   }
   
-  func totalMiles() -> String {
+  func totalMiles(refuels : [Refuel]) -> String {
     if refuels.count == 0 {
       return "0"
     }
