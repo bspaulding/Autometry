@@ -39,6 +39,12 @@
 		65C5AEF91AABBE0000F97447 /* RefuelStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCA61AA5734500EBF26E /* RefuelStore.xcdatamodeld */; };
 		65C5AEFC1AABC26700F97447 /* RefuelCSVWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C5AEFB1AABC26700F97447 /* RefuelCSVWrapper.swift */; };
 		65C5AEFD1AABC2D000F97447 /* RefuelCSVWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C5AEFB1AABC26700F97447 /* RefuelCSVWrapper.swift */; };
+		65E6E0F61ACD01540069960E /* RefuelsTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6E0F51ACD01540069960E /* RefuelsTabBarController.swift */; };
+		65E6E0FC1ACD0E120069960E /* BarGraphIcon.pxm in Resources */ = {isa = PBXBuildFile; fileRef = 65E6E0FA1ACD0E120069960E /* BarGraphIcon.pxm */; };
+		65E6E0FD1ACD0E120069960E /* BarGraphIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E6E0FB1ACD0E120069960E /* BarGraphIcon.png */; };
+		65E6E0FF1ACD0F310069960E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6E0FE1ACD0F310069960E /* DashboardViewController.swift */; };
+		65E6E1011ACD16AB0069960E /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6E1001ACD16AB0069960E /* Formatters.swift */; };
+		65E6E1021ACD17F00069960E /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6E1001ACD16AB0069960E /* Formatters.swift */; };
 		65F96F241AAA1531003EBDCF /* RefuellingStationStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F96F231AAA1531003EBDCF /* RefuellingStationStoreTests.swift */; };
 		65F96F271AAA15A9003EBDCF /* GoogleMapsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F96F261AAA15A9003EBDCF /* GoogleMapsAPI.swift */; };
 		65F96F291AAAF38A003EBDCF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F96F281AAAF38A003EBDCF /* MessageUI.framework */; };
@@ -132,6 +138,11 @@
 		65B4DE741AA7C57200FAC9ED /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		65C5AEEB1AABBC3900F97447 /* RefuelCSVWrapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelCSVWrapperTests.swift; sourceTree = "<group>"; };
 		65C5AEFB1AABC26700F97447 /* RefuelCSVWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelCSVWrapper.swift; sourceTree = "<group>"; };
+		65E6E0F51ACD01540069960E /* RefuelsTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelsTabBarController.swift; sourceTree = "<group>"; };
+		65E6E0FA1ACD0E120069960E /* BarGraphIcon.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = BarGraphIcon.pxm; sourceTree = "<group>"; };
+		65E6E0FB1ACD0E120069960E /* BarGraphIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BarGraphIcon.png; sourceTree = "<group>"; };
+		65E6E0FE1ACD0F310069960E /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		65E6E1001ACD16AB0069960E /* Formatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
 		65F96F231AAA1531003EBDCF /* RefuellingStationStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStoreTests.swift; sourceTree = "<group>"; };
 		65F96F261AAA15A9003EBDCF /* GoogleMapsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsAPI.swift; sourceTree = "<group>"; };
 		65F96F281AAAF38A003EBDCF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -182,6 +193,8 @@
 				65572FF31AAFEF1B0079739E /* AppIcon.png */,
 				656919A21AB4BED7000E9AC2 /* Splash.png */,
 				656919A31AB4BED7000E9AC2 /* Splash.pxm */,
+				65E6E0FA1ACD0E120069960E /* BarGraphIcon.pxm */,
+				65E6E0FB1ACD0E120069960E /* BarGraphIcon.png */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -210,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				65C5AEFB1AABC26700F97447 /* RefuelCSVWrapper.swift */,
+				65E6E1001ACD16AB0069960E /* Formatters.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -331,6 +345,8 @@
 				65FDDCAD1AA5771E00EBF26E /* RefuelListViewController.swift */,
 				65FDDCAF1AA579E900EBF26E /* NewRefuelViewController.swift */,
 				65094A7D1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift */,
+				65E6E0F51ACD01540069960E /* RefuelsTabBarController.swift */,
+				65E6E0FE1ACD0F310069960E /* DashboardViewController.swift */,
 			);
 			name = view_controllers;
 			sourceTree = "<group>";
@@ -459,9 +475,11 @@
 				65FDDC861AA5728C00EBF26E /* Main.storyboard in Resources */,
 				65572FFA1AAFF1EA0079739E /* Images.xcassets in Resources */,
 				65FDDC8B1AA5728C00EBF26E /* LaunchScreen.xib in Resources */,
+				65E6E0FC1ACD0E120069960E /* BarGraphIcon.pxm in Resources */,
 				656919A51AB4BED7000E9AC2 /* Splash.pxm in Resources */,
 				65079DC11AAE0ECA009DFD2E /* GasPumpBlank.png in Resources */,
 				65079DC01AAE0ECA009DFD2E /* GasPump.pxm in Resources */,
+				65E6E0FD1ACD0E120069960E /* BarGraphIcon.png in Resources */,
 				65572FF41AAFEF1B0079739E /* AppIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,10 +502,13 @@
 			files = (
 				65FDDCA81AA5734500EBF26E /* RefuelStore.xcdatamodeld in Sources */,
 				65C5AEFC1AABC26700F97447 /* RefuelCSVWrapper.swift in Sources */,
+				65E6E1011ACD16AB0069960E /* Formatters.swift in Sources */,
 				65FDDCB01AA579E900EBF26E /* NewRefuelViewController.swift in Sources */,
 				65F96F271AAA15A9003EBDCF /* GoogleMapsAPI.swift in Sources */,
+				65E6E0F61ACD01540069960E /* RefuelsTabBarController.swift in Sources */,
 				65FDDCA51AA572FA00EBF26E /* RefuelStore.swift in Sources */,
 				65FDDCAE1AA5771E00EBF26E /* RefuelListViewController.swift in Sources */,
+				65E6E0FF1ACD0F310069960E /* DashboardViewController.swift in Sources */,
 				65B4DE711AA7C14000FAC9ED /* RefuellingStationStore.swift in Sources */,
 				65FDDCAB1AA5765200EBF26E /* Refuel.swift in Sources */,
 				65094A7E1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift in Sources */,
@@ -514,6 +535,7 @@
 				65C5AEF91AABBE0000F97447 /* RefuelStore.xcdatamodeld in Sources */,
 				65C5AEF51AABBDE600F97447 /* RefuelListViewController.swift in Sources */,
 				65C5AEEE1AABBDA400F97447 /* RefuellingStation.swift in Sources */,
+				65E6E1021ACD17F00069960E /* Formatters.swift in Sources */,
 				654E4EFF1AB0AC5200AAE994 /* Observable.swift in Sources */,
 				65C5AEF21AABBDDC00F97447 /* RefuellingStationStore.swift in Sources */,
 				65269E0E1AAD66E500AA47D6 /* DateHelpers.swift in Sources */,

@@ -18,4 +18,8 @@ class Refuel {
     self.octane = octane
     self.createdDate = createdDate
   }
+  
+  func totalSpent() -> Float {
+    return pricePerGallon! * gallons!
+  }
 }
