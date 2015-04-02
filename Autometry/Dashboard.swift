@@ -6,8 +6,8 @@ class Dashboard {
       return "N/A"
     }
     
-    let gallons : Float = refuels.reduce(0, { $0 + $1.gallons! })
-    let miles = Float(refuels[0].odometer!)
+    let gallons : Float = refuels[1...refuels.count - 1].reduce(0, { $0 + $1.gallons! })
+    let miles = Float(refuels[0].odometer! - refuels[refuels.count-1].odometer!)
     let mpg = Int(miles / gallons)
     
     return "\(mpg)"
