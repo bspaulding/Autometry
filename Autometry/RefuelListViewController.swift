@@ -12,7 +12,7 @@ class RefuelListViewController : UITableViewController, MFMailComposeViewControl
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+    dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
     currencyFormatter.numberStyle = .CurrencyStyle
     numberFormatter.numberStyle = .DecimalStyle
     
