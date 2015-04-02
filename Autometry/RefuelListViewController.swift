@@ -93,9 +93,6 @@ class RefuelListViewController : UITableViewController, MFMailComposeViewControl
     odometerLabel.accessibilityValue = odometerValue
     
     (cell.viewWithTag(3002) as UILabel).text = currencyFormatter.stringFromNumber(refuel.pricePerGallon!)
-    // 3003 mpg
-    (cell.viewWithTag(3003) as UILabel).text = "\(numberFormatter.stringFromNumber(34)!) mpg"
-    // 3004 total price
     let total = refuel.pricePerGallon! * refuel.gallons!
     (cell.viewWithTag(3004) as UILabel).text = currencyFormatter.stringFromNumber(total)
 
