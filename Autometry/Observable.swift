@@ -1,6 +1,6 @@
 import Foundation
 
-class Observable { // I wish this was a mixin! Gah!
+class Observable : NSObject { // I wish this was a mixin! Gah!
   var listeners : [() -> ()] = []
 
   func register(callback:()->()) {
