@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import CoreData
 
 class RefuelListViewController : UITableViewController {
   var refuels : [Refuel] = []
@@ -65,5 +66,18 @@ class RefuelListViewController : UITableViewController {
     (cell.viewWithTag(3004) as UILabel).text = formatters.currencyFormatter.stringFromNumber(total)
 
     return cell
+  }
+  override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return true
+  }
+  override func tableView(tableView: UITableView, commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath:NSIndexPath) {
+    if editingStyle == UITableViewCellEditingStyle.Delete {
+      let refuel = refuels[indexPath.row]
+      refuels = refuels.filter({ $0.id as NSManagedObjectID != refuel.id as NSManagedObjectID })
+      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Fade)
+      refuelStore.delete(refuel)
+    } else {
+      println("Unhandled editing style: ", editingStyle);
+    }
   }
 }

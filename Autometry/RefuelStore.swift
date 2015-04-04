@@ -73,7 +73,22 @@ class RefuelStore : CoreDataStore {
     saveContext({
       refuel.id = object.objectID
       refuel.createdDate = createdDate
-      emitChange()
+      self.emitChange()
+    }, failure: { error in
+      println("create failed")
+    })
+  }
+  
+  func delete(refuel:Refuel) {
+    if let objectID = refuel.id as? NSManagedObjectID {
+      let context = managedObjectContext!
+      let object = context.objectWithID(objectID)
+      context.deleteObject(object)
+      saveContext({
+        self.emitChange()
+      },failure: { error in
+        println("delete failed")
+      })
     }
   }
   
