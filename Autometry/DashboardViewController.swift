@@ -6,6 +6,7 @@ class DashboardViewController : UIViewController {
   @IBOutlet weak var pricePerGallonLabel: UILabel!
   @IBOutlet weak var totalSpentLabel: UILabel!
   @IBOutlet weak var totalMilesLabel: UILabel!
+  //@IBOutlet weak var tabBarItem: UITabBarItem!
   
   let dashboard = Dashboard()
   let refuelStore = RefuelStore.sharedInstance
@@ -24,6 +25,10 @@ class DashboardViewController : UIViewController {
     
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    if let image = UIImage(named: "BarGraphIconSelected.png") {
+      tabBarItem.selectedImage = image
+    }
     
     refuelStore.register({
       self.update()

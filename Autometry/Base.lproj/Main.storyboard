@@ -98,8 +98,8 @@
                             <mask key="constraints">
                                 <exclude reference="e3u-Yk-DSz"/>
                                 <exclude reference="o5N-Qc-TUo"/>
-                                <exclude reference="yGF-PD-IkY"/>
                                 <exclude reference="siw-xG-1Fs"/>
+                                <exclude reference="yGF-PD-IkY"/>
                             </mask>
                         </variation>
                     </view>
@@ -107,6 +107,7 @@
                     <connections>
                         <outlet property="mpgLabel" destination="LEN-bu-zSh" id="Fum-hq-SAe"/>
                         <outlet property="pricePerGallonLabel" destination="2Zy-jC-RK1" id="9Z2-qh-KHq"/>
+                        <outlet property="tabBarItem" destination="T81-oa-hrA" id="qmz-XD-nuo"/>
                         <outlet property="totalMilesLabel" destination="e1t-zK-Rob" id="xaU-z4-lGm"/>
                         <outlet property="totalSpentLabel" destination="f5E-Qs-iOR" id="BoJ-J5-pMb"/>
                     </connections>
@@ -662,7 +663,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="9lH-Fk-2I2">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
