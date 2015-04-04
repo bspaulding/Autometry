@@ -70,7 +70,7 @@ class RefuelStore : CoreDataStore {
       object.setValue(station.name, forKey:"stationName")
     }
 
-    saveContext({
+    saveContext(context, {
       refuel.id = object.objectID
       refuel.createdDate = createdDate
       self.emitChange()
@@ -84,7 +84,7 @@ class RefuelStore : CoreDataStore {
       let context = managedObjectContext!
       let object = context.objectWithID(objectID)
       context.deleteObject(object)
-      saveContext({
+      saveContext(context, {
         self.emitChange()
       },failure: { error in
         println("delete failed")
