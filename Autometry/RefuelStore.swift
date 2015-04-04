@@ -69,11 +69,8 @@ class RefuelStore : CoreDataStore {
       object.setValue(station.longitude, forKey:"longitude")
       object.setValue(station.name, forKey:"stationName")
     }
-    
-    var error : NSError?
-    if !context.save(&error) {
-      println("Could not save \(error), \(error?.userInfo)")
-    } else {
+
+    saveContext({
       refuel.id = object.objectID
       refuel.createdDate = createdDate
       emitChange()

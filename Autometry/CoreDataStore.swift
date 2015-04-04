@@ -88,18 +88,23 @@ class CoreDataStore: Observable {
   
   
   // save NSManagedObjectContext
-  func saveContext (context: NSManagedObjectContext) {
+  func saveContext (context: NSManagedObjectContext, success:()->(), failure:(error:NSError)->()) {
+    println("context hasChanges: \(context.hasChanges)")
     var error: NSError? = nil
-    if context.hasChanges && !context.save(&error) {
+    if !context.save(&error) {
       // Replace this implementation with code to handle the error appropriately.
       // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
       NSLog("Unresolved error \(error), \(error!.userInfo)")
-      abort()
+      if let error = error {
+        failure(error: error)
+      }
+    } else {
+      success()
     }
   }
   
-  func saveContext () {
-    self.saveContext( self.backgroundContext! )
+  func saveContext (success:()->(), failure:(error:NSError)->()) {
+    self.saveContext(self.backgroundContext!, success: success, failure: failure)
   }
   
   // call back function by saveContext, support multi-thread
