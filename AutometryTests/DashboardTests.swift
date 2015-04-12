@@ -61,4 +61,9 @@ class DashboardTests: XCTestCase {
     XCTAssertEqual(dashboard.totalMiles(refuelsA), "500")
     XCTAssertEqual(dashboard.totalMiles(refuelsB), "950")
   }
+  
+  func testCostPerMile() {
+    XCTAssertEqual(dashboard.costPerMile(refuelsA), "$0.20")
+    XCTAssertEqual(dashboard.costPerMile(refuelsB), "$0.18")
+  }
 }

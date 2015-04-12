@@ -36,8 +36,7 @@ class Dashboard {
   }
   
   func totalSpent(refuels : [Refuel]) -> String {
-    let totalSpent = refuels.reduce(0, combine: { $0 + $1.totalSpent() })
-    return formatters.currencyFormatter.stringFromNumber(totalSpent)!
+    return formatters.currencyFormatter.stringFromNumber(totalSpent(refuels))!
   }
   
   func totalMiles(refuels : [Refuel]) -> String {
@@ -46,6 +45,11 @@ class Dashboard {
     }
 
     return formatters.numberFormatter.stringFromNumber(miles(refuels))!
+  }
+  
+  func costPerMile(refuels: [Refuel]) -> String {
+    let cpm = totalSpent(refuels) / miles(refuels)
+    return formatters.currencyFormatter.stringFromNumber(cpm)!
   }
   
   // Helpers
@@ -61,5 +65,9 @@ class Dashboard {
  
   private func miles(refuels: [Refuel]) -> Float {
     return Float(refuels[0].odometer! - refuels[refuels.count-1].odometer!)
+  }
+  
+  private func totalSpent(refuels: [Refuel]) -> Float {
+    return refuels.reduce(0, combine: { $0 + $1.totalSpent() })
   }
 }
