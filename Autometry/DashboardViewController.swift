@@ -39,7 +39,7 @@ class DashboardViewController : UIViewController {
   func update() {
     let refuels = refuelStore.all().sorted(createdDateSorter)
 
-    mpgLabel.text = dashboard.mpg(refuels)
+    mpgLabel.text = dashboard.mpgAverage(refuels)
     pricePerGallonLabel.text = dashboard.averagePPG(refuels)
     totalSpentLabel.text = dashboard.totalSpent(refuels)
     totalMilesLabel.text = dashboard.totalMiles(refuels)

@@ -1,7 +1,7 @@
 import Foundation
 
 class Dashboard {
-  func mpg(refuels : [Refuel]) -> String {
+  func mpgAverage(refuels : [Refuel]) -> String {
     if refuels.count <= 1 {
       return "N/A"
     }
@@ -11,6 +11,33 @@ class Dashboard {
     let mpg = Int(miles / gallons)
     
     return "\(mpg)"
+  }
+  
+  func mpgBest(refuels: [Refuel]) -> String {
+    if refuels.count <= 1 {
+      return "N/A"
+    }
+    
+    let mpg = maxElement(mpgs(refuels))
+    return "\(mpg)"
+  }
+  
+  func mpgWorst(refuels: [Refuel]) -> String {
+    if refuels.count <= 1 {
+      return "N/A"
+    }
+    
+    let mpg = minElement(mpgs(refuels))
+    return "\(mpg)"
+  }
+  
+  private func mpgs(refuels: [Refuel]) -> [Int] {
+    return map(enumerate(refuels[1...refuels.count - 1])) { (index, refuel) in
+      let previous = refuels[index]
+      let miles = Float(previous.odometer! - refuel.odometer!)
+
+      return Int(miles / refuel.gallons!)
+    }
   }
   
   func averagePPG(refuels : [Refuel]) -> String {
