@@ -3,39 +3,46 @@ import XCTest
 import Autometry
 
 class DashboardTests: XCTestCase {
-  func testMpg() {
-    let dashboard = Dashboard()
-    
-    let refuelA = Refuel()
+
+  let dashboard = Dashboard()
+  let refuelA = Refuel()
+  let refuelB = Refuel()
+  let refuelC = Refuel()
+  let refuelD = Refuel()
+  let refuelE = Refuel()
+
+  var refuelsA : [Refuel] = []
+  var refuelsB : [Refuel] = []
+  
+  override func setUp() {
     refuelA.odometer = 10000
     refuelA.gallons = 10
-   
-    let refuelB = Refuel()
+    
     refuelB.odometer = 10300
     refuelB.gallons = 10
     
-    let refuelC = Refuel()
     refuelC.odometer = 10500
     refuelC.gallons = 10
 
-    var refuels = [refuelC, refuelB, refuelA]
-    
-    XCTAssertEqual(dashboard.mpgAverage(refuels), "25")
-    XCTAssertEqual(dashboard.mpgBest(refuels), "30")
-    XCTAssertEqual(dashboard.mpgWorst(refuels), "20")
-    
-    let refuelD = Refuel()
     refuelD.odometer = 10900
     refuelD.gallons = 10
     
-    let refuelE = Refuel()
     refuelE.odometer = 10950
     refuelE.gallons = 10
     
-    refuels = [refuelE, refuelD, refuelC, refuelB, refuelA]
+    refuelsA = [refuelC, refuelB, refuelA]
+    refuelsB = [refuelE, refuelD, refuelC, refuelB, refuelA]
     
-    XCTAssertEqual(dashboard.mpgAverage(refuels), "23")
-    XCTAssertEqual(dashboard.mpgBest(refuels), "40")
-    XCTAssertEqual(dashboard.mpgWorst(refuels), "5")
+    super.setUp()
+  }
+  
+  func testMpg() {
+    XCTAssertEqual(dashboard.mpgAverage(refuelsA), "25")
+    XCTAssertEqual(dashboard.mpgBest(refuelsA), "30")
+    XCTAssertEqual(dashboard.mpgWorst(refuelsA), "20")
+    
+    XCTAssertEqual(dashboard.mpgAverage(refuelsB), "23")
+    XCTAssertEqual(dashboard.mpgBest(refuelsB), "40")
+    XCTAssertEqual(dashboard.mpgWorst(refuelsB), "5")
   }
 }
