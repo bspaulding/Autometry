@@ -55,4 +55,10 @@ class DashboardTests: XCTestCase {
     XCTAssertEqual(dashboard.totalSpent(refuelsA), "$98.57")
     XCTAssertEqual(dashboard.totalSpent(refuelsB), "$169.55")
   }
+  
+  func testTotalMiles() {
+    XCTAssertEqual(dashboard.totalMiles([refuelA]), "0")
+    XCTAssertEqual(dashboard.totalMiles(refuelsA), "500")
+    XCTAssertEqual(dashboard.totalMiles(refuelsB), "950")
+  }
 }
