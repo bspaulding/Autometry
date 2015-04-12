@@ -20,6 +20,10 @@ class Refuel {
   }
   
   func totalSpent() -> Float {
-    return pricePerGallon! * gallons!
+    if let price = pricePerGallon, gallons = gallons {
+      return price * gallons
+    }
+    
+    return 0
   }
 }
