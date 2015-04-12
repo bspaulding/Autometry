@@ -41,7 +41,7 @@ class DashboardTests: XCTestCase {
     super.setUp()
   }
   
-  func testMpg() {
+  func testMpgAverage() {
     XCTAssertEqual(dashboard.mpgAverage(refuelsA), "25")
     XCTAssertEqual(dashboard.mpgBest(refuelsA), "30")
     XCTAssertEqual(dashboard.mpgWorst(refuelsA), "20")
