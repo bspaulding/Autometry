@@ -6,7 +6,7 @@ class Dashboard {
       return "N/A"
     }
     
-    let gallons : Float = refuels[1...refuels.count - 1].reduce(0, { $0 + $1.gallons! })
+    let gallons : Float = refuels[1...refuels.count - 1].reduce(0, combine: { $0 + $1.gallons! })
     let miles = Float(refuels[0].odometer! - refuels[refuels.count-1].odometer!)
     let mpg = Int(miles / gallons)
     
@@ -14,12 +14,12 @@ class Dashboard {
   }
   
   func averagePPG(refuels : [Refuel]) -> String {
-    let averagePPG = refuels.reduce(0, { $0 + $1.pricePerGallon! }) / Float(refuels.count)
+    let averagePPG = refuels.reduce(0, combine: { $0 + $1.pricePerGallon! }) / Float(refuels.count)
     return formatters.currencyFormatter.stringFromNumber(averagePPG)!
   }
   
   func totalSpent(refuels : [Refuel]) -> String {
-    let totalSpent = refuels.reduce(0, { $0 + $1.totalSpent() })
+    let totalSpent = refuels.reduce(0, combine: { $0 + $1.totalSpent() })
     return formatters.currencyFormatter.stringFromNumber(totalSpent)!
   }
   

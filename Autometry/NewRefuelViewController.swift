@@ -40,7 +40,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
     switch segue.identifier {
       case let .Some("RefuellingStationSelection"):
-        let destination = segue.destinationViewController as RefuellingStationsListViewController
+        let destination = segue.destinationViewController as! RefuellingStationsListViewController
         destination.setStations(refuellingStations)
         destination.stationStore = refuellingStationStore
       default:
@@ -53,7 +53,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   }
   
   func canSave() -> Bool {
-    return countElements(odometerField.text) > 0 && countElements(pricePerGallonField.text) > 0 && countElements(gallonsField.text) > 0
+    return count(odometerField.text) > 0 && count(pricePerGallonField.text) > 0 && count(gallonsField.text) > 0
   }
   
   func total() -> String {

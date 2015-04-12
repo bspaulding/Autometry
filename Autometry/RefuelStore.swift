@@ -7,19 +7,19 @@ class RefuelStore : CoreDataStore {
   private var unwrap : (NSManagedObject) -> (Refuel) = {object in
     let refuel = Refuel(
       id: object.objectID,
-      odometer: object.valueForKey("odometer") as Int,
-      pricePerGallon: object.valueForKey("pricePerGallon") as Float,
-      gallons: object.valueForKey("gallons") as Float,
+      odometer: object.valueForKey("odometer") as! Int,
+      pricePerGallon: object.valueForKey("pricePerGallon") as! Float,
+      gallons: object.valueForKey("gallons") as! Float,
       octane: object.valueForKey("octane") as? Int,
       createdDate: object.valueForKey("date") as? NSDate
     )
     
     if let googlePlaceID = (object.valueForKey("google_place_id") as? String) {
       let station = RefuellingStation(
-        name: object.valueForKey("stationName") as String,
+        name: object.valueForKey("stationName") as! String,
         googlePlaceID: googlePlaceID,
-        latitude: object.valueForKey("latitude") as Double,
-        longitude: object.valueForKey("longitude") as Double
+        latitude: object.valueForKey("latitude") as! Double,
+        longitude: object.valueForKey("longitude") as! Double
       )
       refuel.station = station
     }
@@ -38,7 +38,7 @@ class RefuelStore : CoreDataStore {
     let request = NSFetchRequest(entityName: entityName)
     var error : NSError?
     if let context = managedObjectContext {
-      let fetchResult = context.executeFetchRequest(request, error: &error) as [NSManagedObject]?
+      let fetchResult = context.executeFetchRequest(request, error: &error) as! [NSManagedObject]?
       
       if let results = fetchResult {
         return results.map(unwrap)
@@ -70,7 +70,7 @@ class RefuelStore : CoreDataStore {
       object.setValue(station.name, forKey:"stationName")
     }
 
-    saveContext(context, {
+    saveContext(context, success: {
       refuel.id = object.objectID
       refuel.createdDate = createdDate
       self.emitChange()
@@ -84,7 +84,7 @@ class RefuelStore : CoreDataStore {
       let context = managedObjectContext!
       let object = context.objectWithID(objectID)
       context.deleteObject(object)
-      saveContext(context, {
+      saveContext(context, success: {
         self.emitChange()
       },failure: { error in
         println("delete failed")

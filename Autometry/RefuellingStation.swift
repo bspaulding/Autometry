@@ -1,8 +1,8 @@
 import Foundation
 
 struct RefuellingStation : Equatable {
-  let name : String = ""
-  let googlePlaceID : String = ""
+  var name : String = ""
+  var googlePlaceID : String = ""
   let latitude : Double
   let longitude : Double
   

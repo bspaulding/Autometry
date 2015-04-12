@@ -10,7 +10,7 @@ import Foundation
 
 class DateHelpers {
   class var calendar : NSCalendar? {
-    return NSCalendar(calendarIdentifier: NSGregorianCalendar)
+    return NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
   }
   
   class func dateWithYear(year:Int, month:Int, day:Int, hour:Int, minute:Int, tz:String) -> NSDate? {

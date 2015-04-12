@@ -32,7 +32,7 @@ class RefuelListViewController : UITableViewController {
   }
   
   @IBAction func save(segue: UIStoryboardSegue) {
-    let source = segue.sourceViewController as NewRefuelViewController
+    let source = segue.sourceViewController as! NewRefuelViewController
     refuelStore.create(source.refuel)
   }
   
@@ -45,7 +45,7 @@ class RefuelListViewController : UITableViewController {
     return refuels.count;
   }
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("RefuelCellIdentifier", forIndexPath: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("RefuelCellIdentifier", forIndexPath: indexPath) as! UITableViewCell
     
     let refuel = refuels[indexPath.row]
     var text = ""
@@ -54,16 +54,16 @@ class RefuelListViewController : UITableViewController {
     } else {
       text = "Unknown Date"
     }
-    (cell.viewWithTag(3000) as UILabel).text = text
+    (cell.viewWithTag(3000) as! UILabel).text = text
     
-    let odometerLabel = cell.viewWithTag(3001) as UILabel
+    let odometerLabel = cell.viewWithTag(3001) as! UILabel
     let odometerValue = "\(formatters.numberFormatter.stringFromNumber(refuel.odometer!)!) miles"
     odometerLabel.text = odometerValue
     odometerLabel.accessibilityValue = odometerValue
     
-    (cell.viewWithTag(3002) as UILabel).text = formatters.currencyFormatter.stringFromNumber(refuel.pricePerGallon!)
+    (cell.viewWithTag(3002) as! UILabel).text = formatters.currencyFormatter.stringFromNumber(refuel.pricePerGallon!)
     let total = refuel.totalSpent()
-    (cell.viewWithTag(3004) as UILabel).text = formatters.currencyFormatter.stringFromNumber(total)
+    (cell.viewWithTag(3004) as! UILabel).text = formatters.currencyFormatter.stringFromNumber(total)
 
     return cell
   }
@@ -73,7 +73,7 @@ class RefuelListViewController : UITableViewController {
   override func tableView(tableView: UITableView, commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath:NSIndexPath) {
     if editingStyle == UITableViewCellEditingStyle.Delete {
       let refuel = refuels[indexPath.row]
-      refuels = refuels.filter({ $0.id as NSManagedObjectID != refuel.id as NSManagedObjectID })
+      refuels = refuels.filter({ $0.id as! NSManagedObjectID != refuel.id as! NSManagedObjectID })
       tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Fade)
       refuelStore.delete(refuel)
     } else {
