@@ -52,6 +52,24 @@ class Dashboard {
     return formatters.currencyFormatter.stringFromNumber(cpm)!
   }
   
+  func costPerMileBest(refuels: [Refuel]) -> String {
+    if refuels.count <= 1 {
+      return "$0.00"
+    }
+    
+    let cpm = minElement(cpms(refuels))
+    return formatters.currencyFormatter.stringFromNumber(cpm)!
+  }
+  
+  func costPerMileWorst(refuels: [Refuel]) -> String {
+    if refuels.count <= 1 {
+      return "$0.00"
+    }
+    
+    let cpm = maxElement(cpms(refuels))
+    return formatters.currencyFormatter.stringFromNumber(cpm)!
+  }
+  
   // Helpers
   
   private func mpgs(refuels: [Refuel]) -> [Int] {
@@ -60,6 +78,15 @@ class Dashboard {
       let miles = Float(previous.odometer! - refuel.odometer!)
       
       return Int(miles / refuel.gallons!)
+    }
+  }
+  
+  private func cpms(refuels: [Refuel]) -> [Float] {
+    return map(enumerate(refuels[0...refuels.count - 2])) { (index, refuel) in
+      let previous = refuels[index+1]
+      let cost = previous.totalSpent()
+      let miles = Float(refuel.odometer! - previous.odometer!)
+      return cost / miles
     }
   }
  
