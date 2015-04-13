@@ -39,6 +39,24 @@ class Dashboard {
     return formatters.currencyFormatter.stringFromNumber(totalSpent(refuels))!
   }
   
+  func totalSpentBest(refuels:[Refuel]) -> String {
+    if refuels.count < 1 {
+      return "$0.00"
+    }
+    
+    let cost = minElement(refuels.map({ $0.totalSpent() }))
+    return formatters.currencyFormatter.stringFromNumber(cost)!
+  }
+  
+  func totalSpentWorst(refuels:[Refuel]) -> String {
+    if refuels.count < 1 {
+      return "$0.00"
+    }
+    
+    let cost = maxElement(refuels.map({ $0.totalSpent() }))
+    return formatters.currencyFormatter.stringFromNumber(cost)!
+  }
+  
   func totalMiles(refuels : [Refuel]) -> String {
     if refuels.count <= 1 {
       return "0"

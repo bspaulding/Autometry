@@ -54,6 +54,12 @@ class DashboardTests: XCTestCase {
   func testTotalSpent() {
     XCTAssertEqual(dashboard.totalSpent(refuelsA), "$98.57")
     XCTAssertEqual(dashboard.totalSpent(refuelsB), "$169.55")
+    
+    XCTAssertEqual(dashboard.totalSpentBest(refuelsA), "$28.99")
+    XCTAssertEqual(dashboard.totalSpentBest(refuelsB), "$23.99")
+
+    XCTAssertEqual(dashboard.totalSpentWorst(refuelsA), "$34.99")
+    XCTAssertEqual(dashboard.totalSpentWorst(refuelsB), "$46.99")
   }
   
   func testTotalMiles() {
