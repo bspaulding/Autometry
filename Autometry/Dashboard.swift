@@ -65,6 +65,24 @@ class Dashboard {
     return formatters.numberFormatter.stringFromNumber(miles(refuels))!
   }
   
+  func totalMilesLongest(refuels:[Refuel]) -> String {
+    if refuels.count <= 1 {
+      return "0"
+    }
+    
+    let miles = maxElement(milesPerTrip(refuels))
+    return formatters.numberFormatter.stringFromNumber(miles)!
+  }
+  
+  func totalMilesShortest(refuels:[Refuel]) -> String {
+    if refuels.count <= 1 {
+      return "0"
+    }
+    
+    let miles = minElement(milesPerTrip(refuels))
+    return formatters.numberFormatter.stringFromNumber(miles)!
+  }
+  
   func costPerMile(refuels: [Refuel]) -> String {
     let cpm = totalSpent(refuels) / miles(refuels)
     return formatters.currencyFormatter.stringFromNumber(cpm)!
@@ -110,6 +128,12 @@ class Dashboard {
  
   private func miles(refuels: [Refuel]) -> Float {
     return Float(refuels[0].odometer! - refuels[refuels.count-1].odometer!)
+  }
+  
+  private func milesPerTrip(refuels: [Refuel]) -> [Int] {
+    return map(enumerate(refuels[0...refuels.count - 2])) {(index,refuel) in
+      return refuel.odometer! - refuels[index+1].odometer!
+    }
   }
   
   private func totalSpent(refuels: [Refuel]) -> Float {

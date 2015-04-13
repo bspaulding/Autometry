@@ -66,6 +66,14 @@ class DashboardTests: XCTestCase {
     XCTAssertEqual(dashboard.totalMiles([refuelA]), "0")
     XCTAssertEqual(dashboard.totalMiles(refuelsA), "500")
     XCTAssertEqual(dashboard.totalMiles(refuelsB), "950")
+    
+    XCTAssertEqual(dashboard.totalMilesLongest([refuelA]), "0")
+    XCTAssertEqual(dashboard.totalMilesLongest(refuelsA), "300")
+    XCTAssertEqual(dashboard.totalMilesLongest(refuelsB), "400")
+    
+    XCTAssertEqual(dashboard.totalMilesShortest([refuelA]), "0")
+    XCTAssertEqual(dashboard.totalMilesShortest(refuelsA), "200")
+    XCTAssertEqual(dashboard.totalMilesShortest(refuelsB), "50")
   }
   
   func testCostPerMile() {
