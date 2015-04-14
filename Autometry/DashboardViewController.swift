@@ -8,6 +8,11 @@ class DashboardViewController : UIViewController {
   @IBOutlet weak var totalMilesLabel: UILabel!
   @IBOutlet weak var totalSpentLabel: UILabel!
   
+  @IBOutlet weak var mpgPanel: UIView!
+  @IBOutlet weak var ppgPanel: UIView!
+  @IBOutlet weak var cpmPanel: UIView!
+  @IBOutlet weak var totalsPanel: UIView!
+  
   let dashboard = Dashboard()
   let refuelStore = RefuelStore.sharedInstance
   let createdDateSorter : (Refuel,Refuel) -> Bool = {(a,b) in
@@ -30,6 +35,16 @@ class DashboardViewController : UIViewController {
       tabBarItem.selectedImage = image
     }
     
+    let borderColor = UIColor(red: 156.0/255.0, green: 156.0/255.0, blue: 156.0/255.0, alpha: 1.0)
+    let borderWidth = 0.5
+    let panels = [totalsPanel, mpgPanel, cpmPanel, ppgPanel]
+    panels.map {
+      self.addTopBorder($0, width: borderWidth, color: borderColor)
+    }
+    panels.map {
+      self.addBottomBorder($0, width: borderWidth, color: borderColor)
+    }
+    
     refuelStore.register({
       self.update()
     })
@@ -43,5 +58,25 @@ class DashboardViewController : UIViewController {
     ppgAverageLabel.text = dashboard.averagePPG(refuels)
     totalSpentLabel.text = dashboard.totalSpent(refuels)
     totalMilesLabel.text = dashboard.totalMiles(refuels)
+  }
+  
+  // helpers
+  
+  func addTopBorder(view : UIView, width : Double, color : UIColor) {
+    let viewSize = view.bounds.size
+    let border = UIView(frame: CGRectMake(0, 0, viewSize.width, CGFloat(width)))
+    border.opaque = true
+    border.backgroundColor = color
+    border.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleBottomMargin;
+    view.addSubview(border)
+  }
+
+  func addBottomBorder(view : UIView, width : Double, color : UIColor) {
+    let viewSize = view.bounds.size
+    let border = UIView(frame: CGRectMake(0, viewSize.height, viewSize.width, CGFloat(width)))
+    border.opaque = true
+    border.backgroundColor = color
+    border.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleBottomMargin;
+    view.addSubview(border)
   }
 }
