@@ -220,7 +220,7 @@
                                             <constraint firstItem="NaY-C4-JNI" firstAttribute="top" secondItem="pjz-F3-Mvh" secondAttribute="top" constant="20" symbolic="YES" id="mCr-CI-cVx"/>
                                             <constraint firstItem="yqI-iM-K0C" firstAttribute="leading" secondItem="pjz-F3-Mvh" secondAttribute="leading" id="ra5-OR-lfF"/>
                                             <constraint firstAttribute="centerX" secondItem="NaY-C4-JNI" secondAttribute="centerX" id="tlm-VW-Mas"/>
-                                            <constraint firstAttribute="height" constant="701" id="vWV-Hz-cxa"/>
+                                            <constraint firstAttribute="height" constant="664" id="vWV-Hz-cxa"/>
                                             <constraint firstAttribute="trailing" secondItem="Ibn-Rg-Q4e" secondAttribute="trailing" id="yr6-KB-3OY"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -259,11 +259,15 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="cpmAverageLabel" destination="96l-zv-bgJ" id="ASH-fB-Kkm"/>
+                        <outlet property="cpmPanel" destination="Ibn-Rg-Q4e" id="idc-DT-rIp"/>
                         <outlet property="mpgAverageLabel" destination="LEN-bu-zSh" id="EWa-1E-gi1"/>
+                        <outlet property="mpgPanel" destination="yqI-iM-K0C" id="UjW-Rg-MXH"/>
                         <outlet property="ppgAverageLabel" destination="ZuO-jk-mXb" id="8aI-41-U4Y"/>
+                        <outlet property="ppgPanel" destination="mRv-rR-a0n" id="mzH-qE-IfW"/>
                         <outlet property="tabBarItem" destination="T81-oa-hrA" id="qmz-XD-nuo"/>
                         <outlet property="totalMilesLabel" destination="UCs-5f-43j" id="ug3-zk-7It"/>
                         <outlet property="totalSpentLabel" destination="6uK-UW-xDi" id="0XA-PR-wIZ"/>
+                        <outlet property="totalsPanel" destination="NaY-C4-JNI" id="QIK-uP-dsh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lif-5V-PMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
