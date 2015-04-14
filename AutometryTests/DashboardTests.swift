@@ -51,9 +51,15 @@ class DashboardTests: XCTestCase {
     XCTAssertEqual(dashboard.mpgWorst(refuelsB), "5")
   }
   
-  func testAveragePPG() {
+  func testPricePerGallon() {
     XCTAssertEqual(dashboard.averagePPG([]), "N/A")
-    XCTAssertEqual(dashboard.averagePPG([refuelA]), "$3.50")
+    XCTAssertEqual(dashboard.averagePPG(refuelsA), "$3.29")
+    XCTAssertEqual(dashboard.pricePerGallonBest(refuelsA), "$2.90")
+    XCTAssertEqual(dashboard.pricePerGallonWorst(refuelsA), "$3.50")
+
+    XCTAssertEqual(dashboard.averagePPG(refuelsB), "$3.39")
+    XCTAssertEqual(dashboard.pricePerGallonBest(refuelsB), "$2.40")
+    XCTAssertEqual(dashboard.pricePerGallonWorst(refuelsB), "$4.70")
   }
   
   func testTotalSpent() {
@@ -82,6 +88,7 @@ class DashboardTests: XCTestCase {
   }
   
   func testCostPerMile() {
+    XCTAssertEqual(dashboard.costPerMile([]), "$0.00")
     XCTAssertEqual(dashboard.costPerMile(refuelsA), "$0.20")
     XCTAssertEqual(dashboard.costPerMile(refuelsB), "$0.18")
     

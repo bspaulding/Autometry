@@ -39,6 +39,24 @@ class Dashboard {
     return formatters.currencyFormatter.stringFromNumber(averagePPG)!
   }
   
+  func pricePerGallonBest(refuels:[Refuel]) -> String {
+    if refuels.count < 1 {
+      return "N/A"
+    }
+    
+    let ppg = minElement(refuels.map { $0.pricePerGallon! })
+    return formatters.currencyFormatter.stringFromNumber(ppg)!
+  }
+  
+  func pricePerGallonWorst(refuels:[Refuel]) -> String {
+    if refuels.count < 1 {
+      return "N/A"
+    }
+    
+    let ppg = maxElement(refuels.map { $0.pricePerGallon! })
+    return formatters.currencyFormatter.stringFromNumber(ppg)!
+  }
+  
   func totalSpent(refuels : [Refuel]) -> String {
     return formatters.currencyFormatter.stringFromNumber(totalSpent(refuels))!
   }
@@ -88,6 +106,10 @@ class Dashboard {
   }
   
   func costPerMile(refuels: [Refuel]) -> String {
+    if refuels.count <= 1 {
+      return "$0.00"
+    }
+    
     let cpm = totalSpent(refuels) / miles(refuels)
     return formatters.currencyFormatter.stringFromNumber(cpm)!
   }
