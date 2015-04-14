@@ -51,6 +51,11 @@ class DashboardTests: XCTestCase {
     XCTAssertEqual(dashboard.mpgWorst(refuelsB), "5")
   }
   
+  func testAveragePPG() {
+    XCTAssertEqual(dashboard.averagePPG([]), "N/A")
+    XCTAssertEqual(dashboard.averagePPG([refuelA]), "$3.50")
+  }
+  
   func testTotalSpent() {
     XCTAssertEqual(dashboard.totalSpent(refuelsA), "$98.57")
     XCTAssertEqual(dashboard.totalSpent(refuelsB), "$169.55")

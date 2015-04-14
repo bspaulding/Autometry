@@ -31,6 +31,10 @@ class Dashboard {
   }
   
   func averagePPG(refuels : [Refuel]) -> String {
+    if refuels.count < 1 {
+      return "N/A"
+    }
+    
     let averagePPG = refuels.reduce(0, combine: { $0 + $1.pricePerGallon! }) / Float(refuels.count)
     return formatters.currencyFormatter.stringFromNumber(averagePPG)!
   }
