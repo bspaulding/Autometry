@@ -2,11 +2,11 @@ import Foundation
 import UIKit
 
 class DashboardViewController : UIViewController {
-  @IBOutlet weak var mpgLabel: UILabel!
-  @IBOutlet weak var pricePerGallonLabel: UILabel!
-  @IBOutlet weak var totalSpentLabel: UILabel!
+  @IBOutlet weak var mpgAverageLabel: UILabel!
+  @IBOutlet weak var cpmAverageLabel: UILabel!
+  @IBOutlet weak var ppgAverageLabel: UILabel!
   @IBOutlet weak var totalMilesLabel: UILabel!
-  //@IBOutlet weak var tabBarItem: UITabBarItem!
+  @IBOutlet weak var totalSpentLabel: UILabel!
   
   let dashboard = Dashboard()
   let refuelStore = RefuelStore.sharedInstance
@@ -39,8 +39,8 @@ class DashboardViewController : UIViewController {
   func update() {
     let refuels = refuelStore.all().sorted(createdDateSorter)
 
-    mpgLabel.text = dashboard.mpgAverage(refuels)
-    pricePerGallonLabel.text = dashboard.averagePPG(refuels)
+    mpgAverageLabel.text = dashboard.mpgAverage(refuels)
+    ppgAverageLabel.text = dashboard.averagePPG(refuels)
     totalSpentLabel.text = dashboard.totalSpent(refuels)
     totalMilesLabel.text = dashboard.totalMiles(refuels)
   }
