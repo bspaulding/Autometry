@@ -5,8 +5,15 @@ class DashboardViewController : UIViewController {
   @IBOutlet weak var mpgAverageLabel: UILabel!
   @IBOutlet weak var mpgBestLabel: UILabel!
   @IBOutlet weak var mpgWorstLabel: UILabel!
+  
   @IBOutlet weak var cpmAverageLabel: UILabel!
+  @IBOutlet weak var cpmBestLabel: UILabel!
+  @IBOutlet weak var cpmWorstLabel: UILabel!
+  
   @IBOutlet weak var ppgAverageLabel: UILabel!
+  @IBOutlet weak var ppgBestLabel: UILabel!
+  @IBOutlet weak var ppgWorstLabel: UILabel!
+  
   @IBOutlet weak var totalMilesLabel: UILabel!
   @IBOutlet weak var totalSpentLabel: UILabel!
   
@@ -59,7 +66,15 @@ class DashboardViewController : UIViewController {
     mpgAverageLabel.text = dashboard.mpgAverage(refuels)
     mpgBestLabel.text = dashboard.mpgBest(refuels)
     mpgWorstLabel.text = dashboard.mpgWorst(refuels)
+    
+    cpmAverageLabel.text = dashboard.costPerMile(refuels)
+    cpmBestLabel.text = dashboard.costPerMileBest(refuels)
+    cpmWorstLabel.text = dashboard.costPerMileWorst(refuels)
+    
     ppgAverageLabel.text = dashboard.averagePPG(refuels)
+    ppgBestLabel.text = dashboard.pricePerGallonBest(refuels)
+    ppgWorstLabel.text = dashboard.pricePerGallonWorst(refuels)
+    
     totalSpentLabel.text = dashboard.totalSpent(refuels)
     totalMilesLabel.text = dashboard.totalMiles(refuels)
   }
