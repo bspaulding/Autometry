@@ -3,6 +3,8 @@ import UIKit
 
 class DashboardViewController : UIViewController {
   @IBOutlet weak var mpgAverageLabel: UILabel!
+  @IBOutlet weak var mpgBestLabel: UILabel!
+  @IBOutlet weak var mpgWorstLabel: UILabel!
   @IBOutlet weak var cpmAverageLabel: UILabel!
   @IBOutlet weak var ppgAverageLabel: UILabel!
   @IBOutlet weak var totalMilesLabel: UILabel!
@@ -55,6 +57,8 @@ class DashboardViewController : UIViewController {
     let refuels = refuelStore.all().sorted(createdDateSorter)
 
     mpgAverageLabel.text = dashboard.mpgAverage(refuels)
+    mpgBestLabel.text = dashboard.mpgBest(refuels)
+    mpgWorstLabel.text = dashboard.mpgWorst(refuels)
     ppgAverageLabel.text = dashboard.averagePPG(refuels)
     totalSpentLabel.text = dashboard.totalSpent(refuels)
     totalMilesLabel.text = dashboard.totalMiles(refuels)
