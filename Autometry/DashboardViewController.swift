@@ -22,6 +22,10 @@ class DashboardViewController : UIViewController {
   @IBOutlet weak var cpmPanel: UIView!
   @IBOutlet weak var totalsPanel: UIView!
   
+  @IBOutlet weak var noDataMessage: UILabel!
+
+  var panels : [UIView] = []
+  
   let dashboard = Dashboard()
   let refuelStore = RefuelStore.sharedInstance
   let createdDateSorter : (Refuel,Refuel) -> Bool = {(a,b) in
@@ -46,7 +50,7 @@ class DashboardViewController : UIViewController {
     
     let borderColor = UIColor(red: 156.0/255.0, green: 156.0/255.0, blue: 156.0/255.0, alpha: 1.0)
     let borderWidth = 0.5
-    let panels = [totalsPanel, mpgPanel, cpmPanel, ppgPanel]
+    panels = [totalsPanel, mpgPanel, cpmPanel, ppgPanel]
     panels.map {
       self.addTopBorder($0, width: borderWidth, color: borderColor)
     }
@@ -62,6 +66,15 @@ class DashboardViewController : UIViewController {
 
   func update() {
     let refuels = refuelStore.all().sorted(createdDateSorter)
+    
+    let contentView = self.view.viewWithTag(7)!
+    if refuels.count < 1 {
+      panels.map { $0.removeFromSuperview() }
+      contentView.addSubview(noDataMessage)
+    } else {
+      panels.map { contentView.addSubview($0) }
+      noDataMessage.removeFromSuperview()
+    }
 
     mpgAverageLabel.text = dashboard.mpgAverage(refuels)
     mpgBestLabel.text = dashboard.mpgBest(refuels)
