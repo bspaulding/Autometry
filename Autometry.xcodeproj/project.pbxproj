@@ -15,6 +15,7 @@
 		651171AB1ACDA343005C4AE8 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651171AA1ACDA343005C4AE8 /* Dashboard.swift */; };
 		651171AC1ACDA4DF005C4AE8 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651171AA1ACDA343005C4AE8 /* Dashboard.swift */; };
 		651171AF1ACDA5C7005C4AE8 /* DashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651171AE1ACDA5C7005C4AE8 /* DashboardTests.swift */; };
+		6520A4431ADEF27800C9ED99 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6520A4421ADEF27800C9ED99 /* iAd.framework */; };
 		65269E0E1AAD66E500AA47D6 /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65269E0D1AAD66E500AA47D6 /* DateHelpers.swift */; };
 		653B89151AD0415900F5EA41 /* BarGraphIconSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 653B89141AD0415900F5EA41 /* BarGraphIconSelected.png */; };
 		653B89191AD041E900F5EA41 /* BarGraphIconSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 653B89141AD0415900F5EA41 /* BarGraphIconSelected.png */; };
@@ -133,6 +134,7 @@
 		65094A861AA8C65100B1FEB0 /* RefuelStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RefuelStore 2.xcdatamodel"; sourceTree = "<group>"; };
 		651171AA1ACDA343005C4AE8 /* Dashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		651171AE1ACDA5C7005C4AE8 /* DashboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTests.swift; sourceTree = "<group>"; };
+		6520A4421ADEF27800C9ED99 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		65269E0D1AAD66E500AA47D6 /* DateHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
 		653B89141AD0415900F5EA41 /* BarGraphIconSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BarGraphIconSelected.png; sourceTree = "<group>"; };
 		654E4EFA1AB0AA5600AAE994 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6520A4431ADEF27800C9ED99 /* iAd.framework in Frameworks */,
 				65F96F291AAAF38A003EBDCF /* MessageUI.framework in Frameworks */,
 				65B4DE861AA7D4BC00FAC9ED /* Alamofire.framework in Frameworks */,
 				65B4DE6F1AA787CC00FAC9ED /* CoreLocation.framework in Frameworks */,
@@ -265,6 +268,7 @@
 		65FDDC721AA5728C00EBF26E = {
 			isa = PBXGroup;
 			children = (
+				6520A4421ADEF27800C9ED99 /* iAd.framework */,
 				65F96F281AAAF38A003EBDCF /* MessageUI.framework */,
 				65B4DE741AA7C57200FAC9ED /* Alamofire.xcodeproj */,
 				65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */,

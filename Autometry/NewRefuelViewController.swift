@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 import CoreLocation
+import iAd
 
 class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLocationManagerDelegate {
   @IBOutlet weak var odometerField: UITextField!
@@ -176,5 +177,40 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   func locationManager(manager:CLLocationManager, didFailWithError error:NSError) {
     println("didFailWithError: ", error)
     locationActivityIndicator.stopAnimating()
+  }
+  
+  // ADBannerView Delegate Protocol
+  
+  func bannerViewDidLoadAd(banner: ADBannerView) {
+    println("bannerViewDidLoadAd")
+    println("banner height: \(banner.frame.height)")
+    showAd = true
+    tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation:UITableViewRowAnimation.Fade)
+  }
+  
+  func bannerView(banner:ADBannerView, didFailToReceiveAdWithError error:NSError) {
+    println("didFailToReceiveAdWithError")
+    showAd = false
+    tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation:UITableViewRowAnimation.Fade)
+  }
+  
+  // TableView Delegate
+  
+  var showAd = false
+  
+  override func tableView(tableView:UITableView, numberOfRowsInSection section:NSInteger) -> NSInteger {
+    if section == 0 && !showAd {
+      return 0
+    }
+    
+    return super.tableView(tableView, numberOfRowsInSection:section)
+  }
+  
+  override func tableView(tableView:UITableView, heightForHeaderInSection section:NSInteger) -> CGFloat {
+    if section == 0 && !showAd {
+      return 1
+    }
+    
+    return super.tableView(tableView, heightForHeaderInSection:section)
   }
 }
