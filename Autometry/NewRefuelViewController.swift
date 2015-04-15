@@ -182,14 +182,11 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   // ADBannerView Delegate Protocol
   
   func bannerViewDidLoadAd(banner: ADBannerView) {
-    println("bannerViewDidLoadAd")
-    println("banner height: \(banner.frame.height)")
     showAd = true
     tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation:UITableViewRowAnimation.Fade)
   }
   
   func bannerView(banner:ADBannerView, didFailToReceiveAdWithError error:NSError) {
-    println("didFailToReceiveAdWithError")
     showAd = false
     tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation:UITableViewRowAnimation.Fade)
   }
