@@ -67,13 +67,12 @@ class DashboardViewController : UIViewController {
   func update() {
     let refuels = refuelStore.all().sorted(createdDateSorter)
     
-    let contentView = self.view.viewWithTag(7)!
     if refuels.count < 1 {
-      panels.map { $0.removeFromSuperview() }
-      contentView.addSubview(noDataMessage)
+      panels.map { $0.hidden = true }
+      noDataMessage.hidden = false
     } else {
-      panels.map { contentView.addSubview($0) }
-      noDataMessage.removeFromSuperview()
+      panels.map { $0.hidden = false }
+      noDataMessage.hidden = true
     }
 
     mpgAverageLabel.text = dashboard.mpgAverage(refuels)
