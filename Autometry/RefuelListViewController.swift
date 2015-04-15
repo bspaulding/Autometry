@@ -9,6 +9,8 @@ class RefuelListViewController : UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        
     let createdDateSorter : (Refuel,Refuel) -> Bool = {(a,b) in
       switch (a.createdDate,b.createdDate) {
       case let (.Some(aDate), .Some(bDate)):

@@ -10,7 +10,7 @@
         <!--Statistics-->
         <scene sceneID="9aT-Tk-oNP">
             <objects>
-                <viewController storyboardIdentifier="Dashboard" id="hxy-jc-ElB" customClass="DashboardViewController" customModule="Autometry" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Dashboard" automaticallyAdjustsScrollViewInsets="NO" id="hxy-jc-ElB" customClass="DashboardViewController" customModule="Autometry" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Glm-py-FWf"/>
                         <viewControllerLayoutGuide type="bottom" id="BZs-AN-yfr"/>
@@ -407,7 +407,7 @@
                                                 </variation>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfP-nK-dgN">
-                                                <rect key="frame" x="0.0" y="22" width="600" height="487"/>
+                                                <rect key="frame" x="0.0" y="22" width="600" height="551"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="L4G-L3-1ny"/>
                                                 </constraints>
@@ -485,7 +485,7 @@ Record a refuel to see statistics.</string>
                             <constraint firstItem="BZs-AN-yfr" firstAttribute="top" secondItem="VMq-Qz-pNt" secondAttribute="bottom" id="uhh-xg-jjJ"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Statistics" image="BarGraphIcon.png" id="T81-oa-hrA"/>
                     <connections>
                         <outlet property="cpmAverageLabel" destination="96l-zv-bgJ" id="ASH-fB-Kkm"/>
@@ -515,7 +515,7 @@ Record a refuel to see statistics.</string>
         <scene sceneID="UBL-xw-3Gu">
             <objects>
                 <tableViewController id="PJL-dB-rEM" customClass="RefuelListViewController" customModule="Autometry" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jvo-k3-LzB">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jvo-k3-LzB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -655,9 +655,8 @@ Record a refuel to see statistics.</string>
                             <outlet property="delegate" destination="PJL-dB-rEM" id="EAN-BT-rjd"/>
                         </connections>
                     </tableView>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" systemItem="history" id="0Xy-F5-MHv"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S2b-SX-Lui" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1039,9 +1038,11 @@ Record a refuel to see statistics.</string>
         <!--Navigation Controller-->
         <scene sceneID="PMq-4f-7HZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pgQ-0y-W3k" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dxz-OS-wrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="pgQ-0y-W3k" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Deu-gI-z6U">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Deu-gI-z6U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1050,7 +1051,6 @@ Record a refuel to see statistics.</string>
                         <segue destination="aEd-fz-Mad" kind="relationship" relationship="rootViewController" id="Yo4-IV-8bf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Dxz-OS-wrg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-337" y="336"/>
         </scene>
@@ -1075,7 +1075,7 @@ Record a refuel to see statistics.</string>
         <!--Autometry-->
         <scene sceneID="IR0-2B-Wkv">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="aEd-fz-Mad" customClass="RefuelsTabBarController" customModule="Autometry" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="aEd-fz-Mad" customClass="RefuelsTabBarController" customModule="Autometry" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Autometry" id="Pp7-44-7fS">
@@ -1090,7 +1090,6 @@ Record a refuel to see statistics.</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="9lH-Fk-2I2">
                         <autoresizingMask key="autoresizingMask"/>
