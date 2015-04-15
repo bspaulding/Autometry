@@ -94,7 +94,51 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   }
   
   func textFieldDidEndEditing(textField: UITextField) {
-    NSNotificationCenter.defaultCenter()
+    NSNotificationCenter.defaultCenter().removeObserver(self, name:UITextFieldTextDidChangeNotification, object:textField)
+  }
+  
+  func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    if textField == odometerField || textField == octaneField {
+      return true
+    }
+    
+    // get current cursor position
+    let selectedRange : UITextRange = textField.selectedTextRange!
+    let start : UITextPosition = textField.beginningOfDocument
+    let cursorOffset : NSInteger = textField.offsetFromPosition(start, toPosition: selectedRange.start)
+
+    // Update the string in the text input
+    let currentString : NSMutableString = NSMutableString(string: textField.text)
+    let currentLength = currentString.length
+    currentString.replaceCharactersInRange(range, withString: string)
+
+    // Strip out the decimal separator
+    let decimalSeparator = formatters.numberFormatter.decimalSeparator!
+    currentString.replaceOccurrencesOfString(
+      decimalSeparator,
+      withString: "",
+      options: NSStringCompareOptions.LiteralSearch,
+      range: NSMakeRange(0, currentString.length)
+    )
+
+    // Generate a new string for the text input
+    let currentValue = Double(currentString.intValue)
+    let maximumFractionDigits = formatters.numberFormatter.maximumFractionDigits
+    let format = NSString(format:"%%.%df", maximumFractionDigits)
+    let minorUnitsPerMajor = pow(10.0, Double(maximumFractionDigits))
+    let newString = NSString(format:format, (currentValue / minorUnitsPerMajor)).stringByReplacingOccurrencesOfString(".", withString:decimalSeparator)
+
+    textField.text = newString
+    // if the cursor was not at the end of the string being entered, restore cursor position
+    if cursorOffset != currentLength {
+      let lengthDelta = count(newString) - currentLength
+      let newCursorOffset = max(0, min(count(newString), cursorOffset + lengthDelta))
+      let newPosition = textField.positionFromPosition(textField.beginningOfDocument, offset:newCursorOffset)
+      let newRange = textField.textRangeFromPosition(newPosition, toPosition:newPosition)
+      textField.selectedTextRange = newRange
+    }
+
+    return false
   }
   
   // CLLocationManagerDelegate Protocol
