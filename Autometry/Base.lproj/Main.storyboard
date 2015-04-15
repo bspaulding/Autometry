@@ -485,9 +485,8 @@ Record a refuel to see statistics.</string>
                             <constraint firstItem="BZs-AN-yfr" firstAttribute="top" secondItem="VMq-Qz-pNt" secondAttribute="bottom" id="uhh-xg-jjJ"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Statistics" image="BarGraphIcon.png" id="T81-oa-hrA"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="cpmAverageLabel" destination="96l-zv-bgJ" id="ASH-fB-Kkm"/>
                         <outlet property="cpmBestLabel" destination="UyV-6f-Abn" id="Lf4-de-hUU"/>
@@ -1077,7 +1076,7 @@ Record a refuel to see statistics.</string>
         <scene sceneID="IR0-2B-Wkv">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="aEd-fz-Mad" customClass="RefuelsTabBarController" customModule="Autometry" customModuleProvider="target" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Autometry" id="Pp7-44-7fS">
                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="dqY-AB-7nI">
