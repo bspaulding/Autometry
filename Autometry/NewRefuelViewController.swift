@@ -129,6 +129,8 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     let newString = NSString(format:format, (currentValue / minorUnitsPerMajor)).stringByReplacingOccurrencesOfString(".", withString:decimalSeparator)
 
     textField.text = newString
+    textChanged()
+    
     // if the cursor was not at the end of the string being entered, restore cursor position
     if cursorOffset != currentLength {
       let lengthDelta = count(newString) - currentLength
