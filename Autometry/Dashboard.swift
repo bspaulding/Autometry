@@ -110,7 +110,8 @@ class Dashboard {
       return "$0.00"
     }
     
-    let cpm = totalSpent(refuels) / miles(refuels)
+    let _cpms = cpms(refuels)
+    let cpm = _cpms.reduce(0.0, combine: { $0 + $1 }) / Float(_cpms.count)
     return formatters.currencyFormatter.stringFromNumber(cpm)!
   }
   
