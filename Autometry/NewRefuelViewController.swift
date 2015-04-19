@@ -24,6 +24,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     super.viewDidLoad()
     
     odometerField.delegate = self
+    odometerField.becomeFirstResponder()
     pricePerGallonField.delegate = self
     gallonsField.delegate = self
     octaneField.delegate = self
@@ -219,14 +220,37 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   
   // ADBannerView Delegate Protocol
   
+  func currentResponder() -> UITextField? {
+    let responders = [octaneField, odometerField, pricePerGallonField, gallonsField].filter({ $0.isFirstResponder() })
+    if responders.count > 0 {
+      return responders[0]
+    }
+    
+    return nil
+  }
+  
+  func restoringFirstResponder(callback:()->()) {
+    var _currentResponder = currentResponder()
+    
+    callback()
+    
+    if let responder = _currentResponder {
+      responder.becomeFirstResponder()
+    }
+ }
+  
   func bannerViewDidLoadAd(banner: ADBannerView) {
     showAd = true
-    tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation:UITableViewRowAnimation.Fade)
+    restoringFirstResponder({
+      self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation:UITableViewRowAnimation.Fade)
+    })
   }
   
   func bannerView(banner:ADBannerView, didFailToReceiveAdWithError error:NSError) {
     showAd = false
-    tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation:UITableViewRowAnimation.Fade)
+    restoringFirstResponder({
+      self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation:UITableViewRowAnimation.Fade)
+    })
   }
   
   // TableView Delegate
