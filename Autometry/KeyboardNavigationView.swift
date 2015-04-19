@@ -1,20 +1,29 @@
 import Foundation
 import UIKit
 
-class KeyboardNavigationView : UIView {
+class KeyboardNavigationView : UIToolbar {
+  let navButtonItems : [String] = ["Previous", "Next"]
+  var navButtons : UISegmentedControl
+  var onPrevious : () -> () = {}
+  var onNext : () -> () = {}
+  
   override init(frame:CGRect) {
+    navButtons = UISegmentedControl(items: navButtonItems)
+
     super.init(frame:frame)
-    
-    let toolbar = UIToolbar()
-    toolbar.sizeToFit()
-    
-    let navButtons = UISegmentedControl(items: ["Previous", "Next"])
+
     navButtons.momentary = true
     navButtons.addTarget(self, action:"navButtonsChanged", forControlEvents:UIControlEvents.ValueChanged)
+
     
-    toolbar.items = [UIBarButtonItem(customView:navButtons)]
+    items = [UIBarButtonItem(customView:navButtons)]
     
-    self.addSubview(toolbar)
+    // TODO: This doesn't work...maybe need to size first?
+    let bottomBorder = UIView(frame: CGRect(x: 0, y: frame.height, width: frame.width, height: 1))
+    bottomBorder.backgroundColor = UIColor.grayColor()
+    self.addSubview(bottomBorder)
+
+    sizeToFit()
   }
   
   convenience init() {
@@ -23,5 +32,16 @@ class KeyboardNavigationView : UIView {
   
   required init(coder:NSCoder) {
     fatalError("This class does not support NSCoding")
+  }
+  
+  func navButtonsChanged() {
+    switch navButtonItems[navButtons.selectedSegmentIndex] {
+    case "Previous":
+      onPrevious()
+    case "Next":
+      onNext()
+    default:
+      ({} as () -> ())()
+    }
   }
 }

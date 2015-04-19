@@ -26,6 +26,8 @@
 		65572FFA1AAFF1EA0079739E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65572FF91AAFF1EA0079739E /* Images.xcassets */; };
 		656919A41AB4BED7000E9AC2 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 656919A21AB4BED7000E9AC2 /* Splash.png */; };
 		656919A51AB4BED7000E9AC2 /* Splash.pxm in Resources */ = {isa = PBXBuildFile; fileRef = 656919A31AB4BED7000E9AC2 /* Splash.pxm */; };
+		659B08C61AE4395E004E94AF /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
+		65AAEC471AE416F900DD81A5 /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
 		65B4DE6F1AA787CC00FAC9ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */; };
 		65B4DE711AA7C14000FAC9ED /* RefuellingStationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */; };
 		65B4DE731AA7C17F00FAC9ED /* RefuellingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */; };
@@ -145,6 +147,7 @@
 		65572FF91AAFF1EA0079739E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		656919A21AB4BED7000E9AC2 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 		656919A31AB4BED7000E9AC2 /* Splash.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splash.pxm; sourceTree = "<group>"; };
+		65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNavigationView.swift; sourceTree = "<group>"; };
 		65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
 		65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStation.swift; sourceTree = "<group>"; };
@@ -223,6 +226,14 @@
 			name = models;
 			sourceTree = "<group>";
 		};
+		65AAEC421AE416E700DD81A5 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
 		65B4DE751AA7C57200FAC9ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +305,7 @@
 		65FDDC7D1AA5728C00EBF26E /* Autometry */ = {
 			isa = PBXGroup;
 			children = (
+				65AAEC421AE416E700DD81A5 /* views */,
 				65C5AEFA1AABC25200F97447 /* utils */,
 				65F96F251AAA1597003EBDCF /* api */,
 				65FDDCAC1AA576E700EBF26E /* view_controllers */,
@@ -545,6 +557,7 @@
 				65B4DE731AA7C17F00FAC9ED /* RefuellingStation.swift in Sources */,
 				65FDDCA21AA572CE00EBF26E /* CoreDataStore.swift in Sources */,
 				65FDDC811AA5728C00EBF26E /* AppDelegate.swift in Sources */,
+				65AAEC471AE416F900DD81A5 /* KeyboardNavigationView.swift in Sources */,
 				654E4EFB1AB0AA5600AAE994 /* Observable.swift in Sources */,
 				651171AB1ACDA343005C4AE8 /* Dashboard.swift in Sources */,
 			);
@@ -555,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				651171A61ACDA309005C4AE8 /* DashboardViewController.swift in Sources */,
+				659B08C61AE4395E004E94AF /* KeyboardNavigationView.swift in Sources */,
 				65C5AEF41AABBDE400F97447 /* NewRefuelViewController.swift in Sources */,
 				651171AC1ACDA4DF005C4AE8 /* Dashboard.swift in Sources */,
 				651171AF1ACDA5C7005C4AE8 /* DashboardTests.swift in Sources */,
