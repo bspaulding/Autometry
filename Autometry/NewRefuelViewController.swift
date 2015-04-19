@@ -45,7 +45,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
         destination.setStations(refuellingStations)
         destination.stationStore = refuellingStationStore
       default:
-        refuel.odometer = odometerField.text.toInt()
+        refuel.odometer = digitize(odometerField.text).toInt()
         refuel.pricePerGallon = (pricePerGallonField.text as NSString).floatValue
         refuel.gallons = (gallonsField.text as NSString).floatValue
         refuel.station = refuellingStationStore.getCurrentRefuellingStation()
@@ -98,9 +98,47 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     NSNotificationCenter.defaultCenter().removeObserver(self, name:UITextFieldTextDidChangeNotification, object:textField)
   }
   
+  func isDigit(character : Character) -> Bool {
+    let s = String(character).unicodeScalars
+    let uni = s[s.startIndex]
+    
+    let digits = NSCharacterSet.decimalDigitCharacterSet()
+    let isADigit = digits.longCharacterIsMember(uni.value)
+
+    return isADigit
+  }
+  
+  func digitize(string:String) -> String {
+    var currentString = ""
+    for character in string {
+      if isDigit(character) {
+        currentString.append(character)
+      }
+    }
+    return currentString
+  }
+  
   func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-    if textField == odometerField || textField == octaneField {
+    if textField == octaneField {
       return true
+    }
+    
+    if textField == odometerField {
+      let currentStringWithSeparators : NSMutableString = NSMutableString(string: textField.text)
+      currentStringWithSeparators.replaceCharactersInRange(range, withString: string)
+      let currentString = digitize(currentStringWithSeparators as String)
+      println("currentString: \(currentString)")
+      
+      let fmt = formatters.numberFormatter
+      if let number = fmt.numberFromString(currentString) {
+        println("Parsed a number! \(number)")
+        textField.text = fmt.stringFromNumber(number)!
+        textChanged()
+        return false
+      } else {
+        println("Parsing failed: \(textField.text)")
+        return true
+      }
     }
     
     // get current cursor position
