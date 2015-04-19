@@ -5,6 +5,12 @@ class RefuelsTabBarController : UITabBarController, MFMailComposeViewControllerD
   let refuelStore = RefuelStore.sharedInstance
   var picker : MFMailComposeViewController?
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    UITabBar.appearance().tintColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+  }
+  
   @IBAction func export(sender: AnyObject) {
     let picker = MFMailComposeViewController()
     self.picker = picker
