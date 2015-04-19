@@ -13,6 +13,8 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   @IBOutlet weak var octaneField: UITextField!
   @IBOutlet weak var totalField: UITextField!
   
+  let keyboardNavigationView = KeyboardNavigationView()
+  
   let refuel = Refuel()
   let locationManager = CLLocationManager()
   let refuellingStationStore = RefuellingStationStore.sharedInstance
@@ -22,6 +24,26 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    keyboardNavigationView.tintColor = UIColor.whiteColor()
+    keyboardNavigationView.barTintColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+    let totalIndexPath = NSIndexPath(forRow:3, inSection:3)
+    keyboardNavigationView.onPrevious = {
+      if let responder = self.previousField() {
+        responder.becomeFirstResponder()
+        if responder == self.gallonsField {
+          self.tableView.scrollToRowAtIndexPath(totalIndexPath, atScrollPosition:UITableViewScrollPosition.Top, animated:true)
+        }
+      }
+    }
+    keyboardNavigationView.onNext = {
+      if let responder = self.nextField() {
+        responder.becomeFirstResponder()
+        if responder == self.octaneField {
+          self.tableView.scrollToRowAtIndexPath(totalIndexPath, atScrollPosition:UITableViewScrollPosition.Top, animated:true)
+        }
+      }
+    }
     
     odometerField.delegate = self
     odometerField.becomeFirstResponder()
@@ -89,9 +111,42 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     }
   }
   
-  // UITextFieldDelegate Protocol
+  func nextField() -> UITextField? {
+    switch currentResponder()! {
+    case odometerField:
+      return octaneField
+    case octaneField:
+      return pricePerGallonField
+    case pricePerGallonField:
+      return gallonsField
+    case gallonsField:
+      return odometerField
+    default:
+      println("Unknown current responder!")
+      return nil
+    }
+  }
   
+  func previousField() -> UITextField? {
+    switch currentResponder()! {
+    case odometerField:
+      return gallonsField
+    case octaneField:
+      return odometerField
+    case pricePerGallonField:
+      return octaneField
+    case gallonsField:
+      return pricePerGallonField
+    default:
+      println("Unknown current responder!")
+      return nil
+    }
+  }
+  
+  // UITextFieldDelegate Protocol
+
   func textFieldDidBeginEditing(textField: UITextField) {
+    textField.inputAccessoryView = keyboardNavigationView
     NSNotificationCenter.defaultCenter().addObserver(self, selector:"textChanged", name:UITextFieldTextDidChangeNotification, object:textField)
   }
   
