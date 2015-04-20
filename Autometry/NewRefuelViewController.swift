@@ -33,6 +33,8 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
         responder.becomeFirstResponder()
         if responder == self.gallonsField {
           self.tableView.scrollToRowAtIndexPath(totalIndexPath, atScrollPosition:UITableViewScrollPosition.Top, animated:true)
+        } else if responder == self.odometerField {
+          self.tableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated:true)
         }
       }
     }
@@ -41,6 +43,8 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
         responder.becomeFirstResponder()
         if responder == self.octaneField {
           self.tableView.scrollToRowAtIndexPath(totalIndexPath, atScrollPosition:UITableViewScrollPosition.Top, animated:true)
+        } else if responder == self.odometerField {
+          self.tableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated:true)
         }
       }
     }
