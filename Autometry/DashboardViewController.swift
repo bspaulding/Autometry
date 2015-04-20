@@ -70,9 +70,11 @@ class DashboardViewController : UIViewController {
     if refuels.count < 1 {
       panels.map { $0.hidden = true }
       noDataMessage.hidden = false
+      view.userInteractionEnabled = false
     } else {
       panels.map { $0.hidden = false }
       noDataMessage.hidden = true
+      view.userInteractionEnabled = true
     }
 
     mpgAverageLabel.text = dashboard.mpgAverage(refuels)
