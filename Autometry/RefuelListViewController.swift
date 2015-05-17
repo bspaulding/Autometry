@@ -4,7 +4,10 @@ import CoreData
 
 class RefuelListViewController : UITableViewController {
   var refuels : [Refuel] = []
+  var mpgs : [Int] = []
+  var milesPerTrip : [Int] = []
   let refuelStore = RefuelStore.sharedInstance
+  let calculator = Dashboard()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,9 +26,16 @@ class RefuelListViewController : UITableViewController {
         return false
       }
     }
+
     refuels = refuelStore.all().sorted(createdDateSorter)
+    mpgs = calculator.mpgs(refuels)
+    milesPerTrip = calculator.milesPerTrip(refuels)
+    
     refuelStore.register({
       self.refuels = self.refuelStore.all().sorted(createdDateSorter)
+      self.mpgs = self.calculator.mpgs(self.refuels)
+      self.milesPerTrip = self.calculator.milesPerTrip(self.refuels)
+      println(self.calculator.milesPerTrip(self.refuels))
       self.tableView.reloadData()
     })
   }
@@ -59,8 +69,17 @@ class RefuelListViewController : UITableViewController {
     (cell.viewWithTag(3000) as! UILabel).text = text
     
     let odometerLabel = cell.viewWithTag(3001) as! UILabel
-    let odometerValue = "\(formatters.numberFormatter.stringFromNumber(refuel.odometer!)!) miles"
-    odometerLabel.text = odometerValue
+    var odometerValue = ""
+    if indexPath.row < milesPerTrip.count {
+      let miles = formatters.numberFormatter.stringFromNumber(milesPerTrip[indexPath.row])!
+      odometerValue = "\(miles) miles"
+    }
+
+    var mpgValue = ""
+    if indexPath.row > 0 {
+      mpgValue = "\(mpgs[indexPath.row - 1]) mpg"
+    }
+    odometerLabel.text = ", ".join(compact([odometerValue, mpgValue]))
     odometerLabel.accessibilityValue = odometerValue
     
     (cell.viewWithTag(3002) as! UILabel).text = formatters.currencyFormatter.stringFromNumber(refuel.pricePerGallon!)
