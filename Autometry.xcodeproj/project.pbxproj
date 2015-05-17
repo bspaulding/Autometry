@@ -18,6 +18,8 @@
 		6520A4431ADEF27800C9ED99 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6520A4421ADEF27800C9ED99 /* iAd.framework */; };
 		6520A4481ADF0E6500C9ED99 /* AppIconTransparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 6520A4471ADF0E6500C9ED99 /* AppIconTransparent.png */; };
 		65269E0E1AAD66E500AA47D6 /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65269E0D1AAD66E500AA47D6 /* DateHelpers.swift */; };
+		653837A11AF3BF57003DEB52 /* compact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653837A01AF3BF57003DEB52 /* compact.swift */; };
+		653837A21AF3BF57003DEB52 /* compact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653837A01AF3BF57003DEB52 /* compact.swift */; };
 		653B89151AD0415900F5EA41 /* BarGraphIconSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 653B89141AD0415900F5EA41 /* BarGraphIconSelected.png */; };
 		653B89191AD041E900F5EA41 /* BarGraphIconSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 653B89141AD0415900F5EA41 /* BarGraphIconSelected.png */; };
 		654E4EFB1AB0AA5600AAE994 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E4EFA1AB0AA5600AAE994 /* Observable.swift */; };
@@ -140,6 +142,7 @@
 		6520A4421ADEF27800C9ED99 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		6520A4471ADF0E6500C9ED99 /* AppIconTransparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconTransparent.png; sourceTree = "<group>"; };
 		65269E0D1AAD66E500AA47D6 /* DateHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
+		653837A01AF3BF57003DEB52 /* compact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = compact.swift; sourceTree = "<group>"; };
 		653B89141AD0415900F5EA41 /* BarGraphIconSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BarGraphIconSelected.png; sourceTree = "<group>"; };
 		654E4EFA1AB0AA5600AAE994 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		65572FF31AAFEF1B0079739E /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
@@ -259,6 +262,7 @@
 			children = (
 				65C5AEFB1AABC26700F97447 /* RefuelCSVWrapper.swift */,
 				65E6E1001ACD16AB0069960E /* Formatters.swift */,
+				653837A01AF3BF57003DEB52 /* compact.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -542,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653837A11AF3BF57003DEB52 /* compact.swift in Sources */,
 				65FDDCA81AA5734500EBF26E /* RefuelStore.xcdatamodeld in Sources */,
 				65C5AEFC1AABC26700F97447 /* RefuelCSVWrapper.swift in Sources */,
 				65E6E1011ACD16AB0069960E /* Formatters.swift in Sources */,
@@ -585,6 +590,7 @@
 				65C5AEEE1AABBDA400F97447 /* RefuellingStation.swift in Sources */,
 				65E6E1021ACD17F00069960E /* Formatters.swift in Sources */,
 				654E4EFF1AB0AC5200AAE994 /* Observable.swift in Sources */,
+				653837A21AF3BF57003DEB52 /* compact.swift in Sources */,
 				65C5AEF21AABBDDC00F97447 /* RefuellingStationStore.swift in Sources */,
 				65269E0E1AAD66E500AA47D6 /* DateHelpers.swift in Sources */,
 				65C5AEF31AABBDE100F97447 /* RefuellingStationsListViewController.swift in Sources */,
