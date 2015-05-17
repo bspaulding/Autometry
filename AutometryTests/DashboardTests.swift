@@ -98,4 +98,20 @@ class DashboardTests: XCTestCase {
     XCTAssertEqual(dashboard.costPerMileWorst(refuelsA), "$0.17")
     XCTAssertEqual(dashboard.costPerMileWorst(refuelsB), "$0.48")
   }
+  
+  func testMilesPerTrip() {
+    let milesPerTripA = dashboard.milesPerTrip(refuelsA)
+
+    XCTAssertEqual(milesPerTripA.count, 2)
+    XCTAssertEqual(milesPerTripA[0], 200)
+    XCTAssertEqual(milesPerTripA[1], 300)
+
+    let milesPerTripB = dashboard.milesPerTrip(refuelsB)
+    
+    XCTAssertEqual(milesPerTripB.count, 4)
+    XCTAssertEqual(milesPerTripB[0], 50)
+    XCTAssertEqual(milesPerTripB[1], 400)
+    XCTAssertEqual(milesPerTripB[2], 200)
+    XCTAssertEqual(milesPerTripB[3], 300)
+  }
 }

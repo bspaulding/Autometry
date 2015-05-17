@@ -157,7 +157,7 @@ class Dashboard {
     return Float(refuels[0].odometer! - refuels[refuels.count-1].odometer!)
   }
   
-  private func milesPerTrip(refuels: [Refuel]) -> [Int] {
+  func milesPerTrip(refuels: [Refuel]) -> [Int] {
     return map(enumerate(refuels[0...refuels.count - 2])) {(index,refuel) in
       return refuel.odometer! - refuels[index+1].odometer!
     }
