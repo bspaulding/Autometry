@@ -35,6 +35,8 @@
 		65B4DE731AA7C17F00FAC9ED /* RefuellingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */; };
 		65B4DE861AA7D4BC00FAC9ED /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE7C1AA7C57200FAC9ED /* Alamofire.framework */; };
 		65B4DE8B1AA7D57C00FAC9ED /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE7C1AA7C57200FAC9ED /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		65B68E921B12A50100C67EE4 /* RefuelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B68E911B12A50100C67EE4 /* RefuelDetailViewController.swift */; };
+		65B68E931B12A50100C67EE4 /* RefuelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B68E911B12A50100C67EE4 /* RefuelDetailViewController.swift */; };
 		65C5AEEC1AABBC3900F97447 /* RefuelCSVWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C5AEEB1AABBC3900F97447 /* RefuelCSVWrapperTests.swift */; };
 		65C5AEED1AABBD9100F97447 /* Refuel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCAA1AA5765200EBF26E /* Refuel.swift */; };
 		65C5AEEE1AABBDA400F97447 /* RefuellingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */; };
@@ -155,6 +157,7 @@
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
 		65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStation.swift; sourceTree = "<group>"; };
 		65B4DE741AA7C57200FAC9ED /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		65B68E911B12A50100C67EE4 /* RefuelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelDetailViewController.swift; sourceTree = "<group>"; };
 		65C5AEEB1AABBC3900F97447 /* RefuelCSVWrapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelCSVWrapperTests.swift; sourceTree = "<group>"; };
 		65C5AEFB1AABC26700F97447 /* RefuelCSVWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelCSVWrapper.swift; sourceTree = "<group>"; };
 		65E6E0F51ACD01540069960E /* RefuelsTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuelsTabBarController.swift; sourceTree = "<group>"; };
@@ -390,6 +393,7 @@
 				65094A7D1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift */,
 				65E6E0F51ACD01540069960E /* RefuelsTabBarController.swift */,
 				65E6E0FE1ACD0F310069960E /* DashboardViewController.swift */,
+				65B68E911B12A50100C67EE4 /* RefuelDetailViewController.swift */,
 			);
 			name = view_controllers;
 			sourceTree = "<group>";
@@ -554,6 +558,7 @@
 				65F96F271AAA15A9003EBDCF /* GoogleMapsAPI.swift in Sources */,
 				65E6E0F61ACD01540069960E /* RefuelsTabBarController.swift in Sources */,
 				65FDDCA51AA572FA00EBF26E /* RefuelStore.swift in Sources */,
+				65B68E921B12A50100C67EE4 /* RefuelDetailViewController.swift in Sources */,
 				65FDDCAE1AA5771E00EBF26E /* RefuelListViewController.swift in Sources */,
 				65E6E0FF1ACD0F310069960E /* DashboardViewController.swift in Sources */,
 				65B4DE711AA7C14000FAC9ED /* RefuellingStationStore.swift in Sources */,
@@ -588,6 +593,7 @@
 				65C5AEF91AABBE0000F97447 /* RefuelStore.xcdatamodeld in Sources */,
 				65C5AEF51AABBDE600F97447 /* RefuelListViewController.swift in Sources */,
 				65C5AEEE1AABBDA400F97447 /* RefuellingStation.swift in Sources */,
+				65B68E931B12A50100C67EE4 /* RefuelDetailViewController.swift in Sources */,
 				65E6E1021ACD17F00069960E /* Formatters.swift in Sources */,
 				654E4EFF1AB0AC5200AAE994 /* Observable.swift in Sources */,
 				653837A21AF3BF57003DEB52 /* compact.swift in Sources */,
