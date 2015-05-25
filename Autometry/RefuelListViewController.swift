@@ -6,6 +6,7 @@ class RefuelListViewController : UITableViewController {
   var refuels : [Refuel] = []
   var mpgs : [Int] = []
   var milesPerTrip : [Int] = []
+  var selectedRefuel : Refuel? = nil
   let refuelStore = RefuelStore.sharedInstance
   let calculator = Dashboard()
   
@@ -46,6 +47,13 @@ class RefuelListViewController : UITableViewController {
   @IBAction func save(segue: UIStoryboardSegue) {
     let source = segue.sourceViewController as! NewRefuelViewController
     refuelStore.create(source.refuel)
+  }
+  
+  override func prepareForSegue(segue:UIStoryboardSegue, sender:AnyObject?) {
+    if segue.identifier == "ShowRefuelDetail" {
+      let destination = segue.destinationViewController as! RefuelDetailViewController
+      destination.refuel = selectedRefuel!
+    }
   }
   
   // TableViewDataSource interface
@@ -100,5 +108,12 @@ class RefuelListViewController : UITableViewController {
     } else {
       println("Unhandled editing style: ", editingStyle);
     }
+  }
+  
+  // TableViewDelegate protocol
+  
+  override func tableView(tableView:UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
+    selectedRefuel = refuels[indexPath.row]
+    performSegueWithIdentifier("ShowRefuelDetail", sender: self)
   }
 }
