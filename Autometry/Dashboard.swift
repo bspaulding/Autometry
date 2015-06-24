@@ -136,6 +136,10 @@ class Dashboard {
   // Helpers
   
   func mpgs(refuels: [Refuel]) -> [Int] {
+    if refuels.count <= 1 {
+      return []
+    }
+    
     return map(enumerate(refuels[1...refuels.count - 1])) { (index, refuel) in
       let previous = refuels[index]
       let miles = Float(previous.odometer! - refuel.odometer!)
@@ -158,6 +162,10 @@ class Dashboard {
   }
   
   func milesPerTrip(refuels: [Refuel]) -> [Int] {
+    if refuels.count <= 1 {
+      return []
+    }
+    
     return map(enumerate(refuels[0...refuels.count - 2])) {(index,refuel) in
       return refuel.odometer! - refuels[index+1].odometer!
     }
