@@ -78,8 +78,8 @@ class RefuelListViewController : UITableViewController {
     
     let odometerLabel = cell.viewWithTag(3001) as! UILabel
     var odometerValue = ""
-    if indexPath.row < milesPerTrip.count {
-      let miles = formatters.numberFormatter.stringFromNumber(milesPerTrip[indexPath.row])!
+    if indexPath.row > 0 && indexPath.row - 1 < milesPerTrip.count {
+      let miles = formatters.numberFormatter.stringFromNumber(milesPerTrip[indexPath.row - 1])!
       odometerValue = "\(miles) miles"
     }
 
