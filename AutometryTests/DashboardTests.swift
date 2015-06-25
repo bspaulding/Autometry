@@ -114,4 +114,33 @@ class DashboardTests: XCTestCase {
     XCTAssertEqual(milesPerTripB[2], 200)
     XCTAssertEqual(milesPerTripB[3], 300)
   }
+  
+  func testMpgs() {
+    let mpgsA = dashboard.mpgs(refuelsA)
+    
+    XCTAssertEqual(mpgsA.count, refuelsA.count - 1)
+    XCTAssertEqual(mpgsA[0], 20)
+    XCTAssertEqual(mpgsA[1], 30)
+    
+    let mpgsB = dashboard.mpgs(refuelsB)
+    
+    XCTAssertEqual(mpgsB.count, refuelsB.count - 1)
+    XCTAssertEqual(mpgsB[0], 5)
+    XCTAssertEqual(mpgsB[1], 40)
+    XCTAssertEqual(mpgsB[2], 20)
+    XCTAssertEqual(mpgsB[3], 30)
+    
+    let refuel1 = Refuel()
+    refuel1.odometer = 10000
+    refuel1.gallons = 10
+    let refuel2 = Refuel()
+    refuel2.odometer = 10300
+    refuel2.gallons = 15
+
+    let refuelsC = [refuel2, refuel1]
+    let mpgsC = dashboard.mpgs(refuelsC)
+    
+    XCTAssertEqual(mpgsC.count, refuelsC.count - 1)
+    XCTAssertEqual(mpgsC[0], 20)
+  }
 }

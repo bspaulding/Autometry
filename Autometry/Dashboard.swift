@@ -140,9 +140,9 @@ class Dashboard {
       return []
     }
     
-    return map(enumerate(refuels[1...refuels.count - 1])) { (index, refuel) in
-      let previous = refuels[index]
-      let miles = Float(previous.odometer! - refuel.odometer!)
+    return map(enumerate(refuels[0...refuels.count - 2])) { (index, refuel) in
+      let previous = refuels[index + 1]
+      let miles = Float(refuel.odometer! - previous.odometer!)
       
       return Int(miles / refuel.gallons!)
     }
