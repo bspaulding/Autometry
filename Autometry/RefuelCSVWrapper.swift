@@ -21,7 +21,7 @@ class RefuelCSVWrapper {
   }
   
   class var header : String {
-    return ",".join(["Date", "Odometer", "Price Per Gallon", "Gallons", "Octane", "Location Name", "Latitude", "Longtidue", "Google Place ID"])
+    return ",".join(["Date", "Odometer", "Price Per Gallon", "Gallons", "Octane", "Partial", "Location Name", "Latitude", "Longtidue", "Google Place ID"])
   }
   
   class func wrapAll(refuels:[Refuel]) -> String {
@@ -50,6 +50,10 @@ class RefuelCSVWrapper {
     if let octane = refuel.octane {
       values.append(String(octane))
     } else { values.append("") }
+    
+    if let partial = refuel.partial {
+      values.append("\(partial)")
+    } else { values.append("false") }
     
     if let station = refuel.station {
       values.append(station.name)

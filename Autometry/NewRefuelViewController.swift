@@ -12,6 +12,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   @IBOutlet weak var locationDescriptionField: UITextField!
   @IBOutlet weak var octaneField: UITextField!
   @IBOutlet weak var totalField: UITextField!
+  @IBOutlet weak var partialSwitch: UISwitch! /* On = Full = false, Off = Partial = true */
   
   let keyboardNavigationView = KeyboardNavigationView()
   
@@ -27,7 +28,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     
     keyboardNavigationView.tintColor = UIColor.whiteColor()
     keyboardNavigationView.barTintColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
-    let totalIndexPath = NSIndexPath(forRow:3, inSection:3)
+    let totalIndexPath = NSIndexPath(forRow:3, inSection:4)
     keyboardNavigationView.onPrevious = {
       if let responder = self.previousField() {
         responder.becomeFirstResponder()
@@ -77,6 +78,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
         refuel.gallons = (gallonsField.text as NSString).floatValue
         refuel.station = refuellingStationStore.getCurrentRefuellingStation()
         refuel.octane = octaneField.text.toInt()
+        refuel.partial = !partialSwitch.on
     }
   }
   

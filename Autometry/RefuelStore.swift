@@ -11,7 +11,8 @@ class RefuelStore : CoreDataStore {
       pricePerGallon: object.valueForKey("pricePerGallon") as! Float,
       gallons: object.valueForKey("gallons") as! Float,
       octane: object.valueForKey("octane") as? Int,
-      createdDate: object.valueForKey("date") as? NSDate
+      createdDate: object.valueForKey("date") as? NSDate,
+      partial: object.valueForKey("partial") as? Bool
     )
     
     if let googlePlaceID = (object.valueForKey("google_place_id") as? String) {
@@ -24,6 +25,7 @@ class RefuelStore : CoreDataStore {
       refuel.station = station
     }
     
+    print("refuel.partial: \(refuel.partial)")
     return refuel
   }
   
@@ -63,6 +65,7 @@ class RefuelStore : CoreDataStore {
     object.setValue(refuel.pricePerGallon, forKey: "pricePerGallon")
     object.setValue(refuel.gallons, forKey: "gallons")
     object.setValue(refuel.octane, forKey: "octane")
+    object.setValue(refuel.partial, forKey: "partial")
     if let station = refuel.station {
       object.setValue(station.googlePlaceID, forKey: "google_place_id")
       object.setValue(station.latitude, forKey:"latitude")

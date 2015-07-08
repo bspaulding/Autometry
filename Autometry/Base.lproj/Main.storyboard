@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pgQ-0y-W3k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pgQ-0y-W3k">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -956,7 +956,7 @@ Record a refuel to see statistics.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Odometer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzI-S5-dk9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzI-S5-dk9">
                                                     <rect key="frame" x="8" y="11" width="78" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="brR-9z-pG3"/>
@@ -971,6 +971,7 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstItem="2GD-Y3-3Fp" firstAttribute="trailing" secondItem="sNa-eG-f2A" secondAttribute="trailingMargin" id="Cui-u7-jke"/>
                                                 <constraint firstItem="UzI-S5-dk9" firstAttribute="leading" secondItem="sNa-eG-f2A" secondAttribute="leadingMargin" id="Ffa-46-FkX"/>
                                                 <constraint firstItem="2GD-Y3-3Fp" firstAttribute="leading" secondItem="UzI-S5-dk9" secondAttribute="trailing" id="Z3k-X4-cQW"/>
+                                                <constraint firstAttribute="centerY" secondItem="UzI-S5-dk9" secondAttribute="centerY" id="bS6-61-DXH"/>
                                                 <constraint firstItem="2GD-Y3-3Fp" firstAttribute="trailing" secondItem="sNa-eG-f2A" secondAttribute="trailingMargin" id="hDn-pU-Nrv"/>
                                                 <constraint firstItem="2GD-Y3-3Fp" firstAttribute="top" secondItem="sNa-eG-f2A" secondAttribute="topMargin" constant="-1" id="uMF-8k-Ctq"/>
                                             </constraints>
@@ -994,7 +995,7 @@ Record a refuel to see statistics.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OG-jf-U13">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OG-jf-U13">
                                                     <rect key="frame" x="8" y="11" width="67" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="Y8h-Oh-FgR"/>
@@ -1010,7 +1011,7 @@ Record a refuel to see statistics.</string>
                                                         <constraint firstAttribute="height" constant="20" id="ecb-zj-9by"/>
                                                     </constraints>
                                                 </activityIndicatorView>
-                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="byq-Hz-FsI">
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="byq-Hz-FsI">
                                                     <rect key="frame" x="83" y="7" width="481" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="NsP-uD-61R"/>
@@ -1020,16 +1021,65 @@ Record a refuel to see statistics.</string>
                                                 </textField>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="centerY" secondItem="7OG-jf-U13" secondAttribute="centerY" id="8fh-Xu-Tjd"/>
                                                 <constraint firstItem="byq-Hz-FsI" firstAttribute="leading" secondItem="7OG-jf-U13" secondAttribute="trailing" constant="8" id="DVH-iF-reH"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="byq-Hz-FsI" secondAttribute="trailing" constant="-5" id="IZQ-0s-epe"/>
                                                 <constraint firstAttribute="centerY" secondItem="c1K-mL-Osb" secondAttribute="centerY" id="gAs-n5-0j1"/>
                                                 <constraint firstItem="7OG-jf-U13" firstAttribute="leading" secondItem="gba-px-xdQ" secondAttribute="leadingMargin" id="hlj-fz-xuT"/>
+                                                <constraint firstAttribute="centerY" secondItem="byq-Hz-FsI" secondAttribute="centerY" id="kAX-M7-sAs"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="c1K-mL-Osb" secondAttribute="trailing" constant="-5" id="qeq-vJ-hfy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="JPs-QY-jNh" kind="show" identifier="RefuellingStationSelection" id="AKr-bS-Icw"/>
                                         </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="aXZ-YQ-mwx">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="oHN-Gj-RrE">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oHN-Gj-RrE" id="iux-Hb-63T">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tIO-HK-Fth">
+                                                    <rect key="frame" x="495" y="7" width="97" height="30"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN7-Ex-UlR">
+                                                    <rect key="frame" x="8" y="11.5" width="30" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="A1W-Ji-1IK"/>
+                                                        <constraint firstAttribute="width" constant="78" id="YdQ-Rw-Wsm"/>
+                                                        <constraint firstAttribute="width" constant="30" id="jw4-HB-ErU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="A1W-Ji-1IK"/>
+                                                            <exclude reference="YdQ-Rw-Wsm"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5C-8s-zgj">
+                                                    <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="G5C-8s-zgj" firstAttribute="trailing" secondItem="iux-Hb-63T" secondAttribute="trailingMargin" id="3JT-Vw-BE8"/>
+                                                <constraint firstAttribute="centerY" secondItem="rN7-Ex-UlR" secondAttribute="centerY" id="VdD-9B-gON"/>
+                                                <constraint firstAttribute="centerY" secondItem="G5C-8s-zgj" secondAttribute="centerY" id="p2k-g3-Hk2"/>
+                                                <constraint firstItem="rN7-Ex-UlR" firstAttribute="leading" secondItem="iux-Hb-63T" secondAttribute="leadingMargin" id="zGJ-ds-ajy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="octaneCell">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1055,7 +1105,7 @@ Record a refuel to see statistics.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Octane" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HS3-Tm-Ltp">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Octane" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HS3-Tm-Ltp">
                                                     <rect key="frame" x="8" y="11" width="56" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="Xhz-Ng-nam"/>
@@ -1069,6 +1119,7 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstItem="jhz-oi-oX9" firstAttribute="trailing" secondItem="Ghi-eZ-Nx6" secondAttribute="trailingMargin" id="MIz-Ud-fcA"/>
                                                 <constraint firstItem="jhz-oi-oX9" firstAttribute="top" secondItem="Ghi-eZ-Nx6" secondAttribute="topMargin" constant="-1" id="Qn9-gz-dMs"/>
                                                 <constraint firstItem="jhz-oi-oX9" firstAttribute="trailing" secondItem="Ghi-eZ-Nx6" secondAttribute="trailingMargin" id="SbT-C8-ts4"/>
+                                                <constraint firstAttribute="centerY" secondItem="HS3-Tm-Ltp" secondAttribute="centerY" id="VRR-Nt-mhg"/>
                                                 <constraint firstItem="HS3-Tm-Ltp" firstAttribute="leading" secondItem="Ghi-eZ-Nx6" secondAttribute="leadingMargin" id="Z7A-gF-dRN"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="jhz-oi-oX9" secondAttribute="bottom" constant="-1.5" id="tLp-xU-le1"/>
                                             </constraints>
@@ -1097,7 +1148,7 @@ Record a refuel to see statistics.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Price Per Gallon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-rB-WHM">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Per Gallon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-rB-WHM">
                                                     <rect key="frame" x="8" y="11" width="124" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="124" id="TR0-Yp-NAq"/>
@@ -1112,6 +1163,7 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstItem="bQK-zR-6Uc" firstAttribute="trailing" secondItem="A8s-Lx-0vL" secondAttribute="trailingMargin" id="HMp-EE-3g0"/>
                                                 <constraint firstItem="Pbl-rB-WHM" firstAttribute="leading" secondItem="A8s-Lx-0vL" secondAttribute="leadingMargin" id="TyR-u2-Mfc"/>
                                                 <constraint firstItem="bQK-zR-6Uc" firstAttribute="trailing" secondItem="A8s-Lx-0vL" secondAttribute="trailingMargin" id="Wjn-TT-Snr"/>
+                                                <constraint firstAttribute="centerY" secondItem="Pbl-rB-WHM" secondAttribute="centerY" id="ckl-w2-ezm"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="bQK-zR-6Uc" secondAttribute="bottom" constant="-1.5" id="fre-tX-wDx"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1130,7 +1182,7 @@ Record a refuel to see statistics.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Gallons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQQ-NZ-pU0">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQQ-NZ-pU0">
                                                     <rect key="frame" x="8" y="11" width="58" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="58" id="sQK-Mv-8cg"/>
@@ -1153,6 +1205,7 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstAttribute="bottomMargin" secondItem="3JA-0q-eAz" secondAttribute="bottom" constant="-1.5" id="Lop-sy-g4O"/>
                                                 <constraint firstItem="3JA-0q-eAz" firstAttribute="trailing" secondItem="DRW-N3-6DI" secondAttribute="trailingMargin" id="MxN-Yw-XJz"/>
                                                 <constraint firstItem="jQQ-NZ-pU0" firstAttribute="leading" secondItem="DRW-N3-6DI" secondAttribute="leadingMargin" id="Z64-tn-VhT"/>
+                                                <constraint firstAttribute="centerY" secondItem="jQQ-NZ-pU0" secondAttribute="centerY" id="eqb-BA-vdc"/>
                                                 <constraint firstItem="3JA-0q-eAz" firstAttribute="top" secondItem="DRW-N3-6DI" secondAttribute="topMargin" constant="-1" id="kHL-eE-es1"/>
                                                 <constraint firstItem="3JA-0q-eAz" firstAttribute="trailing" secondItem="DRW-N3-6DI" secondAttribute="trailingMargin" id="wex-97-2rS"/>
                                             </constraints>
@@ -1172,7 +1225,7 @@ Record a refuel to see statistics.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCV-ZL-bPa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCV-ZL-bPa">
                                                     <rect key="frame" x="8" y="11" width="40" height="21"/>
                                                     <accessibility key="accessibilityConfiguration" label=""/>
                                                     <constraints>
@@ -1195,6 +1248,7 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstItem="IAm-Xe-8tF" firstAttribute="top" secondItem="Nmb-F1-2nW" secondAttribute="topMargin" constant="-1" id="0fa-ci-9fv"/>
                                                 <constraint firstItem="SCV-ZL-bPa" firstAttribute="leading" secondItem="Nmb-F1-2nW" secondAttribute="leadingMargin" id="3ts-Tw-9J8"/>
                                                 <constraint firstItem="IAm-Xe-8tF" firstAttribute="trailing" secondItem="Nmb-F1-2nW" secondAttribute="trailingMargin" id="6ae-Yv-ZIe"/>
+                                                <constraint firstAttribute="centerY" secondItem="SCV-ZL-bPa" secondAttribute="centerY" id="PPZ-zy-NMW"/>
                                                 <constraint firstItem="IAm-Xe-8tF" firstAttribute="trailing" secondItem="Nmb-F1-2nW" secondAttribute="trailingMargin" id="SWy-u9-gDj"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IAm-Xe-8tF" secondAttribute="bottom" constant="-1.5" id="Zgu-Mv-uXG"/>
                                             </constraints>
@@ -1229,6 +1283,7 @@ Record a refuel to see statistics.</string>
                         <outlet property="locationDescriptionField" destination="byq-Hz-FsI" id="Y8o-Ft-QLn"/>
                         <outlet property="octaneField" destination="jhz-oi-oX9" id="g9T-rO-pSR"/>
                         <outlet property="odometerField" destination="2GD-Y3-3Fp" id="fOj-kk-7ZA"/>
+                        <outlet property="partialSwitch" destination="G5C-8s-zgj" id="wYF-Te-5Tg"/>
                         <outlet property="pricePerGallonField" destination="bQK-zR-6Uc" id="FsX-aN-hYK"/>
                         <outlet property="saveButton" destination="u67-lH-sAN" id="r1d-kB-s3B"/>
                         <outlet property="totalField" destination="IAm-Xe-8tF" id="dwu-An-rVx"/>

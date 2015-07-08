@@ -152,6 +152,7 @@
 		65572FF91AAFF1EA0079739E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		656919A21AB4BED7000E9AC2 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 		656919A31AB4BED7000E9AC2 /* Splash.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splash.pxm; sourceTree = "<group>"; };
+		656A0BE11B4DE852008E301C /* RefuelStore 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RefuelStore 3.xcdatamodel"; sourceTree = "<group>"; };
 		65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNavigationView.swift; sourceTree = "<group>"; };
 		65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
@@ -810,10 +811,11 @@
 		65FDDCA61AA5734500EBF26E /* RefuelStore.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				656A0BE11B4DE852008E301C /* RefuelStore 3.xcdatamodel */,
 				65094A861AA8C65100B1FEB0 /* RefuelStore 2.xcdatamodel */,
 				65FDDCA71AA5734500EBF26E /* RefuelStore.xcdatamodel */,
 			);
-			currentVersion = 65094A861AA8C65100B1FEB0 /* RefuelStore 2.xcdatamodel */;
+			currentVersion = 656A0BE11B4DE852008E301C /* RefuelStore 3.xcdatamodel */;
 			path = RefuelStore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
