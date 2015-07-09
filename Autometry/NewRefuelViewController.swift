@@ -189,11 +189,9 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
       let currentStringWithSeparators : NSMutableString = NSMutableString(string: textField.text)
       currentStringWithSeparators.replaceCharactersInRange(range, withString: string)
       let currentString = digitize(currentStringWithSeparators as String)
-      println("currentString: \(currentString)")
       
       let fmt = formatters.numberFormatter
       if let number = fmt.numberFromString(currentString) {
-        println("Parsed a number! \(number)")
         textField.text = fmt.stringFromNumber(number)!
         textChanged()
         return false
@@ -247,19 +245,14 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   // CLLocationManagerDelegate Protocol
   
   func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-    println("authorization status changed")
     switch status {
     case .NotDetermined:
-      println("NotDetermined")
       manager.requestWhenInUseAuthorization()
     case .Restricted:
-      println("Restricted")
       locationActivityIndicator.stopAnimating()
     case .Denied:
-      println("Denied")
       locationActivityIndicator.stopAnimating()
     case .AuthorizedAlways, .AuthorizedWhenInUse:
-      println("starting location updates")
       manager.startUpdatingLocation()
     default:
       println("unknown authorization status...")

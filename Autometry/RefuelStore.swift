@@ -25,7 +25,6 @@ class RefuelStore : CoreDataStore {
       refuel.station = station
     }
     
-    print("refuel.partial: \(refuel.partial)")
     return refuel
   }
   
