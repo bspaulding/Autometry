@@ -21,6 +21,14 @@ class Refuel {
     self.partial = partial
   }
   
+  func getGallons() -> Float {
+    if let gallons = self.gallons {
+      return gallons
+    }
+    
+    return 0
+  }
+  
   func totalSpent() -> Float {
     if let price = pricePerGallon, gallons = gallons {
       return price * gallons

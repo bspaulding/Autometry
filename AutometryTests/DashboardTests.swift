@@ -10,9 +10,12 @@ class DashboardTests: XCTestCase {
   let refuelC = Refuel()
   let refuelD = Refuel()
   let refuelE = Refuel()
+  let refuelF = Refuel()
+  let refuelG = Refuel()
 
   var refuelsA : [Refuel] = []
   var refuelsB : [Refuel] = []
+  var refuelsC : [Refuel] = []
   
   override func setUp() {
     refuelA.odometer = 10000
@@ -35,8 +38,18 @@ class DashboardTests: XCTestCase {
     refuelE.gallons = 10
     refuelE.pricePerGallon = 4.699
     
+    refuelF.odometer = 10350
+    refuelF.gallons = 2.5
+    refuelF.pricePerGallon = 3.999
+    refuelF.partial = true
+    
+    refuelG.odometer = 10600
+    refuelG.gallons = 10
+    refuelG.pricePerGallon = 3.999
+
     refuelsA = [refuelC, refuelB, refuelA]
     refuelsB = [refuelE, refuelD, refuelC, refuelB, refuelA]
+    refuelsC = [refuelG, refuelC, refuelF, refuelB, refuelA]
     
     super.setUp()
   }
@@ -142,5 +155,17 @@ class DashboardTests: XCTestCase {
     
     XCTAssertEqual(mpgsC.count, refuelsC.count - 1)
     XCTAssertEqual(mpgsC[0], 20)
+  }
+  
+  func testMpgsWithPartial() {
+    let mpgs = dashboard.mpgs(refuelsC)
+    
+    // 10600, 10500, 10350 (partial), 10300, 10000
+    XCTAssertEqual(refuelsC.count, 5)
+    XCTAssertEqual(mpgs.count, refuelsC.count - 1)
+    XCTAssertEqual(mpgs[0], 10)
+    XCTAssertEqual(mpgs[1], 16)
+    XCTAssertEqual(mpgs[2], 16)
+    XCTAssertEqual(mpgs[3], 30)
   }
 }

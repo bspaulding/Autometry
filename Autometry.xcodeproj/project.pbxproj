@@ -28,6 +28,7 @@
 		65572FFA1AAFF1EA0079739E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65572FF91AAFF1EA0079739E /* Images.xcassets */; };
 		656919A41AB4BED7000E9AC2 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 656919A21AB4BED7000E9AC2 /* Splash.png */; };
 		656919A51AB4BED7000E9AC2 /* Splash.pxm in Resources */ = {isa = PBXBuildFile; fileRef = 656919A31AB4BED7000E9AC2 /* Splash.pxm */; };
+		657B00B61BCA035900A964B5 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B00B51BCA035900A964B5 /* ArrayExtensions.swift */; settings = {ASSET_TAGS = (); }; };
 		659B08C61AE4395E004E94AF /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
 		65AAEC471AE416F900DD81A5 /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
 		65B4DE6F1AA787CC00FAC9ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */; };
@@ -75,6 +76,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		657B00BB1BCA035900A964B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65B4DE741AA7C57200FAC9ED /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E4202FE01B667AA100C997FB;
+			remoteInfo = "Alamofire watchOS";
+		};
 		65B4DE7B1AA7C57200FAC9ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 65B4DE741AA7C57200FAC9ED /* Alamofire.xcodeproj */;
@@ -153,6 +161,7 @@
 		656919A21AB4BED7000E9AC2 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 		656919A31AB4BED7000E9AC2 /* Splash.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splash.pxm; sourceTree = "<group>"; };
 		656A0BE11B4DE852008E301C /* RefuelStore 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RefuelStore 3.xcdatamodel"; sourceTree = "<group>"; };
+		657B00B51BCA035900A964B5 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNavigationView.swift; sourceTree = "<group>"; };
 		65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
@@ -246,6 +255,7 @@
 			children = (
 				65B4DE7C1AA7C57200FAC9ED /* Alamofire.framework */,
 				65B4DE7E1AA7C57200FAC9ED /* Alamofire.framework */,
+				657B00BC1BCA035900A964B5 /* Alamofire.framework */,
 				65B4DE801AA7C57200FAC9ED /* Alamofire iOS Tests.xctest */,
 				65B4DE821AA7C57200FAC9ED /* Alamofire OSX Tests.xctest */,
 			);
@@ -267,6 +277,7 @@
 				65C5AEFB1AABC26700F97447 /* RefuelCSVWrapper.swift */,
 				65E6E1001ACD16AB0069960E /* Formatters.swift */,
 				653837A01AF3BF57003DEB52 /* compact.swift */,
+				657B00B51BCA035900A964B5 /* ArrayExtensions.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -485,6 +496,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		657B00BC1BCA035900A964B5 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = 657B00BB1BCA035900A964B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		65B4DE7C1AA7C57200FAC9ED /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -559,6 +577,7 @@
 				65E6E1011ACD16AB0069960E /* Formatters.swift in Sources */,
 				65FDDCB01AA579E900EBF26E /* NewRefuelViewController.swift in Sources */,
 				65F96F271AAA15A9003EBDCF /* GoogleMapsAPI.swift in Sources */,
+				657B00B61BCA035900A964B5 /* ArrayExtensions.swift in Sources */,
 				65E6E0F61ACD01540069960E /* RefuelsTabBarController.swift in Sources */,
 				65FDDCA51AA572FA00EBF26E /* RefuelStore.swift in Sources */,
 				65B68E921B12A50100C67EE4 /* RefuelDetailViewController.swift in Sources */,

@@ -135,16 +135,72 @@ class Dashboard {
   
   // Helpers
   
+  func arraySliceFindRight<T>(f: T -> Bool, xs: ArraySlice<T>) -> T? {
+    for (var i = xs.count - 1; i >= 0; i -= 1) {
+      if f(xs[i]) {
+        return xs[i];
+      }
+    }
+    
+    return nil
+  }
+  
+  func arraySliceFind<T>(f: T -> Bool, xs: ArraySlice<T>) -> T? {
+    for (_, x) in xs.enumerate() {
+      if f(x) {
+        return x;
+      }
+    }
+    
+    return nil
+  }
+  
+  let isFull: Refuel -> Bool = { !$0.isPartial() }
+  
+  func tripEnd(refuels: [Refuel], currentRefuel: Refuel) -> Refuel {
+    if let currentRefuelIndex = refuels.indexOf({ $0 === currentRefuel }) {
+      return arraySliceFindRight(isFull,
+        xs: refuels[0...currentRefuelIndex]
+      )!
+    }
+    
+    return refuels[0]
+  }
+  
+  func tripStart(refuels: [Refuel], currentRefuel: Refuel) -> Refuel {
+    if let currentRefuelIndex = refuels.indexOf({ $0 === currentRefuel }) {
+      return arraySliceFind(isFull,
+        xs: refuels[currentRefuelIndex + 1...refuels.count - 1]
+      )!
+    }
+    
+    return refuels.last!
+  }
+  
   func mpgs(refuels: [Refuel]) -> [Int] {
     if refuels.count <= 1 {
       return []
     }
     
     return refuels[0...refuels.count - 2].enumerate().map({ (index, refuel) in
-      let previous = refuels[index + 1]
-      let miles = Float(refuel.odometer! - previous.odometer!)
+      print(refuel.odometer!)
+      let start = tripStart(refuels, currentRefuel: refuel)
+      print("start \(start.odometer!)")
+      let end = tripEnd(refuels, currentRefuel: refuel)
+      print("end \(end.odometer!)")
+      let miles = Float(end.odometer! - start.odometer!)
+      print("miles: \(miles)")
       
-      return Int(miles / refuel.gallons!)
+      let startIndex = refuels.indexOf({ $0 === start })!
+      print("startIndex: \(startIndex)")
+      let endIndex = refuels.indexOf({ $0 === end })!
+      print("endIndex \(endIndex)")
+      let gallons = refuels[endIndex...startIndex - 1]
+        .map({ $0.getGallons() })
+        .reduce(0, combine: +)
+      print("gallons: \(gallons)")
+      
+      return Int(miles / gallons)
     })
   }
   
