@@ -84,8 +84,8 @@ class RefuelListViewController : UITableViewController {
     }
 
     var mpgValue = ""
-    if indexPath.row > 0 {
-      mpgValue = "\(mpgs[indexPath.row - 1]) mpg"
+    if (refuels.count - indexPath.row - 1) < mpgs.count {
+      mpgValue = "\(mpgs[refuels.count - indexPath.row - 1]) mpg"
     }
     odometerLabel.text = compact([odometerValue, mpgValue]).joinWithSeparator(", ")
     odometerLabel.accessibilityValue = odometerValue
