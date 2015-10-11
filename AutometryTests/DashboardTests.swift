@@ -12,10 +12,12 @@ class DashboardTests: XCTestCase {
   let refuelE = Refuel()
   let refuelF = Refuel()
   let refuelG = Refuel()
+  let refuelH = Refuel()
 
   var refuelsA : [Refuel] = []
   var refuelsB : [Refuel] = []
   var refuelsC : [Refuel] = []
+  var refuelsD : [Refuel] = []
   
   override func setUp() {
     refuelA.odometer = 10000
@@ -47,9 +49,15 @@ class DashboardTests: XCTestCase {
     refuelG.gallons = 10
     refuelG.pricePerGallon = 3.999
 
+    refuelH.odometer = 10400
+    refuelH.gallons = 2.5
+    refuelH.pricePerGallon = 3.999
+    refuelH.partial = true
+    
     refuelsA = [refuelC, refuelB, refuelA]
     refuelsB = [refuelE, refuelD, refuelC, refuelB, refuelA]
     refuelsC = [refuelG, refuelC, refuelF, refuelB, refuelA]
+    refuelsD = [refuelG, refuelC, refuelH, refuelF, refuelB, refuelA]
     
     super.setUp()
   }
@@ -157,7 +165,7 @@ class DashboardTests: XCTestCase {
     XCTAssertEqual(mpgsC[0], 20)
   }
   
-  func testMpgsWithPartial() {
+  func testMpgsWithPartialInside() {
     let mpgs = dashboard.mpgs(refuelsC)
     
     // 10600, 10500, 10350 (partial), 10300, 10000
@@ -167,5 +175,37 @@ class DashboardTests: XCTestCase {
     XCTAssertEqual(mpgs[1], 16)
     XCTAssertEqual(mpgs[2], 16)
     XCTAssertEqual(mpgs[3], 30)
+  }
+  
+  func testMpgsWithPartialNewest() {
+    let refuels = [refuelF, refuelB, refuelA]
+    let mpgs = dashboard.mpgs(refuels)
+    
+    // 10350 (partial), 10300, 10000
+    XCTAssertEqual(refuels.count, 3)
+    XCTAssertEqual(mpgs.count, 1)
+    XCTAssertEqual(mpgs[0], 30)
+  }
+  
+  func testMpgsWithPartialOldest() {
+    let refuels = [refuelC, refuelF]
+    let mpgs = dashboard.mpgs(refuels)
+    
+    // 10500, 10350 (partial)
+    XCTAssertEqual(refuels.count, 2)
+    XCTAssertEqual(mpgs.count, 1)
+    XCTAssertEqual(mpgs[0], 15)
+  }
+  
+  func testMpgsWithMultiPartials() {
+    let mpgs = dashboard.mpgs(refuelsD)
+    
+    XCTAssertEqual(refuelsD.count, 6)
+    XCTAssertEqual(mpgs.count, refuelsD.count - 1)
+    XCTAssertEqual(mpgs[0], 10)
+    XCTAssertEqual(mpgs[1], 13)
+    XCTAssertEqual(mpgs[2], 13)
+    XCTAssertEqual(mpgs[3], 13)
+    XCTAssertEqual(mpgs[4], 30)
   }
 }

@@ -135,6 +135,26 @@ class Dashboard {
   
   // Helpers
   
+  func arrayFind<T>(f: T -> Bool, xs: [T]) -> T? {
+    for (_, x) in xs.enumerate() {
+      if f(x) {
+        return x;
+      }
+    }
+    
+    return nil
+  }
+  
+  func arrayFindRight<T>(f: T -> Bool, xs: [T]) -> T? {
+    for (var i = xs.count - 1; i >= 0; i -= 1) {
+      if f(xs[i]) {
+        return xs[i];
+      }
+    }
+    
+    return nil
+  }
+  
   func arraySliceFindRight<T>(f: T -> Bool, xs: ArraySlice<T>) -> T? {
     for (var i = xs.count - 1; i >= 0; i -= 1) {
       if f(xs[i]) {
@@ -157,11 +177,11 @@ class Dashboard {
   
   let isFull: Refuel -> Bool = { !$0.isPartial() }
   
-  func tripEnd(refuels: [Refuel], currentRefuel: Refuel) -> Refuel {
+  func tripEnd(refuels: [Refuel], currentRefuel: Refuel) -> Refuel? {
     if let currentRefuelIndex = refuels.indexOf({ $0 === currentRefuel }) {
       return arraySliceFindRight(isFull,
         xs: refuels[0...currentRefuelIndex]
-      )!
+      )
     }
     
     return refuels[0]
@@ -169,9 +189,14 @@ class Dashboard {
   
   func tripStart(refuels: [Refuel], currentRefuel: Refuel) -> Refuel {
     if let currentRefuelIndex = refuels.indexOf({ $0 === currentRefuel }) {
-      return arraySliceFind(isFull,
+      let lastFull = arraySliceFind(isFull,
         xs: refuels[currentRefuelIndex + 1...refuels.count - 1]
-      )!
+      )
+      if let last = lastFull {
+        return last
+      } else {
+        return refuels.last!
+      }
     }
     
     return refuels.last!
@@ -182,23 +207,21 @@ class Dashboard {
       return []
     }
     
-    return refuels[0...refuels.count - 2].enumerate().map({ (index, refuel) in
-      print(refuel.odometer!)
+    var firstFullRefuelIndex = 0
+    if let firstFullRefuel = arrayFind(isFull, xs: refuels) {
+      firstFullRefuelIndex = refuels.indexOf({ $0 === firstFullRefuel })!
+    }
+    
+    return refuels[firstFullRefuelIndex...refuels.count - 2].enumerate().map({ (index, refuel) in
       let start = tripStart(refuels, currentRefuel: refuel)
-      print("start \(start.odometer!)")
-      let end = tripEnd(refuels, currentRefuel: refuel)
-      print("end \(end.odometer!)")
+      let end = tripEnd(refuels, currentRefuel: refuel)!
       let miles = Float(end.odometer! - start.odometer!)
-      print("miles: \(miles)")
       
       let startIndex = refuels.indexOf({ $0 === start })!
-      print("startIndex: \(startIndex)")
       let endIndex = refuels.indexOf({ $0 === end })!
-      print("endIndex \(endIndex)")
       let gallons = refuels[endIndex...startIndex - 1]
         .map({ $0.getGallons() })
         .reduce(0, combine: +)
-      print("gallons: \(gallons)")
       
       return Int(miles / gallons)
     })
