@@ -11,7 +11,7 @@ class CoreDataStore: Observable {
   lazy var applicationDocumentsDirectory: NSURL = {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "me.iascchen.MyTTT" in the application's documents Application Support directory.
     let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-    return urls[urls.count-1] as! NSURL
+    return urls[urls.count-1] 
     }()
   
   lazy var managedObjectModel: NSManagedObjectModel = {
@@ -31,18 +31,19 @@ class CoreDataStore: Observable {
       NSMigratePersistentStoresAutomaticallyOption: true,
       NSInferMappingModelAutomaticallyOption: true
     ]
-    if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options, error: &error) == nil {
+    do {
+      try coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options)
+    } catch var error1 as NSError {
       coordinator = nil
       // Report any error we got.
-      let dict = NSMutableDictionary()
-      dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
-      dict[NSLocalizedFailureReasonErrorKey] = failureReason
-      dict[NSUnderlyingErrorKey] = error
-      error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict as [NSObject : AnyObject])
       // Replace this with code to handle the error appropriately.
       // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-      NSLog("Unresolved error \(error), \(error!.userInfo)")
+      print("Failed to initialize the application's saved data")
+      print(failureReason)
+      print(error)
       abort()
+    } catch {
+      fatalError()
     }
     
     return coordinator
@@ -88,13 +89,14 @@ class CoreDataStore: Observable {
   
   
   // save NSManagedObjectContext
-  func saveContext (context: NSManagedObjectContext, success:()->(), failure:(error:NSError)->()) {
-    var error: NSError? = nil
-    if context.hasChanges && !context.save(&error) {
-      // Replace this implementation with code to handle the error appropriately.
-      // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-      NSLog("Unresolved error \(error), \(error!.userInfo)")
-      if let error = error {
+  func saveContext (context: NSManagedObjectContext, success:()->(), failure:(error:ErrorType)->()) {
+    if context.hasChanges {
+      do {
+        try context.save()
+      } catch {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog("Unresolved error \(error)")
         failure(error: error)
       }
     } else {
@@ -102,7 +104,7 @@ class CoreDataStore: Observable {
     }
   }
   
-  func saveContext (success:()->(), failure:(error:NSError)->()) {
+  func saveContext (success:()->(), failure:(error:ErrorType)->()) {
     self.saveContext(self.backgroundContext!, success: success, failure: failure)
   }
   

@@ -5,8 +5,8 @@ import Autometry
 class RefuelCSVWrapperTests: XCTestCase {
   func testHeader() {
     let header = RefuelCSVWrapper.header
-    println(header)
-    XCTAssertEqual(header, ",".join(["Date", "Odometer", "Price Per Gallon", "Gallons", "Octane", "Partial", "Location Name", "Latitude", "Longtidue", "Google Place ID"]))
+    print(header)
+    XCTAssertEqual(header, ["Date", "Odometer", "Price Per Gallon", "Gallons", "Octane", "Partial", "Location Name", "Latitude", "Longtidue", "Google Place ID"].joinWithSeparator(","))
   }
   
   func testBlank() {
@@ -83,11 +83,11 @@ class RefuelCSVWrapperTests: XCTestCase {
     let refuelB = Refuel(id: "2", odometer: 10833, pricePerGallon: 2.749, gallons: 11.6789, octane: 91, createdDate: dateB, partial: true)
     refuelB.station = station
     let actual = RefuelCSVWrapper.wrapAll([refuelA, refuelB])
-    let expected = "\n".join([
+    let expected = [
       "Date,Odometer,Price Per Gallon,Gallons,Octane,Partial,Location Name,Latitude,Longtidue,Google Place ID",
       "2015-01-01T03:24-0800,10000,$2.349,10.9876,91,false,Chevron,32.1245,-122.5436,GOOGLE_PLACE_ID",
       "2015-02-01T03:24-0800,10833,$2.749,11.6789,91,true,Chevron,32.1245,-122.5436,GOOGLE_PLACE_ID"
-    ])
+    ].joinWithSeparator("\n")
     XCTAssertEqual(actual, expected)
   }
 }

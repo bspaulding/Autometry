@@ -35,19 +35,18 @@ class RefuelStore : CoreDataStore {
     storeFilename = "RefuelStore.sqlite"
   }
   
-  func all() -> [Refuel]{
+  func all() -> [Refuel] {
     let request = NSFetchRequest(entityName: entityName)
-    var error : NSError?
     if let context = managedObjectContext {
-      let fetchResult = context.executeFetchRequest(request, error: &error) as! [NSManagedObject]?
-      
-      if let results = fetchResult {
+      do {
+        let results = try context.executeFetchRequest(request) as! [NSManagedObject]
         return results.map(unwrap)
-      } else {
-        println("Could not fetch \(error), \(error!.userInfo)")
+      } catch {
+        print("Could not fetch \(error)")
+        return [];
       }
     } else {
-      println("No context to fetch from");
+      print("No context to fetch from");
     }
     
     return [];
@@ -77,7 +76,7 @@ class RefuelStore : CoreDataStore {
       refuel.createdDate = createdDate
       self.emitChange()
     }, failure: { error in
-      println("create failed")
+      print("create failed")
     })
   }
   
@@ -89,7 +88,7 @@ class RefuelStore : CoreDataStore {
       saveContext(context, success: {
         self.emitChange()
       },failure: { error in
-        println("delete failed")
+        print("delete failed")
       })
     }
   }

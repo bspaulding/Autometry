@@ -16,7 +16,7 @@ class RefuellingStationStore : Observable {
   func nearby(latitude:Double, longitude:Double, callback:([RefuellingStation]) -> ()) {
     GoogleMapsAPI.gasStationsNearby(latitude, longitude:longitude, callback:{(data) in
       let results = data!.valueForKey("results") as! [NSDictionary]
-      callback(results.map({ (var result) -> RefuellingStation in
+      callback(results.map({ (result) -> RefuellingStation in
         let geometry = result.valueForKey("geometry") as! NSDictionary
         let location = geometry.valueForKey("location") as! NSDictionary
         

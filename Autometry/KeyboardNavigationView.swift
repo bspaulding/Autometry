@@ -30,7 +30,7 @@ class KeyboardNavigationView : UIToolbar {
     self.init(frame:CGRectZero)
   }
   
-  required init(coder:NSCoder) {
+  required init?(coder:NSCoder) {
     fatalError("This class does not support NSCoding")
   }
   

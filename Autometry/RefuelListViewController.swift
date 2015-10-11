@@ -13,30 +13,30 @@ class RefuelListViewController : UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    tableView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+    tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
     let createdDateSorter : (Refuel,Refuel) -> Bool = {(a,b) in
       switch (a.createdDate,b.createdDate) {
       case let (.Some(aDate), .Some(bDate)):
         return aDate.timeIntervalSinceNow > bDate.timeIntervalSinceNow
-      case let (.None, .Some(bDate)):
+      case (.None, .Some(_)):
         return false
-      case let (.Some(bDate), .None):
+      case (.Some(_), .None):
         return true
-      case let (.None, .None):
+      case (.None, .None):
         return false
       }
     }
 
-    refuels = refuelStore.all().sorted(createdDateSorter)
+    refuels = refuelStore.all().sort(createdDateSorter)
     mpgs = calculator.mpgs(refuels)
     milesPerTrip = calculator.milesPerTrip(refuels)
     
     refuelStore.register({
-      self.refuels = self.refuelStore.all().sorted(createdDateSorter)
+      self.refuels = self.refuelStore.all().sort(createdDateSorter)
       self.mpgs = self.calculator.mpgs(self.refuels)
       self.milesPerTrip = self.calculator.milesPerTrip(self.refuels)
-      println(self.calculator.milesPerTrip(self.refuels))
+      print(self.calculator.milesPerTrip(self.refuels))
       self.tableView.reloadData()
     })
   }
@@ -65,7 +65,7 @@ class RefuelListViewController : UITableViewController {
     return refuels.count;
   }
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("RefuelCellIdentifier", forIndexPath: indexPath) as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("RefuelCellIdentifier", forIndexPath: indexPath) 
     
     let refuel = refuels[indexPath.row]
     var text = ""
@@ -87,7 +87,7 @@ class RefuelListViewController : UITableViewController {
     if indexPath.row > 0 {
       mpgValue = "\(mpgs[indexPath.row - 1]) mpg"
     }
-    odometerLabel.text = ", ".join(compact([odometerValue, mpgValue]))
+    odometerLabel.text = compact([odometerValue, mpgValue]).joinWithSeparator(", ")
     odometerLabel.accessibilityValue = odometerValue
     
     (cell.viewWithTag(3002) as! UILabel).text = formatters.currencyFormatter.stringFromNumber(refuel.pricePerGallon!)
@@ -106,7 +106,7 @@ class RefuelListViewController : UITableViewController {
       tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Fade)
       refuelStore.delete(refuel)
     } else {
-      println("Unhandled editing style: ", editingStyle);
+      print("Unhandled editing style: ", editingStyle);
     }
   }
   

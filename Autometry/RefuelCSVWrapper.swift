@@ -21,11 +21,11 @@ class RefuelCSVWrapper {
   }
   
   class var header : String {
-    return ",".join(["Date", "Odometer", "Price Per Gallon", "Gallons", "Octane", "Partial", "Location Name", "Latitude", "Longtidue", "Google Place ID"])
+    return ["Date", "Odometer", "Price Per Gallon", "Gallons", "Octane", "Partial", "Location Name", "Latitude", "Longtidue", "Google Place ID"].joinWithSeparator(",")
   }
   
   class func wrapAll(refuels:[Refuel]) -> String {
-    return "\n".join([header] + refuels.map(wrap))
+    return ([header] + refuels.map(wrap)).joinWithSeparator("\n")
   }
   
   class func wrap(refuel:Refuel) -> String {
@@ -67,6 +67,6 @@ class RefuelCSVWrapper {
       values.append("")
     }
     
-    return ",".join(values)
+    return values.joinWithSeparator(",")
   }
 }

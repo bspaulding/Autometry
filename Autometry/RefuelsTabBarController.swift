@@ -23,14 +23,14 @@ class RefuelsTabBarController : UITabBarController, MFMailComposeViewControllerD
     let refuels = refuelStore.all()
     let csvString = RefuelCSVWrapper.wrapAll(refuels)
     let csvData = csvString.dataUsingEncoding(NSUTF8StringEncoding)
-    picker.addAttachmentData(csvData, mimeType:"text/csv", fileName:"AutometryExport.csv")
+    picker.addAttachmentData(csvData!, mimeType:"text/csv", fileName:"AutometryExport.csv")
     
     presentViewController(picker, animated:true, completion:nil)
   }
   
-  func mailComposeController(controller: MFMailComposeViewController!,
+  func mailComposeController(controller: MFMailComposeViewController,
     didFinishWithResult result: MFMailComposeResult,
-    error: NSError!) {
+    error: NSError?) {
       if let picker = self.picker {
         picker.dismissViewControllerAnimated(true, completion:nil)
       }

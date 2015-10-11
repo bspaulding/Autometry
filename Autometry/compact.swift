@@ -1,8 +1,8 @@
 import Foundation
 
 func compact(collection: [String]) -> [String] {
-  return filter(collection) {
-    if count($0) > 0 {
+  return collection.filter {
+    if $0.characters.count > 0 {
       return true
     } else {
       return false

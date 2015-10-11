@@ -19,7 +19,7 @@ class RefuellingStationsListViewController : UITableViewController {
     return stations.count;
   }
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("RefuellingStationCellIdentifier", forIndexPath: indexPath) as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("RefuellingStationCellIdentifier", forIndexPath: indexPath) 
     
     let station = stations[indexPath.row]
     cell.textLabel!.text = String(station.name)

@@ -17,7 +17,7 @@ class Dashboard {
       return "N/A"
     }
     
-    let mpg = maxElement(mpgs(refuels))
+    let mpg = mpgs(refuels).maxElement()!
     return "\(mpg)"
   }
   
@@ -26,7 +26,7 @@ class Dashboard {
       return "N/A"
     }
     
-    let mpg = minElement(mpgs(refuels))
+    let mpg = mpgs(refuels).minElement()!
     return "\(mpg)"
   }
   
@@ -44,7 +44,7 @@ class Dashboard {
       return "N/A"
     }
     
-    let ppg = minElement(refuels.map { $0.pricePerGallon! })
+    let ppg = refuels.map { $0.pricePerGallon! }.minElement()!
     return formatters.currencyFormatter.stringFromNumber(ppg)!
   }
   
@@ -53,7 +53,7 @@ class Dashboard {
       return "N/A"
     }
     
-    let ppg = maxElement(refuels.map { $0.pricePerGallon! })
+    let ppg = refuels.map { $0.pricePerGallon! }.maxElement()!
     return formatters.currencyFormatter.stringFromNumber(ppg)!
   }
   
@@ -66,7 +66,7 @@ class Dashboard {
       return "$0.00"
     }
     
-    let cost = minElement(refuels.map({ $0.totalSpent() }))
+    let cost = refuels.map({ $0.totalSpent() }).minElement()!
     return formatters.currencyFormatter.stringFromNumber(cost)!
   }
   
@@ -75,7 +75,7 @@ class Dashboard {
       return "$0.00"
     }
     
-    let cost = maxElement(refuels.map({ $0.totalSpent() }))
+    let cost = refuels.map({ $0.totalSpent() }).maxElement()!
     return formatters.currencyFormatter.stringFromNumber(cost)!
   }
   
@@ -92,7 +92,7 @@ class Dashboard {
       return "0"
     }
     
-    let miles = maxElement(milesPerTrip(refuels))
+    let miles = milesPerTrip(refuels).maxElement()!
     return formatters.numberFormatter.stringFromNumber(miles)!
   }
   
@@ -101,7 +101,7 @@ class Dashboard {
       return "0"
     }
     
-    let miles = minElement(milesPerTrip(refuels))
+    let miles = milesPerTrip(refuels).minElement()!
     return formatters.numberFormatter.stringFromNumber(miles)!
   }
   
@@ -120,7 +120,7 @@ class Dashboard {
       return "$0.00"
     }
     
-    let cpm = minElement(cpms(refuels))
+    let cpm = cpms(refuels).minElement()!
     return formatters.currencyFormatter.stringFromNumber(cpm)!
   }
   
@@ -129,7 +129,7 @@ class Dashboard {
       return "$0.00"
     }
     
-    let cpm = maxElement(cpms(refuels))
+    let cpm = cpms(refuels).maxElement()!
     return formatters.currencyFormatter.stringFromNumber(cpm)!
   }
   
@@ -140,21 +140,21 @@ class Dashboard {
       return []
     }
     
-    return map(enumerate(refuels[0...refuels.count - 2])) { (index, refuel) in
+    return refuels[0...refuels.count - 2].enumerate().map({ (index, refuel) in
       let previous = refuels[index + 1]
       let miles = Float(refuel.odometer! - previous.odometer!)
       
       return Int(miles / refuel.gallons!)
-    }
+    })
   }
   
   private func cpms(refuels: [Refuel]) -> [Float] {
-    return map(enumerate(refuels[0...refuels.count - 2])) { (index, refuel) in
+    return refuels[0...refuels.count - 2].enumerate().map({ (index, refuel) in
       let previous = refuels[index+1]
       let cost = previous.totalSpent()
       let miles = Float(refuel.odometer! - previous.odometer!)
       return cost / miles
-    }
+    })
   }
  
   private func miles(refuels: [Refuel]) -> Float {
@@ -166,9 +166,9 @@ class Dashboard {
       return []
     }
     
-    return map(enumerate(refuels[0...refuels.count - 2])) {(index,refuel) in
-      return refuel.odometer! - refuels[index+1].odometer!
-    }
+    return refuels[0...refuels.count - 2].enumerate().map({(index,refuel) in
+      return Int(refuel.odometer!) - Int(refuels[index+1].odometer!)
+    })
   }
   
   private func totalSpent(refuels: [Refuel]) -> Float {

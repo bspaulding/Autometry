@@ -32,11 +32,11 @@ class DashboardViewController : UIViewController {
     switch (a.createdDate,b.createdDate) {
     case let (.Some(aDate), .Some(bDate)):
       return aDate.timeIntervalSinceNow > bDate.timeIntervalSinceNow
-    case let (.None, .Some(bDate)):
+    case (.None, .Some(_)):
       return false
-    case let (.Some(bDate), .None):
+    case (.Some(_), .None):
       return true
-    case let (.None, .None):
+    case (.None, .None):
       return false
     }
   }
@@ -51,10 +51,10 @@ class DashboardViewController : UIViewController {
     let borderColor = UIColor(red: 156.0/255.0, green: 156.0/255.0, blue: 156.0/255.0, alpha: 1.0)
     let borderWidth = 0.5
     panels = [totalsPanel, mpgPanel, cpmPanel, ppgPanel]
-    panels.map {
+    panels.forEach {
       self.addTopBorder($0, width: borderWidth, color: borderColor)
     }
-    panels.map {
+    panels.forEach {
       self.addBottomBorder($0, width: borderWidth, color: borderColor)
     }
     
@@ -65,14 +65,14 @@ class DashboardViewController : UIViewController {
   }
 
   func update() {
-    let refuels = refuelStore.all().sorted(createdDateSorter)
+    let refuels = refuelStore.all().sort(createdDateSorter)
     
     if refuels.count < 1 {
-      panels.map { $0.hidden = true }
+      panels.forEach { $0.hidden = true }
       noDataMessage.hidden = false
       view.userInteractionEnabled = false
     } else {
-      panels.map { $0.hidden = false }
+      panels.forEach { $0.hidden = false }
       noDataMessage.hidden = true
       view.userInteractionEnabled = true
     }
@@ -100,7 +100,7 @@ class DashboardViewController : UIViewController {
     let border = UIView(frame: CGRectMake(0, 0, viewSize.width, CGFloat(width)))
     border.opaque = true
     border.backgroundColor = color
-    border.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleBottomMargin;
+    border.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleBottomMargin];
     view.addSubview(border)
   }
 
@@ -109,7 +109,7 @@ class DashboardViewController : UIViewController {
     let border = UIView(frame: CGRectMake(0, viewSize.height, viewSize.width, CGFloat(width)))
     border.opaque = true
     border.backgroundColor = color
-    border.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleBottomMargin;
+    border.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleBottomMargin];
     view.addSubview(border)
   }
 }

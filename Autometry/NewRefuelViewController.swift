@@ -68,27 +68,36 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
     switch segue.identifier {
-      case let .Some("RefuellingStationSelection"):
+      case .Some("RefuellingStationSelection"):
         let destination = segue.destinationViewController as! RefuellingStationsListViewController
         destination.setStations(refuellingStations)
         destination.stationStore = refuellingStationStore
       default:
-        refuel.odometer = digitize(odometerField.text).toInt()
-        refuel.pricePerGallon = (pricePerGallonField.text as NSString).floatValue
-        refuel.gallons = (gallonsField.text as NSString).floatValue
+        refuel.odometer = Int(digitize(odometerField.text!))
+        refuel.pricePerGallon = (pricePerGallonField.text! as NSString).floatValue
+        refuel.gallons = (gallonsField.text! as NSString).floatValue
         refuel.station = refuellingStationStore.getCurrentRefuellingStation()
-        refuel.octane = octaneField.text.toInt()
+        refuel.octane = Int(octaneField.text!)
         refuel.partial = !partialSwitch.on
     }
   }
   
   func canSave() -> Bool {
-    return count(odometerField.text) > 0 && count(pricePerGallonField.text) > 0 && count(gallonsField.text) > 0
+    return odometerField.text!.characters.count > 0 && pricePerGallonField.text!.characters.count > 0 && gallonsField.text!.characters.count > 0
+  }
+  
+  func currentResponder() -> UITextField? {
+    let responders = [octaneField, odometerField, pricePerGallonField, gallonsField].filter({ $0.isFirstResponder() })
+    if responders.count > 0 {
+      return responders[0]
+    }
+    
+    return nil
   }
   
   func total() -> String {
-    let ppgString = pricePerGallonField.text as NSString
-    let gallonsString = gallonsField.text as NSString
+    let ppgString = pricePerGallonField.text! as NSString
+    let gallonsString = gallonsField.text! as NSString
     
     if ppgString.length == 0 || gallonsString.length == 0 {
       return ""
@@ -128,7 +137,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     case gallonsField:
       return odometerField
     default:
-      println("Unknown current responder!")
+      print("Unknown current responder!")
       return nil
     }
   }
@@ -144,7 +153,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     case gallonsField:
       return pricePerGallonField
     default:
-      println("Unknown current responder!")
+      print("Unknown current responder!")
       return nil
     }
   }
@@ -172,7 +181,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   
   func digitize(string:String) -> String {
     var currentString = ""
-    for character in string {
+    for character in string.characters {
       if isDigit(character) {
         currentString.append(character)
       }
@@ -186,7 +195,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     }
     
     if textField == odometerField {
-      let currentStringWithSeparators : NSMutableString = NSMutableString(string: textField.text)
+      let currentStringWithSeparators : NSMutableString = NSMutableString(string: textField.text!)
       currentStringWithSeparators.replaceCharactersInRange(range, withString: string)
       let currentString = digitize(currentStringWithSeparators as String)
       
@@ -196,7 +205,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
         textChanged()
         return false
       } else {
-        println("Parsing failed: \(textField.text)")
+        print("Parsing failed: \(textField.text)")
         return true
       }
     }
@@ -207,7 +216,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     let cursorOffset : NSInteger = textField.offsetFromPosition(start, toPosition: selectedRange.start)
 
     // Update the string in the text input
-    let currentString : NSMutableString = NSMutableString(string: textField.text)
+    let currentString : NSMutableString = NSMutableString(string: textField.text!)
     let currentLength = currentString.length
     currentString.replaceCharactersInRange(range, withString: string)
 
@@ -232,9 +241,9 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
     
     // if the cursor was not at the end of the string being entered, restore cursor position
     if cursorOffset != currentLength {
-      let lengthDelta = count(newString) - currentLength
-      let newCursorOffset = max(0, min(count(newString), cursorOffset + lengthDelta))
-      let newPosition = textField.positionFromPosition(textField.beginningOfDocument, offset:newCursorOffset)
+      let lengthDelta = newString.characters.count - currentLength
+      let newCursorOffset = max(0, min(newString.characters.count, cursorOffset + lengthDelta))
+      let newPosition = textField.positionFromPosition(textField.beginningOfDocument, offset:newCursorOffset)!
       let newRange = textField.textRangeFromPosition(newPosition, toPosition:newPosition)
       textField.selectedTextRange = newRange
     }
@@ -244,7 +253,7 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   
   // CLLocationManagerDelegate Protocol
   
-  func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+  func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
     switch status {
     case .NotDetermined:
       manager.requestWhenInUseAuthorization()
@@ -254,37 +263,26 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
       locationActivityIndicator.stopAnimating()
     case .AuthorizedAlways, .AuthorizedWhenInUse:
       manager.startUpdatingLocation()
-    default:
-      println("unknown authorization status...")
     }
   }
   
-  func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+  func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     let coordinate = locations[0].coordinate
     refuellingStationStore.nearby(coordinate.latitude, longitude: coordinate.longitude, callback:{stations in
       self.updateRefuellingStations(stations)
     })
-    locationManager.stopUpdatingLocation()
+    manager.stopUpdatingLocation()
   }
   
   func locationManager(manager:CLLocationManager, didFailWithError error:NSError) {
-    println("didFailWithError: ", error)
+    print("didFailWithError: ", error)
     locationActivityIndicator.stopAnimating()
   }
   
   // ADBannerView Delegate Protocol
   
-  func currentResponder() -> UITextField? {
-    let responders = [octaneField, odometerField, pricePerGallonField, gallonsField].filter({ $0.isFirstResponder() })
-    if responders.count > 0 {
-      return responders[0]
-    }
-    
-    return nil
-  }
-  
   func restoringFirstResponder(callback:()->()) {
-    var _currentResponder = currentResponder()
+    let _currentResponder = currentResponder()
     
     callback()
     
@@ -292,6 +290,8 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
       responder.becomeFirstResponder()
     }
  }
+  
+  var showAd = false
   
   func bannerViewDidLoadAd(banner: ADBannerView) {
     showAd = true
@@ -308,8 +308,6 @@ class NewRefuelViewController : UITableViewController, UITextFieldDelegate, CLLo
   }
   
   // TableView Delegate
-  
-  var showAd = false
   
   override func tableView(tableView:UITableView, numberOfRowsInSection section:NSInteger) -> NSInteger {
     if section == 0 && !showAd {
