@@ -9,8 +9,8 @@ class GoogleMapsAPI {
   class func gasStationsNearby(latitude:Double, longitude:Double, callback:(AnyObject?) -> ()) {
     let url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=\(GoogleMapsAPI.apiKey)&types=gas_station&rankby=distance&location=\(latitude),\(longitude)"
     Alamofire.request(.GET, url).responseJSON {response in
-      if response.data != nil {
-        callback(response.data)
+      if let json = response.result.value {
+        callback(json)
       } else {
         callback([])
       }
