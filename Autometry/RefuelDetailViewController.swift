@@ -5,6 +5,7 @@ class RefuelDetailViewController : UITableViewController {
   
   @IBOutlet weak var odometerLabel: UILabel!
   @IBOutlet weak var locationNameLabel: UILabel!
+  @IBOutlet weak var fullLabel: UILabel!
   @IBOutlet weak var octaneLabel: UILabel!
   @IBOutlet weak var pricePerGallonLabel: UILabel!
   @IBOutlet weak var gallonsLabel: UILabel!
@@ -21,6 +22,12 @@ class RefuelDetailViewController : UITableViewController {
       locationNameLabel.text = station.name
     } else {
       locationNameLabel.text = ""
+    }
+    
+    if refuel.isPartial() {
+      fullLabel.text = "No"
+    } else {
+      fullLabel.text = "Yes"
     }
     
     if let octane = refuel.octane {
