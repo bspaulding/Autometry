@@ -8,7 +8,6 @@ class Observable : NSObject { // I wish this was a mixin! Gah!
   }
   
   func emitChange() {
-    print("emitChange")
     for listener in listeners {
       listener()
     }
