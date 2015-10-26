@@ -55,8 +55,9 @@ class RefuelListViewController : UITableViewController {
   
   override func prepareForSegue(segue:UIStoryboardSegue, sender:AnyObject?) {
     if segue.identifier == "ShowRefuelDetail" {
-      let navigation = segue.destinationViewController as! UINavigationController
-      let destination = navigation.viewControllers.first as! RefuelDetailViewController
+//      let navigation = segue.destinationViewController as! UINavigationController
+//      let destination = navigation.viewControllers.first as! RefuelDetailViewController
+      let destination = segue.destinationViewController as! RefuelDetailViewController
       destination.refuel = selectedRefuel!
     }
   }
