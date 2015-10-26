@@ -45,13 +45,18 @@ class RefuelListViewController : UITableViewController {
   }
   
   @IBAction func save(segue: UIStoryboardSegue) {
-    let source = segue.sourceViewController as! NewRefuelViewController
-    refuelStore.create(source.refuel)
+    let source = segue.sourceViewController as! RefuelDetailViewController
+    if let _ = source.refuel.id {
+      refuelStore.update(source.refuel)
+    } else {
+      refuelStore.create(source.refuel)
+    }
   }
   
   override func prepareForSegue(segue:UIStoryboardSegue, sender:AnyObject?) {
     if segue.identifier == "ShowRefuelDetail" {
-      let destination = segue.destinationViewController as! RefuelDetailViewController
+      let navigation = segue.destinationViewController as! UINavigationController
+      let destination = navigation.viewControllers.first as! RefuelDetailViewController
       destination.refuel = selectedRefuel!
     }
   }

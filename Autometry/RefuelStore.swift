@@ -28,6 +28,32 @@ class RefuelStore : CoreDataStore {
     return refuel
   }
   
+  private var wrap : (Refuel, NSManagedObject) -> (NSManagedObject) = {refuel, object in
+    if let odometer = refuel.odometer {
+      object.setValue(odometer, forKey: "odometer")
+    }
+    if let pricePerGallon = refuel.pricePerGallon {
+      object.setValue(pricePerGallon, forKey: "pricePerGallon")
+    }
+    if let gallons = refuel.gallons {
+      object.setValue(gallons, forKey: "gallons")
+    }
+    if let octane = refuel.octane {
+      object.setValue(octane, forKey: "octane")
+    }
+    if let partial = refuel.partial {
+      object.setValue(partial, forKey: "partial")
+    }
+    if let station = refuel.station {
+      object.setValue(station.name, forKey: "stationName")
+      object.setValue(station.googlePlaceID, forKey: "google_place_id")
+      object.setValue(station.latitude, forKey: "latitude")
+      object.setValue(station.longitude, forKey: "longitude")
+    }
+    
+    return object
+  }
+  
   private override init() {
     super.init()
     
@@ -80,6 +106,23 @@ class RefuelStore : CoreDataStore {
     })
   }
   
+  func update(refuel:Refuel) {
+    if let object = findObject(refuel) {
+      wrap(refuel, object)
+      
+      saveContext(managedObjectContext!,
+        success: {
+          self.emitChange()
+        },
+        failure: {error in
+          print("update failed")
+        }
+      )
+    } else {
+      print("[RefuelStore#update] Tried to update a performance that hadn't been persisted yet.")
+    }
+  }
+  
   func delete(refuel:Refuel) {
     if let objectID = refuel.id as? NSManagedObjectID {
       let context = managedObjectContext!
@@ -106,5 +149,17 @@ class RefuelStore : CoreDataStore {
     }
     
     return Static.instance!
+  }
+  
+  // Private Methods
+  
+  private func findObject(refuel:Refuel) -> NSManagedObject? {
+    let context = managedObjectContext!
+    do {
+      return try context.existingObjectWithID(refuel.id as! NSManagedObjectID)
+    } catch {
+      print("Uncaught exception")
+      return nil
+    }
   }
 }
