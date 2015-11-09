@@ -3,7 +3,7 @@ import UIKit
 import CoreLocation
 import iAd
 
-class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, CLLocationManagerDelegate {
+class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, CLLocationManagerDelegate, ADBannerViewDelegate {
   @IBOutlet weak var odometerField: UITextField!
   @IBOutlet weak var pricePerGallonField: UITextField!
   @IBOutlet weak var gallonsField: UITextField!
@@ -13,6 +13,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
   @IBOutlet weak var octaneField: UITextField!
   @IBOutlet weak var totalField: UITextField!
   @IBOutlet weak var partialSwitch: UISwitch! /* On = Full = false, Off = Partial = true */
+  @IBOutlet weak var bannerView: ADBannerView!
   
   let keyboardNavigationView = KeyboardNavigationView()
   
@@ -64,6 +65,8 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     })
     
     currencyFormatter.numberStyle = .CurrencyStyle
+    
+    bannerView.delegate = self
     
     update()
   }

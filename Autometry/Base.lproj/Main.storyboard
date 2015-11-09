@@ -752,9 +752,6 @@ Record a refuel to see statistics.</string>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Bry-5y-G98"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outlet property="delegate" destination="x3I-47-glS" id="b4b-iz-uIP"/>
-                                                    </connections>
                                                 </adBannerView>
                                             </subviews>
                                             <animations/>
@@ -1166,6 +1163,7 @@ Record a refuel to see statistics.</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerView" destination="Yzq-Cs-fvE" id="Pcy-ge-UBo"/>
                         <outlet property="gallonsField" destination="3JA-0q-eAz" id="ceW-Dn-Tey"/>
                         <outlet property="locationActivityIndicator" destination="c1K-mL-Osb" id="4lL-a5-EU3"/>
                         <outlet property="locationDescriptionField" destination="byq-Hz-FsI" id="Y8o-Ft-QLn"/>
