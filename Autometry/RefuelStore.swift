@@ -3,7 +3,20 @@ import CoreData
 
 class RefuelStore : CoreDataStore {
   let entityName = "Refuel"
-    
+  
+  static let createdDateSorter : (Refuel,Refuel) -> Bool = {(a,b) in
+    switch (a.createdDate,b.createdDate) {
+    case let (.Some(aDate), .Some(bDate)):
+      return aDate.timeIntervalSinceNow > bDate.timeIntervalSinceNow
+    case (.None, .Some(_)):
+      return false
+    case (.Some(_), .None):
+      return true
+    case (.None, .None):
+      return false
+    }
+  }
+  
   private var unwrap : (NSManagedObject) -> (Refuel) = {object in
     let refuel = Refuel(
       id: object.objectID,
