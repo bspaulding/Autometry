@@ -1,6 +1,22 @@
 import Foundation
 
-class Dashboard {
+class Dashboard {    
+  func toDictionary(refuels: [Refuel]) -> [String : String] {
+    return [
+      "totalMiles": totalMiles(refuels),
+      "totalSpent": totalSpent(refuels),
+      "mpgAverage": mpgAverage(refuels),
+      "mpgBest": mpgBest(refuels),
+      "mpgWorst": mpgWorst(refuels),
+      "cpmAverage": costPerMile(refuels),
+      "cpmBest": costPerMileBest(refuels),
+      "cpmWorst": costPerMileWorst(refuels),
+      "ppgAverage": averagePPG(refuels),
+      "ppgBest": pricePerGallonBest(refuels),
+      "ppgWorst": pricePerGallonWorst(refuels)
+    ];
+  }
+  
   func mpgAverage(refuels : [Refuel]) -> String {
     if refuels.count <= 1 {
       return "N/A"

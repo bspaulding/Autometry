@@ -6,7 +6,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   let refuelStore = RefuelStore.sharedInstance
-  let dashboard = Dashboard()
   let createdDateSorter : (Refuel,Refuel) -> Bool = {(a,b) in
     switch (a.createdDate,b.createdDate) {
     case let (.Some(aDate), .Some(bDate)):
@@ -26,10 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     refuelStore.register({
       let refuels = self.refuelStore.all().sort(self.createdDateSorter)
-      let watchData = [
-        "mpgAverage": self.dashboard.mpgAverage(refuels)
-      ];
-      WatchSessionManager.sharedManager.updateApplicationContext(watchData)
+      WatchSessionManager.sharedManager.updateApplicationContext(Dashboard().toDictionary(refuels))
     })
     
     return true

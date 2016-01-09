@@ -44,9 +44,6 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
     didReceiveMessage message: [String : AnyObject],
     replyHandler: ([String : AnyObject]) -> Void) {
     let refuels = RefuelStore.sharedInstance.all().sort(RefuelStore.createdDateSorter)
-    let watchData = [
-      "mpgAverage": Dashboard().mpgAverage(refuels)
-    ];
-    replyHandler(watchData)
+    replyHandler(Dashboard().toDictionary(refuels))
   }
 }

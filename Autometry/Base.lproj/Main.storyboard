@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pgQ-0y-W3k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pgQ-0y-W3k">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -31,72 +30,60 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Miles Per Gallon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anl-Ky-84J">
                                                         <rect key="frame" x="8" y="8" width="126" height="21"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEN-bu-zSh">
                                                         <rect key="frame" x="282" y="56" width="36" height="39"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Average" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfg-Yl-Bna">
                                                         <rect key="frame" x="268" y="103" width="64" height="22"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2O8-6d-4XT">
                                                         <rect key="frame" x="123" y="56" width="36" height="39"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Best" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieq-YW-ba6">
                                                         <rect key="frame" x="123" y="103" width="36" height="22"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="34" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zg-bj-sBl">
                                                         <rect key="frame" x="441" y="56" width="36" height="39"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Worst" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPd-66-eNP">
                                                         <rect key="frame" x="436" y="103" width="46" height="22"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4u2-YN-51K">
                                                         <rect key="frame" x="0.0" y="75" width="123" height="0.0"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9U1-Bh-k4P">
                                                         <rect key="frame" x="159" y="75" width="123" height="0.0"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yGD-uh-X1n">
                                                         <rect key="frame" x="318" y="75" width="123" height="0.0"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xqo-gY-sNV">
                                                         <rect key="frame" x="477" y="75" width="123" height="0.0"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="yGD-uh-X1n" firstAttribute="leading" secondItem="LEN-bu-zSh" secondAttribute="trailing" id="2PC-Zo-8g0"/>
@@ -140,72 +127,60 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price Per Gallon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-CC-zGC">
                                                         <rect key="frame" x="8" y="8" width="124" height="21"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Average" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grm-u7-4Zf">
                                                         <rect key="frame" x="268" y="102" width="64" height="22"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$2.49" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuO-jk-mXb">
                                                         <rect key="frame" x="260" y="55" width="80" height="39"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$2.49" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbc-35-7t3">
                                                         <rect key="frame" x="430" y="55" width="80" height="39"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Best" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhf-le-8DM">
                                                         <rect key="frame" x="112" y="102" width="36" height="22"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$2.49" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDj-5b-ShR">
                                                         <rect key="frame" x="90" y="55" width="80" height="39"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hB9-iH-W4W">
                                                         <rect key="frame" x="0.0" y="75" width="90" height="0.0"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yh1-7r-mWz">
                                                         <rect key="frame" x="170" y="75" width="90" height="0.0"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rwm-SU-0x2">
                                                         <rect key="frame" x="340" y="75" width="90" height="0.0"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xky-Ac-aNT">
                                                         <rect key="frame" x="510" y="75" width="90" height="0.0"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Worst" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SVg-Jx-HAB">
                                                         <rect key="frame" x="447" y="102" width="46" height="22"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="0lQ-sM-lQn"/>
@@ -249,54 +224,45 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Totals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiD-0Z-wfy">
                                                         <rect key="frame" x="8" y="8" width="45" height="21"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$2,122" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uK-UW-xDi">
                                                         <rect key="frame" x="365" y="56" width="106" height="39"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Spent" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkN-Hs-srZ">
                                                         <rect key="frame" x="394" y="103" width="47" height="22"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="30,322" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCs-5f-43j">
                                                         <rect key="frame" x="137" y="56" width="98" height="39"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Miles" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lpv-IT-zTd">
                                                         <rect key="frame" x="166" y="103" width="40" height="22"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OcU-ie-ouw">
                                                         <rect key="frame" x="235" y="-71" width="130" height="14"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wXk-bI-Xay">
                                                         <rect key="frame" x="471" y="35" width="129" height="62"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LnA-6s-hIJ">
                                                         <rect key="frame" x="0.0" y="100" width="129" height="61"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="OcU-ie-ouw" firstAttribute="width" secondItem="LnA-6s-hIJ" secondAttribute="width" id="0xj-pe-ObP"/>
@@ -348,72 +314,60 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cost Per Mile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qq7-qJ-9wo">
                                                         <rect key="frame" x="8" y="8" width="104" height="21"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Average" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzt-A1-bPR">
                                                         <rect key="frame" x="268" y="102" width="64" height="22"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$0.17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96l-zv-bgJ">
                                                         <rect key="frame" x="260" y="55" width="80" height="39"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Best" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqo-L0-obK">
                                                         <rect key="frame" x="112" y="102" width="36" height="22"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$0.17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyV-6f-Abn">
                                                         <rect key="frame" x="90" y="55" width="80" height="39"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Worst" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhS-UP-CvO">
                                                         <rect key="frame" x="447" y="102" width="46" height="22"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$0.17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDG-q3-mFH">
                                                         <rect key="frame" x="430" y="55" width="80" height="39"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBI-Vv-feb">
                                                         <rect key="frame" x="0.0" y="75" width="90" height="0.0"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4N-Jn-3nk">
                                                         <rect key="frame" x="170" y="75" width="90" height="0.0"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VAg-eJ-LKr">
                                                         <rect key="frame" x="340" y="75" width="90" height="0.0"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6vx-23-geq">
                                                         <rect key="frame" x="510" y="75" width="90" height="0.0"/>
-                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="2XE-Kl-y2a"/>
@@ -454,7 +408,6 @@
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfP-nK-dgN">
                                                 <rect key="frame" x="0.0" y="22" width="600" height="551"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="L4G-L3-1ny"/>
                                                 </constraints>
@@ -478,7 +431,6 @@ Record a refuel to see statistics.</string>
                                                 </variation>
                                             </label>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="Ibn-Rg-Q4e" firstAttribute="leading" secondItem="pjz-F3-Mvh" secondAttribute="leading" id="9Qt-d0-z9q"/>
@@ -510,7 +462,6 @@ Record a refuel to see statistics.</string>
                                         </variation>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="pjz-F3-Mvh" secondAttribute="trailing" id="TbI-Dh-8Eh"/>
                                     <constraint firstItem="pjz-F3-Mvh" firstAttribute="leading" secondItem="VMq-Qz-pNt" secondAttribute="leading" id="YA0-xM-GXI"/>
@@ -522,7 +473,6 @@ Record a refuel to see statistics.</string>
                                 </userDefinedRuntimeAttributes>
                             </scrollView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="pjz-F3-Mvh" secondAttribute="width" id="HQm-ze-llo"/>
@@ -568,7 +518,6 @@ Record a refuel to see statistics.</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jvo-k3-LzB">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RefuelCellIdentifier" rowHeight="88" id="gih-Ro-9C7">
@@ -580,7 +529,6 @@ Record a refuel to see statistics.</string>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$2.39" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ap-RS-CRx">
                                             <rect key="frame" x="476" y="21" width="41" height="21"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="0l3-Ff-liW"/>
                                                 <constraint firstAttribute="height" constant="21" id="pIF-vW-qNv"/>
@@ -596,7 +544,6 @@ Record a refuel to see statistics.</string>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$20.35" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUP-iY-7O0">
                                             <rect key="frame" x="542" y="21" width="49.5" height="21"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="4iS-61-Wku"/>
                                                 <constraint firstAttribute="height" constant="21" id="8Gj-Xw-1O8"/>
@@ -612,7 +559,6 @@ Record a refuel to see statistics.</string>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="March 5, 2015" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Q9m-PJ-1Ob">
                                             <rect key="frame" x="13" y="19" width="111" height="21"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="k2R-PE-NA2"/>
                                             </constraints>
@@ -622,7 +568,6 @@ Record a refuel to see statistics.</string>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXX-OJ-UZY">
                                             <rect key="frame" x="13" y="48" width="88" height="21"/>
-                                            <animations/>
                                             <accessibility key="accessibilityConfiguration" label="odometerLabel"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Sum-V3-4PA"/>
@@ -633,20 +578,17 @@ Record a refuel to see statistics.</string>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3U-ch-H52">
                                             <rect key="frame" x="550" y="45" width="32" height="21"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="/gallon" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccm-Rw-36G">
                                             <rect key="frame" x="471" y="46" width="50" height="21"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="Q9m-PJ-1Ob" secondAttribute="centerY" id="1PM-vk-Gud"/>
                                         <constraint firstItem="Q9m-PJ-1Ob" firstAttribute="leading" secondItem="4lI-Zi-M9j" secondAttribute="leadingMargin" constant="5" id="3Ht-Js-ssK"/>
@@ -708,7 +650,6 @@ Record a refuel to see statistics.</string>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableViewCell>
                         </prototypes>
@@ -734,7 +675,6 @@ Record a refuel to see statistics.</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="uaZ-OE-pMj">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="ha0-UC-XtN">
@@ -748,13 +688,11 @@ Record a refuel to see statistics.</string>
                                             <subviews>
                                                 <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yzq-Cs-fvE">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="Bry-5y-G98"/>
                                                     </constraints>
                                                 </adBannerView>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Yzq-Cs-fvE" secondAttribute="trailing" id="EPc-kB-bou"/>
                                                 <constraint firstItem="Yzq-Cs-fvE" firstAttribute="leading" secondItem="6eK-l9-3OF" secondAttribute="leading" id="X3z-KC-7dI"/>
@@ -762,7 +700,6 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstItem="Yzq-Cs-fvE" firstAttribute="top" secondItem="6eK-l9-3OF" secondAttribute="top" id="viw-q2-cNW"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <accessibility key="accessibilityConfiguration" label="odometerCell">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -780,14 +717,12 @@ Record a refuel to see statistics.</string>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Npt-nC-tCg">
                                                     <rect key="frame" x="495" y="7" width="97" height="30"/>
-                                                    <animations/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="miles" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="2GD-Y3-3Fp">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
-                                                    <animations/>
                                                     <accessibility key="accessibilityConfiguration" label="odometerField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="22a-pT-Ab9"/>
@@ -797,7 +732,6 @@ Record a refuel to see statistics.</string>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzI-S5-dk9">
                                                     <rect key="frame" x="8" y="11" width="78" height="21"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="brR-9z-pG3"/>
                                                     </constraints>
@@ -806,7 +740,6 @@ Record a refuel to see statistics.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="2GD-Y3-3Fp" secondAttribute="bottom" constant="-1.5" id="5NA-6Z-oQm"/>
                                                 <constraint firstItem="2GD-Y3-3Fp" firstAttribute="trailing" secondItem="sNa-eG-f2A" secondAttribute="trailingMargin" id="Cui-u7-jke"/>
@@ -817,7 +750,6 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstItem="2GD-Y3-3Fp" firstAttribute="top" secondItem="sNa-eG-f2A" secondAttribute="topMargin" constant="-1" id="uMF-8k-Ctq"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <accessibility key="accessibilityConfiguration" label="odometerCell">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -835,14 +767,12 @@ Record a refuel to see statistics.</string>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R04-Ly-PRI">
                                                     <rect key="frame" x="495" y="7" width="97" height="30"/>
-                                                    <animations/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OG-jf-U13">
                                                     <rect key="frame" x="8" y="11" width="67" height="21"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="Y8h-Oh-FgR"/>
                                                     </constraints>
@@ -852,7 +782,6 @@ Record a refuel to see statistics.</string>
                                                 </label>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="c1K-mL-Osb">
                                                     <rect key="frame" x="544" y="12" width="20" height="20"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="LQs-26-IbT"/>
                                                         <constraint firstAttribute="height" constant="20" id="ecb-zj-9by"/>
@@ -860,7 +789,6 @@ Record a refuel to see statistics.</string>
                                                 </activityIndicatorView>
                                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="byq-Hz-FsI">
                                                     <rect key="frame" x="83" y="7" width="481" height="30"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="NsP-uD-61R"/>
                                                     </constraints>
@@ -868,7 +796,6 @@ Record a refuel to see statistics.</string>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="7OG-jf-U13" secondAttribute="centerY" id="8fh-Xu-Tjd"/>
                                                 <constraint firstItem="byq-Hz-FsI" firstAttribute="leading" secondItem="7OG-jf-U13" secondAttribute="trailing" constant="8" id="DVH-iF-reH"/>
@@ -879,7 +806,6 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstAttribute="trailingMargin" secondItem="c1K-mL-Osb" secondAttribute="trailing" constant="-5" id="qeq-vJ-hfy"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <segue destination="JPs-QY-jNh" kind="show" identifier="RefuellingStationSelection" id="AKr-bS-Icw"/>
                                         </connections>
@@ -897,14 +823,12 @@ Record a refuel to see statistics.</string>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tIO-HK-Fth">
                                                     <rect key="frame" x="495" y="7" width="97" height="30"/>
-                                                    <animations/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN7-Ex-UlR">
                                                     <rect key="frame" x="8" y="11.5" width="30" height="20.5"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="A1W-Ji-1IK"/>
                                                         <constraint firstAttribute="width" constant="78" id="YdQ-Rw-Wsm"/>
@@ -922,10 +846,8 @@ Record a refuel to see statistics.</string>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5C-8s-zgj">
                                                     <rect key="frame" x="543" y="6" width="51" height="31"/>
-                                                    <animations/>
                                                 </switch>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="G5C-8s-zgj" firstAttribute="trailing" secondItem="iux-Hb-63T" secondAttribute="trailingMargin" id="3JT-Vw-BE8"/>
                                                 <constraint firstAttribute="centerY" secondItem="rN7-Ex-UlR" secondAttribute="centerY" id="VdD-9B-gON"/>
@@ -933,7 +855,6 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstItem="rN7-Ex-UlR" firstAttribute="leading" secondItem="iux-Hb-63T" secondAttribute="leadingMargin" id="zGJ-ds-ajy"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <accessibility key="accessibilityConfiguration" label="octaneCell">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -951,14 +872,12 @@ Record a refuel to see statistics.</string>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KEJ-M8-ZXf">
                                                     <rect key="frame" x="495" y="7" width="97" height="30"/>
-                                                    <animations/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="level" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="jhz-oi-oX9">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
-                                                    <animations/>
                                                     <accessibility key="accessibilityConfiguration" label="octaneField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="8kJ-Tk-5qt"/>
@@ -968,7 +887,6 @@ Record a refuel to see statistics.</string>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Octane" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HS3-Tm-Ltp">
                                                     <rect key="frame" x="8" y="11" width="56" height="21"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="Xhz-Ng-nam"/>
                                                     </constraints>
@@ -977,7 +895,6 @@ Record a refuel to see statistics.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="jhz-oi-oX9" firstAttribute="trailing" secondItem="Ghi-eZ-Nx6" secondAttribute="trailingMargin" id="MIz-Ud-fcA"/>
                                                 <constraint firstItem="jhz-oi-oX9" firstAttribute="top" secondItem="Ghi-eZ-Nx6" secondAttribute="topMargin" constant="-1" id="Qn9-gz-dMs"/>
@@ -987,7 +904,6 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstAttribute="bottomMargin" secondItem="jhz-oi-oX9" secondAttribute="bottom" constant="-1.5" id="tLp-xU-le1"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <accessibility key="accessibilityConfiguration" label="octaneCell">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -1001,14 +917,12 @@ Record a refuel to see statistics.</string>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4d-j0-fOE">
                                                     <rect key="frame" x="495" y="7" width="97" height="30"/>
-                                                    <animations/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dollars" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="bQK-zR-6Uc">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
-                                                    <animations/>
                                                     <accessibility key="accessibilityConfiguration" label="pricePerGallonField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="FoB-fe-BGu"/>
@@ -1018,7 +932,6 @@ Record a refuel to see statistics.</string>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Per Gallon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-rB-WHM">
                                                     <rect key="frame" x="8" y="11" width="124" height="21"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="124" id="TR0-Yp-NAq"/>
                                                     </constraints>
@@ -1027,7 +940,6 @@ Record a refuel to see statistics.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="bQK-zR-6Uc" firstAttribute="top" secondItem="A8s-Lx-0vL" secondAttribute="topMargin" constant="-1" id="0nl-eo-smp"/>
                                                 <constraint firstItem="bQK-zR-6Uc" firstAttribute="trailing" secondItem="A8s-Lx-0vL" secondAttribute="trailingMargin" id="HMp-EE-3g0"/>
@@ -1037,7 +949,6 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstAttribute="bottomMargin" secondItem="bQK-zR-6Uc" secondAttribute="bottom" constant="-1.5" id="fre-tX-wDx"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <accessibility key="accessibilityConfiguration" label="pricePerGallonCell">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -1051,14 +962,12 @@ Record a refuel to see statistics.</string>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sk2-EY-op2">
                                                     <rect key="frame" x="495" y="7" width="97" height="30"/>
-                                                    <animations/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQQ-NZ-pU0">
                                                     <rect key="frame" x="8" y="11" width="58" height="21"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="58" id="sQK-Mv-8cg"/>
                                                     </constraints>
@@ -1068,7 +977,6 @@ Record a refuel to see statistics.</string>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="gallons" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="3JA-0q-eAz">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
-                                                    <animations/>
                                                     <accessibility key="accessibilityConfiguration" label="gallonsField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Sk8-zP-Mfd"/>
@@ -1077,7 +985,6 @@ Record a refuel to see statistics.</string>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="3JA-0q-eAz" secondAttribute="bottom" constant="-1.5" id="Lop-sy-g4O"/>
                                                 <constraint firstItem="3JA-0q-eAz" firstAttribute="trailing" secondItem="DRW-N3-6DI" secondAttribute="trailingMargin" id="MxN-Yw-XJz"/>
@@ -1087,7 +994,6 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstItem="3JA-0q-eAz" firstAttribute="trailing" secondItem="DRW-N3-6DI" secondAttribute="trailingMargin" id="wex-97-2rS"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <accessibility key="accessibilityConfiguration" label="gallonsCell">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -1101,14 +1007,12 @@ Record a refuel to see statistics.</string>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9B7-HS-e0W">
                                                     <rect key="frame" x="495" y="7" width="97" height="30"/>
-                                                    <animations/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCV-ZL-bPa">
                                                     <rect key="frame" x="8" y="11" width="40" height="21"/>
-                                                    <animations/>
                                                     <accessibility key="accessibilityConfiguration" label=""/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="58" id="ybR-B0-FfI"/>
@@ -1118,7 +1022,6 @@ Record a refuel to see statistics.</string>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dollars" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="IAm-Xe-8tF">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
-                                                    <animations/>
                                                     <accessibility key="accessibilityConfiguration" label="totalField"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="hLl-0m-7gl"/>
@@ -1127,7 +1030,6 @@ Record a refuel to see statistics.</string>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="IAm-Xe-8tF" firstAttribute="top" secondItem="Nmb-F1-2nW" secondAttribute="topMargin" constant="-1" id="0fa-ci-9fv"/>
                                                 <constraint firstItem="SCV-ZL-bPa" firstAttribute="leading" secondItem="Nmb-F1-2nW" secondAttribute="leadingMargin" id="3ts-Tw-9J8"/>
@@ -1137,7 +1039,6 @@ Record a refuel to see statistics.</string>
                                                 <constraint firstAttribute="bottomMargin" secondItem="IAm-Xe-8tF" secondAttribute="bottom" constant="-1.5" id="Zgu-Mv-uXG"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <accessibility key="accessibilityConfiguration" label="totalCell">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
@@ -1187,7 +1088,6 @@ Record a refuel to see statistics.</string>
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GI8-ih-sEQ">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="RefuellingStationCellIdentifier" id="k6i-V0-zx3">
@@ -1196,9 +1096,7 @@ Record a refuel to see statistics.</string>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k6i-V0-zx3" id="IGa-Wh-6Fm">
                                     <rect key="frame" x="0.0" y="0.0" width="561" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
                                 </tableViewCellContentView>
-                                <animations/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -1223,7 +1121,6 @@ Record a refuel to see statistics.</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Deu-gI-z6U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1242,7 +1139,6 @@ Record a refuel to see statistics.</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zZv-PF-S0Q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1274,7 +1170,6 @@ Record a refuel to see statistics.</string>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="9lH-Fk-2I2">
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
