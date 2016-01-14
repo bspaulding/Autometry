@@ -30,6 +30,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     return true
   }
+  
+  func application(application: UIApplication,
+    performActionForShortcutItem shortcutItem: UIApplicationShortcutItem,
+    completionHandler: (Bool) -> Void) {
+    
+    if (shortcutItem.type == "com.motingo.Autometry.RecordRefuel") {
+      window!
+        .rootViewController!
+        .childViewControllers[0]
+        .performSegueWithIdentifier("RecordRefuel", sender: self)
+    }
+  }
 
   func applicationWillResignActive(application: UIApplication) {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
