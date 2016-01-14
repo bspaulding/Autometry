@@ -66,6 +66,7 @@
 		65E6E0FF1ACD0F310069960E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6E0FE1ACD0F310069960E /* DashboardViewController.swift */; };
 		65E6E1011ACD16AB0069960E /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6E1001ACD16AB0069960E /* Formatters.swift */; };
 		65E6E1021ACD17F00069960E /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E6E1001ACD16AB0069960E /* Formatters.swift */; };
+		65F3D6711C481D270035D56F /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B34731C3E3FE40067CB57 /* WatchSessionManager.swift */; };
 		65F96F241AAA1531003EBDCF /* RefuellingStationStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F96F231AAA1531003EBDCF /* RefuellingStationStoreTests.swift */; };
 		65F96F271AAA15A9003EBDCF /* GoogleMapsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F96F261AAA15A9003EBDCF /* GoogleMapsAPI.swift */; };
 		65F96F291AAAF38A003EBDCF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F96F281AAAF38A003EBDCF /* MessageUI.framework */; };
@@ -770,6 +771,7 @@
 				65B68E931B12A50100C67EE4 /* RefuelDetailViewController.swift in Sources */,
 				65E6E1021ACD17F00069960E /* Formatters.swift in Sources */,
 				654E4EFF1AB0AC5200AAE994 /* Observable.swift in Sources */,
+				65F3D6711C481D270035D56F /* WatchSessionManager.swift in Sources */,
 				653837A21AF3BF57003DEB52 /* compact.swift in Sources */,
 				65C5AEF21AABBDDC00F97447 /* RefuellingStationStore.swift in Sources */,
 				65269E0E1AAD66E500AA47D6 /* DateHelpers.swift in Sources */,
@@ -1019,6 +1021,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = AutometryTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Autometry.app/Autometry";
@@ -1034,6 +1037,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = AutometryTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Autometry.app/Autometry";
