@@ -39,11 +39,7 @@
 		657B34771C3E423D0067CB57 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B34761C3E423D0067CB57 /* WatchSessionManager.swift */; };
 		657B34781C3E46CF0067CB57 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E4EFA1AB0AA5600AAE994 /* Observable.swift */; };
 		658F2A411C7EE802005BA8DD /* RefuelStoreBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2A401C7EE802005BA8DD /* RefuelStoreBridge.m */; };
-		658F2A471C7EEA25005BA8DD /* CoreDataStoreBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2A461C7EEA25005BA8DD /* CoreDataStoreBridge.m */; };
-		658F2A491C7EEA48005BA8DD /* ObservableBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2A481C7EEA48005BA8DD /* ObservableBridge.m */; };
 		658F2A4A1C7EEAE3005BA8DD /* RefuelStoreBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2A401C7EE802005BA8DD /* RefuelStoreBridge.m */; };
-		658F2A4B1C7EEAE6005BA8DD /* CoreDataStoreBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2A461C7EEA25005BA8DD /* CoreDataStoreBridge.m */; };
-		658F2A4C1C7EEAEA005BA8DD /* ObservableBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2A481C7EEA48005BA8DD /* ObservableBridge.m */; };
 		658F2A4E1C7EEB74005BA8DD /* ReactNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC31D01C7ECC7100D089B3 /* ReactNativeView.swift */; };
 		659B08C61AE4395E004E94AF /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
 		65AAEC471AE416F900DD81A5 /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
@@ -228,8 +224,6 @@
 		657B34761C3E423D0067CB57 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		658F2A3F1C7EE801005BA8DD /* Autometry-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Autometry-Bridging-Header.h"; sourceTree = "<group>"; };
 		658F2A401C7EE802005BA8DD /* RefuelStoreBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefuelStoreBridge.m; sourceTree = "<group>"; };
-		658F2A461C7EEA25005BA8DD /* CoreDataStoreBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStoreBridge.m; sourceTree = "<group>"; };
-		658F2A481C7EEA48005BA8DD /* ObservableBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObservableBridge.m; sourceTree = "<group>"; };
 		65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNavigationView.swift; sourceTree = "<group>"; };
 		65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
@@ -490,9 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				65FDDCA11AA572CE00EBF26E /* CoreDataStore.swift */,
-				658F2A461C7EEA25005BA8DD /* CoreDataStoreBridge.m */,
 				654E4EFA1AB0AA5600AAE994 /* Observable.swift */,
-				658F2A481C7EEA48005BA8DD /* ObservableBridge.m */,
 			);
 			name = lib;
 			sourceTree = "<group>";
@@ -831,13 +823,11 @@
 				65FDDCA51AA572FA00EBF26E /* RefuelStore.swift in Sources */,
 				65B68E921B12A50100C67EE4 /* RefuelDetailViewController.swift in Sources */,
 				65FDDCAE1AA5771E00EBF26E /* RefuelListViewController.swift in Sources */,
-				658F2A471C7EEA25005BA8DD /* CoreDataStoreBridge.m in Sources */,
 				65E6E0FF1ACD0F310069960E /* DashboardViewController.swift in Sources */,
 				65B4DE711AA7C14000FAC9ED /* RefuellingStationStore.swift in Sources */,
 				65FDDCAB1AA5765200EBF26E /* Refuel.swift in Sources */,
 				65094A7E1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift in Sources */,
 				65B4DE731AA7C17F00FAC9ED /* RefuellingStation.swift in Sources */,
-				658F2A491C7EEA48005BA8DD /* ObservableBridge.m in Sources */,
 				65FDDCA21AA572CE00EBF26E /* CoreDataStore.swift in Sources */,
 				65FDDC811AA5728C00EBF26E /* AppDelegate.swift in Sources */,
 				65AAEC471AE416F900DD81A5 /* KeyboardNavigationView.swift in Sources */,
@@ -870,13 +860,11 @@
 				65E6E1021ACD17F00069960E /* Formatters.swift in Sources */,
 				654E4EFF1AB0AC5200AAE994 /* Observable.swift in Sources */,
 				65F3D6711C481D270035D56F /* WatchSessionManager.swift in Sources */,
-				658F2A4B1C7EEAE6005BA8DD /* CoreDataStoreBridge.m in Sources */,
 				653837A21AF3BF57003DEB52 /* compact.swift in Sources */,
 				65C5AEF21AABBDDC00F97447 /* RefuellingStationStore.swift in Sources */,
 				65269E0E1AAD66E500AA47D6 /* DateHelpers.swift in Sources */,
 				65C5AEF31AABBDE100F97447 /* RefuellingStationsListViewController.swift in Sources */,
 				658F2A4A1C7EEAE3005BA8DD /* RefuelStoreBridge.m in Sources */,
-				658F2A4C1C7EEAEA005BA8DD /* ObservableBridge.m in Sources */,
 				65F96F241AAA1531003EBDCF /* RefuellingStationStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
