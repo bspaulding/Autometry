@@ -1,6 +1,7 @@
 import Foundation
 import CoreData
 
+@objc(RefuelStore)
 class RefuelStore : CoreDataStore {
   let entityName = "Refuel"
   
@@ -89,6 +90,32 @@ class RefuelStore : CoreDataStore {
     }
     
     return [];
+  }
+  
+  private func refuelToDict(refuel: Refuel) -> [String: String] {
+    return [
+      "odometer": refuel.odometer != nil ? "\(refuel.odometer!)" : "",
+      "pricePerGallon": refuel.pricePerGallon != nil ? "\(refuel.pricePerGallon!)" : "",
+      "gallons": refuel.gallons != nil ? "\(refuel.gallons!)" : "",
+      "octane": refuel.octane != nil ? "\(refuel.octane!)" : "",
+      "partial": refuel.partial != nil ? "\(refuel.partial!)" : "",
+      "stationName": refuel.station?.name != nil ? "\(refuel.station!.name)" : "",
+      "googlePlaceID": refuel.station?.googlePlaceID != nil ? "\(refuel.station!.googlePlaceID)" : "",
+      "latitude": refuel.station?.latitude != nil ? "\(refuel.station!.latitude)" : "",
+      "longitude": refuel.station?.longitude != nil ? "\(refuel.station!.longitude)" : ""
+    ];
+  }
+  
+  @objc
+  func getAll(fn: ([[String: [[String: String]]]]) -> ()) {
+    let dicts = all().map({refuel in
+      return refuelToDict(refuel)
+    })
+    print("returning dicts: \(dicts)")
+    // adding a dummy dictionary as the first arg,
+    // because the react bridge uses the first arg as
+    // a node style error param, values are the second param
+    fn([["refuels": dicts]])
   }
   
   func create(refuel:Refuel) {

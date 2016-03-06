@@ -1,6 +1,6 @@
 import Foundation
 
-class RefuellingStationStore : Observable {
+class RefuellingStationStore : BSObservable {
   private var currentRefuellingStation : RefuellingStation?
   
   override private init() {}

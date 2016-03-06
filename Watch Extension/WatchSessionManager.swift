@@ -2,7 +2,7 @@ import WatchConnectivity
 
 // Note that the WCSessionDelegate must be an NSObject
 // So no, you cannot use the nice Swift struct here!
-class WatchSessionManager: Observable, WCSessionDelegate {
+class WatchSessionManager: BSObservable, WCSessionDelegate {
   var context : [String : AnyObject] = ["empty" : "dict"]
   
   // Instantiate the Singleton

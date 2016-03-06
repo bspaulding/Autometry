@@ -1,9 +1,10 @@
 import Foundation
 
-class Observable : NSObject { // I wish this was a mixin! Gah!
+@objc(BSObservable)
+class BSObservable : NSObject { // I wish this was a mixin! Gah!
   var listeners : [() -> ()] = []
 
-  func register(callback:()->()) {
+  @objc func register(callback:()->()) {
     listeners.append(callback)
   }
   
