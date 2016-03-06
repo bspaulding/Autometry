@@ -16,7 +16,7 @@ const styles = {
   container: {
     flex: 1,
     backgroundColor: "#F6F6F6",
-    paddingTop: 20
+    paddingTop: 15
   },
   panel: {
     backgroundColor: "#fff",
