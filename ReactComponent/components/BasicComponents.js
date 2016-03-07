@@ -1,9 +1,10 @@
 import React, {
- View,
- Text
+  StyleSheet,
+  Text,
+  View
 } from "react-native";
 
-const styles = {
+const styles = StyleSheet.create({
   panel: {
     backgroundColor: "#fff",
     borderBottomWidth: 1,
@@ -25,7 +26,7 @@ const styles = {
     fontWeight: "300",
     color: "#686868"
   }
-};
+});
 
 export const Panel = (props) => <View style={styles.panel}>{props.children}</View>;
 Panel.propTypes = { children: React.PropTypes.node };

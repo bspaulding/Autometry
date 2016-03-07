@@ -40,7 +40,7 @@
 		657B34781C3E46CF0067CB57 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E4EFA1AB0AA5600AAE994 /* Observable.swift */; };
 		658F2A411C7EE802005BA8DD /* RefuelStoreBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2A401C7EE802005BA8DD /* RefuelStoreBridge.m */; };
 		658F2A4A1C7EEAE3005BA8DD /* RefuelStoreBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2A401C7EE802005BA8DD /* RefuelStoreBridge.m */; };
-		658F2A4E1C7EEB74005BA8DD /* ReactNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC31D01C7ECC7100D089B3 /* ReactNativeView.swift */; };
+		658F2A4E1C7EEB74005BA8DD /* ReactNativeStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC31D01C7ECC7100D089B3 /* ReactNativeStatisticsView.swift */; };
 		659B08C61AE4395E004E94AF /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
 		65AAEC471AE416F900DD81A5 /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
 		65B4DE6F1AA787CC00FAC9ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */; };
@@ -74,7 +74,7 @@
 		65F96F241AAA1531003EBDCF /* RefuellingStationStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F96F231AAA1531003EBDCF /* RefuellingStationStoreTests.swift */; };
 		65F96F271AAA15A9003EBDCF /* GoogleMapsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F96F261AAA15A9003EBDCF /* GoogleMapsAPI.swift */; };
 		65F96F291AAAF38A003EBDCF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F96F281AAAF38A003EBDCF /* MessageUI.framework */; };
-		65FC31D11C7ECC7100D089B3 /* ReactNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC31D01C7ECC7100D089B3 /* ReactNativeView.swift */; };
+		65FC31D11C7ECC7100D089B3 /* ReactNativeStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC31D01C7ECC7100D089B3 /* ReactNativeStatisticsView.swift */; };
 		65FDDC811AA5728C00EBF26E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDC801AA5728C00EBF26E /* AppDelegate.swift */; };
 		65FDDC861AA5728C00EBF26E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65FDDC841AA5728C00EBF26E /* Main.storyboard */; };
 		65FDDC8B1AA5728C00EBF26E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65FDDC891AA5728C00EBF26E /* LaunchScreen.xib */; };
@@ -240,7 +240,7 @@
 		65F96F231AAA1531003EBDCF /* RefuellingStationStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStoreTests.swift; sourceTree = "<group>"; };
 		65F96F261AAA15A9003EBDCF /* GoogleMapsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsAPI.swift; sourceTree = "<group>"; };
 		65F96F281AAAF38A003EBDCF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		65FC31D01C7ECC7100D089B3 /* ReactNativeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactNativeView.swift; sourceTree = "<group>"; };
+		65FC31D01C7ECC7100D089B3 /* ReactNativeStatisticsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactNativeStatisticsView.swift; sourceTree = "<group>"; };
 		65FDDC7B1AA5728C00EBF26E /* Autometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FDDC7F1AA5728C00EBF26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65FDDC801AA5728C00EBF26E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -348,7 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */,
-				65FC31D01C7ECC7100D089B3 /* ReactNativeView.swift */,
+				65FC31D01C7ECC7100D089B3 /* ReactNativeStatisticsView.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -817,7 +817,7 @@
 				65F96F271AAA15A9003EBDCF /* GoogleMapsAPI.swift in Sources */,
 				657B00B61BCA035900A964B5 /* ArrayExtensions.swift in Sources */,
 				657B34741C3E3FE40067CB57 /* WatchSessionManager.swift in Sources */,
-				65FC31D11C7ECC7100D089B3 /* ReactNativeView.swift in Sources */,
+				65FC31D11C7ECC7100D089B3 /* ReactNativeStatisticsView.swift in Sources */,
 				65E6E0F61ACD01540069960E /* RefuelsTabBarController.swift in Sources */,
 				658F2A411C7EE802005BA8DD /* RefuelStoreBridge.m in Sources */,
 				65FDDCA51AA572FA00EBF26E /* RefuelStore.swift in Sources */,
@@ -845,7 +845,7 @@
 				651171AC1ACDA4DF005C4AE8 /* Dashboard.swift in Sources */,
 				651171AF1ACDA5C7005C4AE8 /* DashboardTests.swift in Sources */,
 				65C5AEEF1AABBDD100F97447 /* CoreDataStore.swift in Sources */,
-				658F2A4E1C7EEB74005BA8DD /* ReactNativeView.swift in Sources */,
+				658F2A4E1C7EEB74005BA8DD /* ReactNativeStatisticsView.swift in Sources */,
 				65C5AEF61AABBDEA00F97447 /* GoogleMapsAPI.swift in Sources */,
 				65FDDC971AA5728C00EBF26E /* AutometryTests.swift in Sources */,
 				65C5AEEC1AABBC3900F97447 /* RefuelCSVWrapperTests.swift in Sources */,

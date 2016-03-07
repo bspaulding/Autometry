@@ -15,5 +15,6 @@ class App extends Component {
 }
 
 AppRegistry.registerComponent('App', () => App);
+AppRegistry.registerComponent('StatisticsView', () => StatisticsView);
 
 export default App;
