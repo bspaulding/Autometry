@@ -2,7 +2,6 @@
 
 import React, {
   Component,
-  NativeModules,
   ScrollView,
   Text,
   View
@@ -18,8 +17,7 @@ import {
 } from "./BasicComponents";
 
 import Dashboard from "../dashboard";
-
-const { RefuelStore } = NativeModules;
+import RefuelStore from "../stores/RefuelStore";
 
 const styles = {
   container: {
@@ -27,16 +25,6 @@ const styles = {
     backgroundColor: "#F6F6F6",
     paddingTop: 15
   }
-};
-
-function parse(refuel : RawRefuel) : Refuel {
-  return {
-    odometer: parseInt(refuel.odometer, 10),
-    pricePerGallon: parseFloat(refuel.pricePerGallon, 10),
-    gallons: parseFloat(refuel.gallons, 10),
-    octane: parseInt(refuel.octane, 10),
-    partial: refuel.partial !== "false",
-  };
 };
 
 class StatisticsView extends Component {
@@ -47,12 +35,8 @@ class StatisticsView extends Component {
   }
 
   componentWillMount() {
-    RefuelStore.getAll((response) => {
-      this.setState({
-        refuels: response.refuels
-          .map(parse)
-          .sort((a, b) => a.odometer >= b.odometer ? -1 : 1)
-      });
+    RefuelStore.listen((refuels) => {
+      this.setState({ refuels });
     });
   }
 

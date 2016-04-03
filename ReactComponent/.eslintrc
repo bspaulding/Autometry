@@ -330,11 +330,6 @@
 		"no-fallthrough": [2],
 
 		/*
-			Error occurs when a label is used to mark a statement that is not an iteration or switch.
-		*/
-		"no-empty-label": [2],
-
-		/*
 			Disallows extending native objects.
 		*/
 		"no-extend-native": [2],
