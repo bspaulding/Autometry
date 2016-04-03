@@ -22,6 +22,9 @@
 		653837A21AF3BF57003DEB52 /* compact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653837A01AF3BF57003DEB52 /* compact.swift */; };
 		653B89151AD0415900F5EA41 /* BarGraphIconSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 653B89141AD0415900F5EA41 /* BarGraphIconSelected.png */; };
 		653B89191AD041E900F5EA41 /* BarGraphIconSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 653B89141AD0415900F5EA41 /* BarGraphIconSelected.png */; };
+		654A558B1CA9D0CF00CE99D8 /* ReactBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A558A1CA9D0CF00CE99D8 /* ReactBridge.swift */; };
+		654A55951CA9D5BC00CE99D8 /* RefuelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCA41AA572FA00EBF26E /* RefuelStore.swift */; };
+		654A55961CA9D5C100CE99D8 /* ReactBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654A558A1CA9D0CF00CE99D8 /* ReactBridge.swift */; };
 		654E4EFB1AB0AA5600AAE994 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E4EFA1AB0AA5600AAE994 /* Observable.swift */; };
 		654E4EFF1AB0AC5200AAE994 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E4EFA1AB0AA5600AAE994 /* Observable.swift */; };
 		65572FF41AAFEF1B0079739E /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 65572FF31AAFEF1B0079739E /* AppIcon.png */; };
@@ -40,8 +43,8 @@
 		657B34781C3E46CF0067CB57 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E4EFA1AB0AA5600AAE994 /* Observable.swift */; };
 		658F2A411C7EE802005BA8DD /* RefuelStoreBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2A401C7EE802005BA8DD /* RefuelStoreBridge.m */; };
 		658F2A4A1C7EEAE3005BA8DD /* RefuelStoreBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 658F2A401C7EE802005BA8DD /* RefuelStoreBridge.m */; };
-		658F2A4E1C7EEB74005BA8DD /* ReactNativeStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FC31D01C7ECC7100D089B3 /* ReactNativeStatisticsView.swift */; };
 		659B08C61AE4395E004E94AF /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
+		65A562CB1C8D323D00B29D72 /* ReactNativeRefuelsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A562CA1C8D323D00B29D72 /* ReactNativeRefuelsListView.swift */; };
 		65AAEC471AE416F900DD81A5 /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
 		65B4DE6F1AA787CC00FAC9ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */; };
 		65B4DE711AA7C14000FAC9ED /* RefuellingStationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */; };
@@ -55,7 +58,6 @@
 		65C5AEEE1AABBDA400F97447 /* RefuellingStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE721AA7C17F00FAC9ED /* RefuellingStation.swift */; };
 		65C5AEEF1AABBDD100F97447 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCA11AA572CE00EBF26E /* CoreDataStore.swift */; };
 		65C5AEF01AABBDD400F97447 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDC801AA5728C00EBF26E /* AppDelegate.swift */; };
-		65C5AEF11AABBDD900F97447 /* RefuelStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCA41AA572FA00EBF26E /* RefuelStore.swift */; };
 		65C5AEF21AABBDDC00F97447 /* RefuellingStationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */; };
 		65C5AEF31AABBDE100F97447 /* RefuellingStationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65094A7D1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift */; };
 		65C5AEF51AABBDE600F97447 /* RefuelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FDDCAD1AA5771E00EBF26E /* RefuelListViewController.swift */; };
@@ -203,6 +205,7 @@
 		65269E0D1AAD66E500AA47D6 /* DateHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
 		653837A01AF3BF57003DEB52 /* compact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = compact.swift; sourceTree = "<group>"; };
 		653B89141AD0415900F5EA41 /* BarGraphIconSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BarGraphIconSelected.png; sourceTree = "<group>"; };
+		654A558A1CA9D0CF00CE99D8 /* ReactBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactBridge.swift; sourceTree = "<group>"; };
 		654E4EFA1AB0AA5600AAE994 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		65572FF31AAFEF1B0079739E /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon.png; sourceTree = "<group>"; };
 		65572FF81AAFEF220079739E /* AppIcon.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppIcon.pxm; sourceTree = "<group>"; };
@@ -224,6 +227,7 @@
 		657B34761C3E423D0067CB57 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		658F2A3F1C7EE801005BA8DD /* Autometry-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Autometry-Bridging-Header.h"; sourceTree = "<group>"; };
 		658F2A401C7EE802005BA8DD /* RefuelStoreBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefuelStoreBridge.m; sourceTree = "<group>"; };
+		65A562CA1C8D323D00B29D72 /* ReactNativeRefuelsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactNativeRefuelsListView.swift; sourceTree = "<group>"; };
 		65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNavigationView.swift; sourceTree = "<group>"; };
 		65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
@@ -349,6 +353,7 @@
 			children = (
 				65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */,
 				65FC31D01C7ECC7100D089B3 /* ReactNativeStatisticsView.swift */,
+				65A562CA1C8D323D00B29D72 /* ReactNativeRefuelsListView.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 				653837A01AF3BF57003DEB52 /* compact.swift */,
 				657B00B51BCA035900A964B5 /* ArrayExtensions.swift */,
 				657B34731C3E3FE40067CB57 /* WatchSessionManager.swift */,
+				654A558A1CA9D0CF00CE99D8 /* ReactBridge.swift */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -813,7 +819,9 @@
 				653837A11AF3BF57003DEB52 /* compact.swift in Sources */,
 				65FDDCA81AA5734500EBF26E /* RefuelStore.xcdatamodeld in Sources */,
 				65C5AEFC1AABC26700F97447 /* RefuelCSVWrapper.swift in Sources */,
+				654A558B1CA9D0CF00CE99D8 /* ReactBridge.swift in Sources */,
 				65E6E1011ACD16AB0069960E /* Formatters.swift in Sources */,
+				65A562CB1C8D323D00B29D72 /* ReactNativeRefuelsListView.swift in Sources */,
 				65F96F271AAA15A9003EBDCF /* GoogleMapsAPI.swift in Sources */,
 				657B00B61BCA035900A964B5 /* ArrayExtensions.swift in Sources */,
 				657B34741C3E3FE40067CB57 /* WatchSessionManager.swift in Sources */,
@@ -845,12 +853,11 @@
 				651171AC1ACDA4DF005C4AE8 /* Dashboard.swift in Sources */,
 				651171AF1ACDA5C7005C4AE8 /* DashboardTests.swift in Sources */,
 				65C5AEEF1AABBDD100F97447 /* CoreDataStore.swift in Sources */,
-				658F2A4E1C7EEB74005BA8DD /* ReactNativeStatisticsView.swift in Sources */,
 				65C5AEF61AABBDEA00F97447 /* GoogleMapsAPI.swift in Sources */,
 				65FDDC971AA5728C00EBF26E /* AutometryTests.swift in Sources */,
 				65C5AEEC1AABBC3900F97447 /* RefuelCSVWrapperTests.swift in Sources */,
 				65C5AEED1AABBD9100F97447 /* Refuel.swift in Sources */,
-				65C5AEF11AABBDD900F97447 /* RefuelStore.swift in Sources */,
+				654A55951CA9D5BC00CE99D8 /* RefuelStore.swift in Sources */,
 				65C5AEFD1AABC2D000F97447 /* RefuelCSVWrapper.swift in Sources */,
 				65C5AEF01AABBDD400F97447 /* AppDelegate.swift in Sources */,
 				65C5AEF91AABBE0000F97447 /* RefuelStore.xcdatamodeld in Sources */,
@@ -861,6 +868,7 @@
 				654E4EFF1AB0AC5200AAE994 /* Observable.swift in Sources */,
 				65F3D6711C481D270035D56F /* WatchSessionManager.swift in Sources */,
 				653837A21AF3BF57003DEB52 /* compact.swift in Sources */,
+				654A55961CA9D5C100CE99D8 /* ReactBridge.swift in Sources */,
 				65C5AEF21AABBDDC00F97447 /* RefuellingStationStore.swift in Sources */,
 				65269E0E1AAD66E500AA47D6 /* DateHelpers.swift in Sources */,
 				65C5AEF31AABBDE100F97447 /* RefuellingStationsListViewController.swift in Sources */,
