@@ -2,13 +2,11 @@ import UIKit
 import React
 
 class ReactNativeStatisticsView : UIView {
-  static let jsURL = NSURL(string: "http://localhost:8081/index.ios.bundle?platform=ios&dev=true")
   
   let rootView = RCTRootView(
-    bundleURL: ReactNativeStatisticsView.jsURL,
+    bridge: ReactBridge.sharedInstance,
     moduleName: "StatisticsView",
-    initialProperties: nil,
-    launchOptions: nil
+    initialProperties: nil
   )
   
   required init(coder: NSCoder) {

@@ -1,5 +1,6 @@
 import Foundation
 import CoreData
+import React
 
 @objc(RefuelStore)
 class RefuelStore : CoreDataStore {
@@ -102,7 +103,8 @@ class RefuelStore : CoreDataStore {
       "stationName": refuel.station?.name != nil ? "\(refuel.station!.name)" : "",
       "googlePlaceID": refuel.station?.googlePlaceID != nil ? "\(refuel.station!.googlePlaceID)" : "",
       "latitude": refuel.station?.latitude != nil ? "\(refuel.station!.latitude)" : "",
-      "longitude": refuel.station?.longitude != nil ? "\(refuel.station!.longitude)" : ""
+      "longitude": refuel.station?.longitude != nil ? "\(refuel.station!.longitude)" : "",
+      "createdDate": refuel.createdDate != nil ? "\(refuel.createdDate!.timeIntervalSince1970 * 1000)" : ""
     ];
   }
   
@@ -116,6 +118,27 @@ class RefuelStore : CoreDataStore {
     // because the react bridge uses the first arg as
     // a node style error param, values are the second param
     fn([["refuels": dicts]])
+  }
+  
+  var rctListeners : [() -> ()] = []
+  @objc
+  func listen(fn: () -> ()) {
+    print("[RefuelStore#listen] rctListeners: ")
+    print(rctListeners);
+    rctListeners.append(fn);
+    print(rctListeners);
+  }
+  
+  @objc
+  override func emitChange() {
+    print("[RefuelStore#emitChange] rctListeners: ")
+    print(rctListeners)
+    super.emitChange();
+    let bridge = ReactBridge.sharedInstance
+    bridge.eventDispatcher.sendAppEventWithName("RefuelStoreChanged", body: nil)
+    for f in rctListeners {
+      f()
+    }
   }
   
   func create(refuel:Refuel) {
