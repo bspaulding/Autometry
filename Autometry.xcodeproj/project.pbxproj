@@ -30,6 +30,7 @@
 		65572FF41AAFEF1B0079739E /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 65572FF31AAFEF1B0079739E /* AppIcon.png */; };
 		65572FFA1AAFF1EA0079739E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65572FF91AAFF1EA0079739E /* Images.xcassets */; };
 		656919A41AB4BED7000E9AC2 /* Splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 656919A21AB4BED7000E9AC2 /* Splash.png */; };
+		6570B9CB1CB6286600FF994B /* ReactNativeNewRefuelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6570B9CA1CB6286600FF994B /* ReactNativeNewRefuelView.swift */; };
 		657B00B61BCA035900A964B5 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B00B51BCA035900A964B5 /* ArrayExtensions.swift */; };
 		657B34501C3DF8220067CB57 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 657B344E1C3DF8220067CB57 /* Interface.storyboard */; };
 		657B34521C3DF8220067CB57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657B34511C3DF8220067CB57 /* Assets.xcassets */; };
@@ -213,6 +214,7 @@
 		656919A21AB4BED7000E9AC2 /* Splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Splash.png; sourceTree = "<group>"; };
 		656919A31AB4BED7000E9AC2 /* Splash.pxm */ = {isa = PBXFileReference; lastKnownFileType = file; path = Splash.pxm; sourceTree = "<group>"; };
 		656A0BE11B4DE852008E301C /* RefuelStore 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RefuelStore 3.xcdatamodel"; sourceTree = "<group>"; };
+		6570B9CA1CB6286600FF994B /* ReactNativeNewRefuelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactNativeNewRefuelView.swift; sourceTree = "<group>"; };
 		657B00B51BCA035900A964B5 /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		657B344C1C3DF8220067CB57 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		657B344F1C3DF8220067CB57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 				65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */,
 				65FC31D01C7ECC7100D089B3 /* ReactNativeStatisticsView.swift */,
 				65A562CA1C8D323D00B29D72 /* ReactNativeRefuelsListView.swift */,
+				6570B9CA1CB6286600FF994B /* ReactNativeNewRefuelView.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -833,6 +836,7 @@
 				65FDDCAE1AA5771E00EBF26E /* RefuelListViewController.swift in Sources */,
 				65E6E0FF1ACD0F310069960E /* DashboardViewController.swift in Sources */,
 				65B4DE711AA7C14000FAC9ED /* RefuellingStationStore.swift in Sources */,
+				6570B9CB1CB6286600FF994B /* ReactNativeNewRefuelView.swift in Sources */,
 				65FDDCAB1AA5765200EBF26E /* Refuel.swift in Sources */,
 				65094A7E1AA7F3F400B1FEB0 /* RefuellingStationsListViewController.swift in Sources */,
 				65B4DE731AA7C17F00FAC9ED /* RefuellingStation.swift in Sources */,

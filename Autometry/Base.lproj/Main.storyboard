@@ -7,6 +7,25 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Item-->
+        <scene sceneID="KmS-SQ-Z1G">
+            <objects>
+                <viewController id="A7l-QG-5Xk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y3h-6U-qyJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z1c-hW-rOl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cRI-2o-Ye3" customClass="ReactNativeNewRefuelView" customModule="Autometry" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="UcG-hP-dcr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="owM-BY-YV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1997" y="1158"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ilb-h8-kSu">
             <objects>
@@ -1216,6 +1235,7 @@ Record a refuel to see statistics.</string>
                         <segue destination="PJL-dB-rEM" kind="relationship" relationship="viewControllers" id="SbV-5X-u7L"/>
                         <segue destination="eXe-9f-sCw" kind="relationship" relationship="viewControllers" id="CiN-Rj-7OU"/>
                         <segue destination="s0d-a5-IHq" kind="relationship" relationship="viewControllers" id="zXE-qC-I6y"/>
+                        <segue destination="A7l-QG-5Xk" kind="relationship" relationship="viewControllers" id="EGN-RM-NGF"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDt-8u-Wx0" userLabel="First Responder" sceneMemberID="firstResponder"/>
