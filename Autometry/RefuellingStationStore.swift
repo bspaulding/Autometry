@@ -1,47 +1,33 @@
 import Foundation
 
 class RefuellingStationStore : Observable {
-  private var currentRefuellingStation : RefuellingStation?
+  static let sharedInstance = RefuellingStationStore()
+  fileprivate var currentRefuellingStation : RefuellingStation?
   
-  override private init() {}
+  override fileprivate init() {}
     
   func getCurrentRefuellingStation() -> RefuellingStation? {
     return self.currentRefuellingStation
   }
-  func setCurrentRefuellingStation(station:RefuellingStation) {
+  func setCurrentRefuellingStation(_ station:RefuellingStation) {
     self.currentRefuellingStation = station
     emitChange()
   }
   
-  func nearby(latitude:Double, longitude:Double, callback:([RefuellingStation]) -> ()) {
+  func nearby(_ latitude:Double, longitude:Double, callback:@escaping ([RefuellingStation]) -> ()) {
     GoogleMapsAPI.gasStationsNearby(latitude, longitude:longitude, callback:{(data) in
-      let results = data!.valueForKey("results") as! [NSDictionary]
+      let results = data["results"] as! [NSDictionary]
       callback(results.map({ (result) -> RefuellingStation in
-        let geometry = result.valueForKey("geometry") as! NSDictionary
-        let location = geometry.valueForKey("location") as! NSDictionary
+        let geometry = result.value(forKey: "geometry") as! NSDictionary
+        let location = geometry.value(forKey: "location") as! NSDictionary
         
         return RefuellingStation(
-          name: result.valueForKey("name") as! String,
-          googlePlaceID: result.valueForKey("place_id") as! String,
-          latitude: location.valueForKey("lat") as! Double,
-          longitude: location.valueForKey("lng") as! Double
+          name: result.value(forKey: "name") as! String,
+          googlePlaceID: result.value(forKey: "place_id") as! String,
+          latitude: location.value(forKey: "lat") as! Double,
+          longitude: location.value(forKey: "lng") as! Double
         )
       }))
     })
-  }
-  
-  // Singleton Pattern
-  
-  class var sharedInstance: RefuellingStationStore {
-    struct Static {
-      static var instance: RefuellingStationStore?
-      static var token: dispatch_once_t = 0
-    }
-    
-    dispatch_once(&Static.token) {
-      Static.instance = RefuellingStationStore()
-    }
-    
-    return Static.instance!
   }
 }

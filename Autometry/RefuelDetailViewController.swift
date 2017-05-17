@@ -22,21 +22,21 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
   let refuellingStationStore = RefuellingStationStore.sharedInstance
   var refuellingStations : [RefuellingStation] = []
   
-  var currencyFormatter = NSNumberFormatter()
+  var currencyFormatter = NumberFormatter()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    keyboardNavigationView.tintColor = UIColor.whiteColor()
+    keyboardNavigationView.tintColor = UIColor.white
     keyboardNavigationView.barTintColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
-    let totalIndexPath = NSIndexPath(forRow:3, inSection:4)
+    let totalIndexPath = IndexPath(row:3, section:4)
     keyboardNavigationView.onPrevious = {
       if let responder = self.previousField() {
         responder.becomeFirstResponder()
         if responder == self.gallonsField {
-          self.tableView.scrollToRowAtIndexPath(totalIndexPath, atScrollPosition:UITableViewScrollPosition.Top, animated:true)
+          self.tableView.scrollToRow(at: totalIndexPath, at:UITableViewScrollPosition.top, animated:true)
         } else if responder == self.odometerField {
-          self.tableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated:true)
+          self.tableView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated:true)
         }
       }
     }
@@ -44,9 +44,9 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
       if let responder = self.nextField() {
         responder.becomeFirstResponder()
         if responder == self.octaneField {
-          self.tableView.scrollToRowAtIndexPath(totalIndexPath, atScrollPosition:UITableViewScrollPosition.Top, animated:true)
+          self.tableView.scrollToRow(at: totalIndexPath, at:UITableViewScrollPosition.top, animated:true)
         } else if responder == self.odometerField {
-          self.tableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated:true)
+          self.tableView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated:true)
         }
       }
     }
@@ -64,7 +64,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
       self.locationDescriptionField.text = self.refuellingStationStore.getCurrentRefuellingStation()!.name
     })
     
-    currencyFormatter.numberStyle = .CurrencyStyle
+    currencyFormatter.numberStyle = .currency
     
     bannerView.delegate = self
     
@@ -77,7 +77,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     }
     
     if let odometer = refuel.odometer {
-      odometerField.text = formatters.numberFormatter.stringFromNumber(odometer)
+      odometerField.text = formatters.numberFormatter.string(from: NSNumber(value: odometer))
     }
     
     if let station = refuel.station {
@@ -91,26 +91,26 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     }
     
     if let octane = refuel.octane {
-      octaneField.text = formatters.numberFormatter.stringFromNumber(octane)
+      octaneField.text = formatters.numberFormatter.string(from: NSNumber(value: octane))
     }
     
     if let pricePerGallon = refuel.pricePerGallon {
-      pricePerGallonField.text = formatters.numberFormatter.stringFromNumber(pricePerGallon)
+      pricePerGallonField.text = formatters.numberFormatter.string(from: NSNumber(value: pricePerGallon))
     }
     
     if let gallons = refuel.gallons {
-      gallonsField.text = formatters.numberFormatter.stringFromNumber(gallons)
+      gallonsField.text = formatters.numberFormatter.string(from: NSNumber(value: gallons))
     }
     
-    totalField.text = formatters.currencyFormatter.stringFromNumber(refuel.totalSpent())
+    totalField.text = formatters.currencyFormatter.string(from: NSNumber(value: refuel.totalSpent()))
 
-    saveButton.enabled = canSave()
+    saveButton.isEnabled = canSave()
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender:AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender:Any?) {
     switch segue.identifier {
-      case .Some("RefuellingStationSelection"):
-        let destination = segue.destinationViewController as! RefuellingStationsListViewController
+      case .some("RefuellingStationSelection"):
+        let destination = segue.destination as! RefuellingStationsListViewController
         destination.setStations(refuellingStations)
         destination.stationStore = refuellingStationStore
       default:
@@ -119,7 +119,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
         refuel.gallons = (gallonsField.text! as NSString).floatValue
         refuel.station = refuellingStationStore.getCurrentRefuellingStation()
         refuel.octane = Int(octaneField.text!)
-        refuel.partial = !partialSwitch.on
+        refuel.partial = !partialSwitch.isOn
     }
   }
   
@@ -128,7 +128,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
   }
   
   func currentResponder() -> UITextField? {
-    let responders = [octaneField, odometerField, pricePerGallonField, gallonsField].filter({ $0.isFirstResponder() })
+    let responders = [octaneField, odometerField, pricePerGallonField, gallonsField].filter({ $0.isFirstResponder })
     if responders.count > 0 {
       return responders[0]
     }
@@ -145,15 +145,15 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     }
     
     let total = ppgString.floatValue * gallonsString.floatValue
-    return currencyFormatter.stringFromNumber(total)!
+    return currencyFormatter.string(from: NSNumber(value: total))!
   }
   
   func textChanged() {
-    saveButton.enabled = canSave()
+    saveButton.isEnabled = canSave()
     totalField.text = total()
   }
   
-  func updateRefuellingStations(stations:[RefuellingStation]) {
+  func updateRefuellingStations(_ stations:[RefuellingStation]) {
     refuellingStations = stations
     
     if (refuellingStations.count > 0) {
@@ -201,26 +201,26 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
   
   // UITextFieldDelegate Protocol
 
-  func textFieldDidBeginEditing(textField: UITextField) {
+  func textFieldDidBeginEditing(_ textField: UITextField) {
     textField.inputAccessoryView = keyboardNavigationView
-    NSNotificationCenter.defaultCenter().addObserver(self, selector:"textChanged", name:UITextFieldTextDidChangeNotification, object:textField)
+    NotificationCenter.default.addObserver(self, selector:#selector(RefuelDetailViewController.textChanged), name:NSNotification.Name.UITextFieldTextDidChange, object:textField)
   }
   
-  func textFieldDidEndEditing(textField: UITextField) {
-    NSNotificationCenter.defaultCenter().removeObserver(self, name:UITextFieldTextDidChangeNotification, object:textField)
+  func textFieldDidEndEditing(_ textField: UITextField) {
+    NotificationCenter.default.removeObserver(self, name:NSNotification.Name.UITextFieldTextDidChange, object:textField)
   }
   
-  func isDigit(character : Character) -> Bool {
+  func isDigit(_ character : Character) -> Bool {
     let s = String(character).unicodeScalars
     let uni = s[s.startIndex]
     
-    let digits = NSCharacterSet.decimalDigitCharacterSet()
-    let isADigit = digits.longCharacterIsMember(uni.value)
+    let digits = CharacterSet.decimalDigits
+    let isADigit = digits.contains(UnicodeScalar(uni.value)!)
 
     return isADigit
   }
   
-  func digitize(string:String) -> String {
+  func digitize(_ string:String) -> String {
     var currentString = ""
     for character in string.characters {
       if isDigit(character) {
@@ -230,23 +230,23 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     return currentString
   }
   
-  func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+  func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     if textField == octaneField {
       return true
     }
     
     if textField == odometerField {
       let currentStringWithSeparators : NSMutableString = NSMutableString(string: textField.text!)
-      currentStringWithSeparators.replaceCharactersInRange(range, withString: string)
+      currentStringWithSeparators.replaceCharacters(in: range, with: string)
       let currentString = digitize(currentStringWithSeparators as String)
       
       let fmt = formatters.numberFormatter
-      if let number = fmt.numberFromString(currentString) {
-        textField.text = fmt.stringFromNumber(number)!
+      if let number = fmt.number(from: currentString) {
+        textField.text = fmt.string(from: number)!
         textChanged()
         return false
       } else {
-        print("Parsing failed: \(textField.text)")
+        print("Parsing failed: \(textField.text!)")
         return true
       }
     }
@@ -254,19 +254,19 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     // get current cursor position
     let selectedRange : UITextRange = textField.selectedTextRange!
     let start : UITextPosition = textField.beginningOfDocument
-    let cursorOffset : NSInteger = textField.offsetFromPosition(start, toPosition: selectedRange.start)
+    let cursorOffset : NSInteger = textField.offset(from: start, to: selectedRange.start)
 
     // Update the string in the text input
     let currentString : NSMutableString = NSMutableString(string: textField.text!)
     let currentLength = currentString.length
-    currentString.replaceCharactersInRange(range, withString: string)
+    currentString.replaceCharacters(in: range, with: string)
 
     // Strip out the decimal separator
     let decimalSeparator = formatters.numberFormatter.decimalSeparator!
-    currentString.replaceOccurrencesOfString(
-      decimalSeparator,
-      withString: "",
-      options: NSStringCompareOptions.LiteralSearch,
+    currentString.replaceOccurrences(
+      of: decimalSeparator,
+      with: "",
+      options: NSString.CompareOptions.literal,
       range: NSMakeRange(0, currentString.length)
     )
 
@@ -275,7 +275,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     let maximumFractionDigits = formatters.numberFormatter.maximumFractionDigits
     let format = NSString(format:"%%.%df", maximumFractionDigits)
     let minorUnitsPerMajor = pow(10.0, Double(maximumFractionDigits))
-    let newString = NSString(format:format, (currentValue / minorUnitsPerMajor)).stringByReplacingOccurrencesOfString(".", withString:decimalSeparator)
+    let newString = NSString(format:format, (currentValue / minorUnitsPerMajor)).replacingOccurrences(of: ".", with:decimalSeparator)
 
     textField.text = newString
     textChanged()
@@ -284,8 +284,8 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     if cursorOffset != currentLength {
       let lengthDelta = newString.characters.count - currentLength
       let newCursorOffset = max(0, min(newString.characters.count, cursorOffset + lengthDelta))
-      let newPosition = textField.positionFromPosition(textField.beginningOfDocument, offset:newCursorOffset)!
-      let newRange = textField.textRangeFromPosition(newPosition, toPosition:newPosition)
+      let newPosition = textField.position(from: textField.beginningOfDocument, offset:newCursorOffset)!
+      let newRange = textField.textRange(from: newPosition, to:newPosition)
       textField.selectedTextRange = newRange
     }
 
@@ -294,20 +294,20 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
   
   // CLLocationManagerDelegate Protocol
   
-  func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+  func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     switch status {
-    case .NotDetermined:
+    case .notDetermined:
       manager.requestWhenInUseAuthorization()
-    case .Restricted:
+    case .restricted:
       locationActivityIndicator.stopAnimating()
-    case .Denied:
+    case .denied:
       locationActivityIndicator.stopAnimating()
-    case .AuthorizedAlways, .AuthorizedWhenInUse:
+    case .authorizedAlways, .authorizedWhenInUse:
       manager.startUpdatingLocation()
     }
   }
   
-  func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     let coordinate = locations[0].coordinate
     refuellingStationStore.nearby(coordinate.latitude, longitude: coordinate.longitude, callback:{stations in
       self.updateRefuellingStations(stations)
@@ -315,14 +315,14 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     manager.stopUpdatingLocation()
   }
   
-  func locationManager(manager:CLLocationManager, didFailWithError error:NSError) {
+  func locationManager(_ manager:CLLocationManager, didFailWithError error:Error) {
     print("didFailWithError: ", error)
     locationActivityIndicator.stopAnimating()
   }
   
   // ADBannerView Delegate Protocol
   
-  func restoringFirstResponder(callback:()->()) {
+  func restoringFirstResponder(_ callback:()->()) {
     let _currentResponder = currentResponder()
     
     callback()
@@ -334,23 +334,23 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
   
   var showAd = false
   
-  func bannerViewDidLoadAd(banner: ADBannerView) {
+  func bannerViewDidLoadAd(_ banner: ADBannerView) {
     showAd = true
     restoringFirstResponder({
-      self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation:UITableViewRowAnimation.Fade)
+      self.tableView.reloadSections(IndexSet(integer: 0), with:UITableViewRowAnimation.fade)
     })
   }
   
-  func bannerView(banner:ADBannerView, didFailToReceiveAdWithError error:NSError) {
+  func bannerView(_ banner:ADBannerView, didFailToReceiveAdWithError error:Error) {
     showAd = false
     restoringFirstResponder({
-      self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation:UITableViewRowAnimation.Fade)
+      self.tableView.reloadSections(IndexSet(integer: 0), with:UITableViewRowAnimation.fade)
     })
   }
   
   // TableView Delegate
   
-  override func tableView(tableView:UITableView, numberOfRowsInSection section:NSInteger) -> NSInteger {
+  override func tableView(_ tableView:UITableView, numberOfRowsInSection section:NSInteger) -> NSInteger {
     if section == 0 && !showAd {
       return 0
     }
@@ -358,7 +358,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     return super.tableView(tableView, numberOfRowsInSection:section)
   }
   
-  override func tableView(tableView:UITableView, heightForHeaderInSection section:NSInteger) -> CGFloat {
+  override func tableView(_ tableView:UITableView, heightForHeaderInSection section:NSInteger) -> CGFloat {
     if section == 0 && !showAd {
       return 1
     }

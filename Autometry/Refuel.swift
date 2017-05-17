@@ -7,11 +7,11 @@ class Refuel {
   var gallons : Float?
   var station : RefuellingStation?
   var octane : Int?
-  var createdDate : NSDate?
+  var createdDate : Date?
   var partial : Bool?
   
   init() {}
-  init(id: AnyObject, odometer: Int, pricePerGallon: Float, gallons: Float, octane: Int?, createdDate: NSDate?, partial: Bool?) {
+  init(id: AnyObject, odometer: Int, pricePerGallon: Float, gallons: Float, octane: Int?, createdDate: Date?, partial: Bool?) {
     self.id = id
     self.odometer = odometer
     self.pricePerGallon = pricePerGallon
@@ -30,7 +30,7 @@ class Refuel {
   }
   
   func totalSpent() -> Float {
-    if let price = pricePerGallon, gallons = gallons {
+    if let price = pricePerGallon, let gallons = gallons {
       return price * gallons
     }
     

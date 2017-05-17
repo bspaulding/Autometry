@@ -12,22 +12,22 @@ class KeyboardNavigationView : UIToolbar {
 
     super.init(frame:frame)
 
-    navButtons.momentary = true
-    navButtons.addTarget(self, action:"navButtonsChanged", forControlEvents:UIControlEvents.ValueChanged)
+    navButtons.isMomentary = true
+    navButtons.addTarget(self, action:#selector(KeyboardNavigationView.navButtonsChanged), for:UIControlEvents.valueChanged)
 
     
     items = [UIBarButtonItem(customView:navButtons)]
     
     // TODO: This doesn't work...maybe need to size first?
     let bottomBorder = UIView(frame: CGRect(x: 0, y: frame.height, width: frame.width, height: 1))
-    bottomBorder.backgroundColor = UIColor.grayColor()
+    bottomBorder.backgroundColor = UIColor.gray
     self.addSubview(bottomBorder)
 
     sizeToFit()
   }
   
   convenience init() {
-    self.init(frame:CGRectZero)
+    self.init(frame:CGRect.zero)
   }
   
   required init?(coder:NSCoder) {

@@ -30,13 +30,13 @@ class DashboardViewController : UIViewController {
   let refuelStore = RefuelStore.sharedInstance
   let createdDateSorter : (Refuel,Refuel) -> Bool = {(a,b) in
     switch (a.createdDate,b.createdDate) {
-    case let (.Some(aDate), .Some(bDate)):
+    case let (.some(aDate), .some(bDate)):
       return aDate.timeIntervalSinceNow > bDate.timeIntervalSinceNow
-    case (.None, .Some(_)):
+    case (.none, .some(_)):
       return false
-    case (.Some(_), .None):
+    case (.some(_), .none):
       return true
-    case (.None, .None):
+    case (.none, .none):
       return false
     }
   }
@@ -65,16 +65,16 @@ class DashboardViewController : UIViewController {
   }
 
   func update() {
-    let refuels = refuelStore.all().sort(createdDateSorter)
+    let refuels = refuelStore.all().sorted(by: createdDateSorter)
     
     if refuels.count < 1 {
-      panels.forEach { $0.hidden = true }
-      noDataMessage.hidden = false
-      view.userInteractionEnabled = false
+      panels.forEach { $0.isHidden = true }
+      noDataMessage.isHidden = false
+      view.isUserInteractionEnabled = false
     } else {
-      panels.forEach { $0.hidden = false }
-      noDataMessage.hidden = true
-      view.userInteractionEnabled = true
+      panels.forEach { $0.isHidden = false }
+      noDataMessage.isHidden = true
+      view.isUserInteractionEnabled = true
     }
 
     mpgAverageLabel.text = dashboard.mpgAverage(refuels)
@@ -95,21 +95,21 @@ class DashboardViewController : UIViewController {
   
   // helpers
   
-  func addTopBorder(view : UIView, width : Double, color : UIColor) {
+  func addTopBorder(_ view : UIView, width : Double, color : UIColor) {
     let viewSize = view.bounds.size
-    let border = UIView(frame: CGRectMake(0, 0, viewSize.width, CGFloat(width)))
-    border.opaque = true
+    let border = UIView(frame: CGRect(x: 0, y: 0, width: viewSize.width, height: CGFloat(width)))
+    border.isOpaque = true
     border.backgroundColor = color
-    border.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleBottomMargin];
+    border.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleBottomMargin];
     view.addSubview(border)
   }
 
-  func addBottomBorder(view : UIView, width : Double, color : UIColor) {
+  func addBottomBorder(_ view : UIView, width : Double, color : UIColor) {
     let viewSize = view.bounds.size
-    let border = UIView(frame: CGRectMake(0, viewSize.height, viewSize.width, CGFloat(width)))
-    border.opaque = true
+    let border = UIView(frame: CGRect(x: 0, y: viewSize.height, width: viewSize.width, height: CGFloat(width)))
+    border.isOpaque = true
     border.backgroundColor = color
-    border.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleBottomMargin];
+    border.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleBottomMargin];
     view.addSubview(border)
   }
 }

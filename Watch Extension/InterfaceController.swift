@@ -23,8 +23,8 @@ class InterfaceController: WKInterfaceController {
   @IBOutlet var averagePPGLabel: WKInterfaceLabel!
   @IBOutlet var worstPPGLabel: WKInterfaceLabel!
 
-  override func awakeWithContext(context: AnyObject?) {
-    super.awakeWithContext(context)
+  override func awake(withContext context: Any?) {
+    super.awake(withContext: context)
     
     WatchSessionManager.sharedManager.register({
       let context = WatchSessionManager.sharedManager.context

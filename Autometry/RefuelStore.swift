@@ -2,38 +2,39 @@ import Foundation
 import CoreData
 
 class RefuelStore : CoreDataStore {
+  static let sharedInstance = RefuelStore()
   let entityName = "Refuel"
   
   static let createdDateSorter : (Refuel,Refuel) -> Bool = {(a,b) in
     switch (a.createdDate,b.createdDate) {
-    case let (.Some(aDate), .Some(bDate)):
+    case let (.some(aDate), .some(bDate)):
       return aDate.timeIntervalSinceNow > bDate.timeIntervalSinceNow
-    case (.None, .Some(_)):
+    case (.none, .some(_)):
       return false
-    case (.Some(_), .None):
+    case (.some(_), .none):
       return true
-    case (.None, .None):
+    case (.none, .none):
       return false
     }
   }
   
-  private var unwrap : (NSManagedObject) -> (Refuel) = {object in
+  fileprivate var unwrap : (NSManagedObject) -> (Refuel) = {object in
     let refuel = Refuel(
       id: object.objectID,
-      odometer: object.valueForKey("odometer") as! Int,
-      pricePerGallon: object.valueForKey("pricePerGallon") as! Float,
-      gallons: object.valueForKey("gallons") as! Float,
-      octane: object.valueForKey("octane") as? Int,
-      createdDate: object.valueForKey("date") as? NSDate,
-      partial: object.valueForKey("partial") as? Bool
+      odometer: object.value(forKey: "odometer") as! Int,
+      pricePerGallon: object.value(forKey: "pricePerGallon") as! Float,
+      gallons: object.value(forKey: "gallons") as! Float,
+      octane: object.value(forKey: "octane") as? Int,
+      createdDate: object.value(forKey: "date") as? Date,
+      partial: object.value(forKey: "partial") as? Bool
     )
     
-    if let googlePlaceID = (object.valueForKey("google_place_id") as? String) {
+    if let googlePlaceID = (object.value(forKey: "google_place_id") as? String) {
       let station = RefuellingStation(
-        name: object.valueForKey("stationName") as! String,
+        name: object.value(forKey: "stationName") as! String,
         googlePlaceID: googlePlaceID,
-        latitude: object.valueForKey("latitude") as! Double,
-        longitude: object.valueForKey("longitude") as! Double
+        latitude: object.value(forKey: "latitude") as! Double,
+        longitude: object.value(forKey: "longitude") as! Double
       )
       refuel.station = station
     }
@@ -41,7 +42,7 @@ class RefuelStore : CoreDataStore {
     return refuel
   }
   
-  private var wrap : (Refuel, NSManagedObject) -> (NSManagedObject) = {refuel, object in
+  fileprivate var wrap : (Refuel, NSManagedObject) -> (NSManagedObject) = {refuel, object in
     if let odometer = refuel.odometer {
       object.setValue(odometer, forKey: "odometer")
     }
@@ -67,7 +68,7 @@ class RefuelStore : CoreDataStore {
     return object
   }
   
-  private override init() {
+  fileprivate override init() {
     super.init()
     
     storeName = "RefuelStore"
@@ -75,10 +76,10 @@ class RefuelStore : CoreDataStore {
   }
   
   func all() -> [Refuel] {
-    let request = NSFetchRequest(entityName: entityName)
+    let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
     if let context = managedObjectContext {
       do {
-        let results = try context.executeFetchRequest(request) as! [NSManagedObject]
+        let results = try context.fetch(request) as! [NSManagedObject]
         return results.map(unwrap)
       } catch {
         print("Could not fetch \(error)")
@@ -91,12 +92,12 @@ class RefuelStore : CoreDataStore {
     return [];
   }
   
-  func create(refuel:Refuel) {
+  func create(_ refuel:Refuel) {
     let context = managedObjectContext!
-    let entity = NSEntityDescription.entityForName(entityName, inManagedObjectContext:context)
+    let entity = NSEntityDescription.entity(forEntityName: entityName, in:context)
     
-    let object = NSManagedObject(entity: entity!, insertIntoManagedObjectContext:context)
-    let createdDate = NSDate()
+    let object = NSManagedObject(entity: entity!, insertInto:context)
+    let createdDate = Date()
     object.setValue(createdDate, forKey: "date")
     object.setValue(refuel.odometer, forKey: "odometer")
     object.setValue(refuel.pricePerGallon, forKey: "pricePerGallon")
@@ -119,7 +120,7 @@ class RefuelStore : CoreDataStore {
     })
   }
   
-  func update(refuel:Refuel) {
+  func update(_ refuel:Refuel) {
     if let object = findObject(refuel) {
       wrap(refuel, object)
       
@@ -136,11 +137,11 @@ class RefuelStore : CoreDataStore {
     }
   }
   
-  func delete(refuel:Refuel) {
+  func delete(_ refuel:Refuel) {
     if let objectID = refuel.id as? NSManagedObjectID {
       let context = managedObjectContext!
-      let object = context.objectWithID(objectID)
-      context.deleteObject(object)
+      let object = context.object(with: objectID)
+      context.delete(object)
       saveContext(context, success: {
         self.emitChange()
       },failure: { error in
@@ -149,27 +150,12 @@ class RefuelStore : CoreDataStore {
     }
   }
   
-  // Singleton Pattern
-  
-  class var sharedInstance: RefuelStore {
-    struct Static {
-      static var instance: RefuelStore?
-      static var token: dispatch_once_t = 0
-    }
-    
-    dispatch_once(&Static.token) {
-      Static.instance = RefuelStore()
-    }
-    
-    return Static.instance!
-  }
-  
   // Private Methods
   
-  private func findObject(refuel:Refuel) -> NSManagedObject? {
+  fileprivate func findObject(_ refuel:Refuel) -> NSManagedObject? {
     let context = managedObjectContext!
     do {
-      return try context.existingObjectWithID(refuel.id as! NSManagedObjectID)
+      return try context.existingObject(with: refuel.id as! NSManagedObjectID)
     } catch {
       print("Uncaught exception")
       return nil

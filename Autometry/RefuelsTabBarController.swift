@@ -11,18 +11,18 @@ class RefuelsTabBarController : UITabBarController {
     UITabBar.appearance().tintColor = tintColor
   }
 
-  @IBAction func export(sender: AnyObject) {
+  @IBAction func export(_ sender: AnyObject) {
     let refuels = refuelStore.all()
     let csvString = RefuelCSVWrapper.wrapAll(refuels)
 
-    let docPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
-    let filePath = NSURL(fileURLWithPath: docPath).URLByAppendingPathComponent("AutometryDataExport.csv")
+    let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+    let filePath = URL(fileURLWithPath: docPath).appendingPathComponent("AutometryDataExport.csv")
     do {
-      try csvString.writeToURL(filePath, atomically: true, encoding: NSUTF8StringEncoding)
+      try csvString.write(to: filePath, atomically: true, encoding: String.Encoding.utf8)
 
       let activityViewController = UIActivityViewController(activityItems: [filePath], applicationActivities: nil)
       activityViewController.setValue("Autometry Data Export", forKey: "subject")
-      presentViewController(activityViewController, animated: true, completion: {})
+      present(activityViewController, animated: true, completion: {})
     } catch {
       print("writing to csv failed: \(error)")
     }

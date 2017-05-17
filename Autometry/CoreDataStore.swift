@@ -8,23 +8,23 @@ class CoreDataStore: Observable {
   
   // From Base Class in Example
   
-  lazy var applicationDocumentsDirectory: NSURL = {
+  lazy var applicationDocumentsDirectory: URL = {
     // The directory the application uses to store the Core Data store file. This code uses a directory named "me.iascchen.MyTTT" in the application's documents Application Support directory.
-    let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+    let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     return urls[urls.count-1] 
     }()
   
   lazy var managedObjectModel: NSManagedObjectModel = {
     // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-    let modelURL = NSBundle.mainBundle().URLForResource(self.storeName, withExtension: "momd")!
-    return NSManagedObjectModel(contentsOfURL: modelURL)!
+    let modelURL = Bundle.main.url(forResource: self.storeName, withExtension: "momd")!
+    return NSManagedObjectModel(contentsOf: modelURL)!
     }()
   
   lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
     // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
     // Create the coordinator and store
     var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-    let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent(self.storeFilename)
+    let url = self.applicationDocumentsDirectory.appendingPathComponent(self.storeFilename)
     var error: NSError? = nil
     var failureReason = "There was an error creating or loading the application's saved data."
     let options = [
@@ -32,7 +32,7 @@ class CoreDataStore: Observable {
       NSInferMappingModelAutomaticallyOption: true
     ]
     do {
-      try coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: options)
+      try coordinator!.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: options)
     } catch var error1 as NSError {
       coordinator = nil
       // Report any error we got.
@@ -54,11 +54,11 @@ class CoreDataStore: Observable {
   override init(){
     super.init()
     
-    NSNotificationCenter.defaultCenter().addObserver(self, selector: "contextDidSaveContext:", name: NSManagedObjectContextDidSaveNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(CoreDataStore.contextDidSaveContext(_:)), name: NSNotification.Name.NSManagedObjectContextDidSave, object: nil)
   }
   
   deinit{
-    NSNotificationCenter.defaultCenter().removeObserver(self)
+    NotificationCenter.default.removeObserver(self)
   }
   
   lazy var managedObjectContext: NSManagedObjectContext? = {
@@ -67,7 +67,7 @@ class CoreDataStore: Observable {
     if coordinator == nil {
       return nil
     }
-    var managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
+    var managedObjectContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.mainQueueConcurrencyType)
     managedObjectContext.persistentStoreCoordinator = coordinator
     return managedObjectContext
     }()
@@ -82,14 +82,14 @@ class CoreDataStore: Observable {
     if coordinator == nil {
       return nil
     }
-    var backgroundContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.PrivateQueueConcurrencyType)
+    var backgroundContext = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.privateQueueConcurrencyType)
     backgroundContext.persistentStoreCoordinator = coordinator
     return backgroundContext
     }()
   
   
   // save NSManagedObjectContext
-  func saveContext (context: NSManagedObjectContext, success:()->(), failure:(error:ErrorType)->()) {
+  func saveContext (_ context: NSManagedObjectContext, success:()->(), failure:(_ error:Error)->()) {
     if context.hasChanges {
       do {
         try context.save()
@@ -98,37 +98,37 @@ class CoreDataStore: Observable {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog("Unresolved error \(error)")
-        failure(error: error)
+        failure(error)
       }
     } else {
       success()
     }
   }
   
-  func saveContext (success:()->(), failure:(error:ErrorType)->()) {
+  func saveContext (_ success:()->(), failure:(_ error:Error)->()) {
     self.saveContext(self.backgroundContext!, success: success, failure: failure)
   }
   
   // call back function by saveContext, support multi-thread
-  func contextDidSaveContext(notification: NSNotification) {
+  func contextDidSaveContext(_ notification: Notification) {
     let sender = notification.object as! NSManagedObjectContext
     if sender === self.managedObjectContext {
       NSLog("******** Saved main Context in this thread")
-      self.backgroundContext!.performBlock {
-        self.backgroundContext!.mergeChangesFromContextDidSaveNotification(notification)
+      self.backgroundContext!.perform {
+        self.backgroundContext!.mergeChanges(fromContextDidSave: notification)
       }
     } else if sender === self.backgroundContext {
       NSLog("******** Saved background Context in this thread")
-      self.managedObjectContext!.performBlock {
-        self.managedObjectContext!.mergeChangesFromContextDidSaveNotification(notification)
+      self.managedObjectContext!.perform {
+        self.managedObjectContext!.mergeChanges(fromContextDidSave: notification)
       }
     } else {
       NSLog("******** Saved Context in other thread")
-      self.backgroundContext!.performBlock {
-        self.backgroundContext!.mergeChangesFromContextDidSaveNotification(notification)
+      self.backgroundContext!.perform {
+        self.backgroundContext!.mergeChanges(fromContextDidSave: notification)
       }
-      self.managedObjectContext!.performBlock {
-        self.managedObjectContext!.mergeChangesFromContextDidSaveNotification(notification)
+      self.managedObjectContext!.perform {
+        self.managedObjectContext!.mergeChanges(fromContextDidSave: notification)
       }
     }
   }

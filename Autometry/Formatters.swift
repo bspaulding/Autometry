@@ -1,14 +1,14 @@
 import Foundation
 
 struct Formatters {
-  let dateFormatter = NSDateFormatter()
-  let currencyFormatter = NSNumberFormatter()
-  let numberFormatter = NSNumberFormatter()
+  let dateFormatter = DateFormatter()
+  let currencyFormatter = NumberFormatter()
+  let numberFormatter = NumberFormatter()
   
   init() {
-    dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
-    currencyFormatter.numberStyle = .CurrencyStyle
-    numberFormatter.numberStyle = .DecimalStyle
+    dateFormatter.dateStyle = DateFormatter.Style.long
+    currencyFormatter.numberStyle = .currency
+    numberFormatter.numberStyle = .decimal
   }
 }
 

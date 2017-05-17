@@ -9,30 +9,30 @@
 import Foundation
 
 class RefuelCSVWrapper {
-  class var dateFormatter : NSDateFormatter {
-    let formatter = NSDateFormatter()
+  class var dateFormatter : DateFormatter {
+    let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd'T'HH:mmZ"
     return formatter
   }
-  class var currencyFormatter : NSNumberFormatter {
-    let formatter = NSNumberFormatter()
-    formatter.numberStyle = .CurrencyStyle
+  class var currencyFormatter : NumberFormatter {
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .currency
     return formatter
   }
   
   class var header : String {
-    return ["Date", "Odometer", "Price Per Gallon", "Gallons", "Octane", "Partial", "Location Name", "Latitude", "Longtidue", "Google Place ID"].joinWithSeparator(",")
+    return ["Date", "Odometer", "Price Per Gallon", "Gallons", "Octane", "Partial", "Location Name", "Latitude", "Longtidue", "Google Place ID"].joined(separator: ",")
   }
   
-  class func wrapAll(refuels:[Refuel]) -> String {
-    return ([header] + refuels.map(wrap)).joinWithSeparator("\n")
+  class func wrapAll(_ refuels:[Refuel]) -> String {
+    return ([header] + refuels.map(wrap)).joined(separator: "\n")
   }
   
-  class func wrap(refuel:Refuel) -> String {
+  class func wrap(_ refuel:Refuel) -> String {
     var values : [String] = []
     
     if let createdDate = refuel.createdDate {
-      values.append(dateFormatter.stringFromDate(createdDate))
+      values.append(dateFormatter.string(from: createdDate as Date))
     } else { values.append("") }
     
     if let odometer = refuel.odometer {
@@ -67,6 +67,6 @@ class RefuelCSVWrapper {
       values.append("")
     }
     
-    return values.joinWithSeparator(",")
+    return values.joined(separator: ",")
   }
 }

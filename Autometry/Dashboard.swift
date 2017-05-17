@@ -1,7 +1,7 @@
 import Foundation
 
 class Dashboard {    
-  func toDictionary(refuels: [Refuel]) -> [String : String] {
+  func toDictionary(_ refuels: [Refuel]) -> [String : String] {
     return [
       "totalMiles": totalMiles(refuels),
       "totalSpent": totalSpent(refuels),
@@ -17,142 +17,142 @@ class Dashboard {
     ];
   }
   
-  func mpgAverage(refuels : [Refuel]) -> String {
+  func mpgAverage(_ refuels : [Refuel]) -> String {
     if refuels.count <= 1 {
       return "N/A"
     }
     
-    let gallons : Float = refuels[1...refuels.count - 1].reduce(0, combine: { $0 + $1.gallons! })
+    let gallons : Float = refuels[1...refuels.count - 1].reduce(0, { $0 + $1.gallons! })
     let mpg = Int(miles(refuels) / gallons)
     
     return "\(mpg)"
   }
   
-  func mpgBest(refuels: [Refuel]) -> String {
+  func mpgBest(_ refuels: [Refuel]) -> String {
     if refuels.count <= 1 {
       return "N/A"
     }
     
-    let mpg = mpgs(refuels).maxElement()!
+    let mpg = mpgs(refuels).max()!
     return "\(mpg)"
   }
   
-  func mpgWorst(refuels: [Refuel]) -> String {
+  func mpgWorst(_ refuels: [Refuel]) -> String {
     if refuels.count <= 1 {
       return "N/A"
     }
     
-    let mpg = mpgs(refuels).minElement()!
+    let mpg = mpgs(refuels).min()!
     return "\(mpg)"
   }
   
-  func averagePPG(refuels : [Refuel]) -> String {
+  func averagePPG(_ refuels : [Refuel]) -> String {
     if refuels.count < 1 {
       return "N/A"
     }
     
-    let averagePPG = refuels.reduce(0, combine: { $0 + $1.pricePerGallon! }) / Float(refuels.count)
-    return formatters.currencyFormatter.stringFromNumber(averagePPG)!
+    let averagePPG = refuels.reduce(0, { $0 + $1.pricePerGallon! }) / Float(refuels.count)
+    return formatters.currencyFormatter.string(from: NSNumber(value: averagePPG))!
   }
   
-  func pricePerGallonBest(refuels:[Refuel]) -> String {
+  func pricePerGallonBest(_ refuels:[Refuel]) -> String {
     if refuels.count < 1 {
       return "N/A"
     }
     
-    let ppg = refuels.map { $0.pricePerGallon! }.minElement()!
-    return formatters.currencyFormatter.stringFromNumber(ppg)!
+    let ppg = refuels.map { $0.pricePerGallon! }.min()!
+    return formatters.currencyFormatter.string(from: NSNumber(value: ppg))!
   }
   
-  func pricePerGallonWorst(refuels:[Refuel]) -> String {
+  func pricePerGallonWorst(_ refuels:[Refuel]) -> String {
     if refuels.count < 1 {
       return "N/A"
     }
     
-    let ppg = refuels.map { $0.pricePerGallon! }.maxElement()!
-    return formatters.currencyFormatter.stringFromNumber(ppg)!
+    let ppg = refuels.map { $0.pricePerGallon! }.max()!
+    return formatters.currencyFormatter.string(from: NSNumber(value: ppg))!
   }
   
-  func totalSpent(refuels : [Refuel]) -> String {
-    return formatters.currencyFormatter.stringFromNumber(totalSpent(refuels))!
+  func totalSpent(_ refuels : [Refuel]) -> String {
+    return formatters.currencyFormatter.string(from: NSNumber(value: totalSpent(refuels)))!
   }
   
-  func totalSpentBest(refuels:[Refuel]) -> String {
+  func totalSpentBest(_ refuels:[Refuel]) -> String {
     if refuels.count < 1 {
       return "$0.00"
     }
     
-    let cost = refuels.map({ $0.totalSpent() }).minElement()!
-    return formatters.currencyFormatter.stringFromNumber(cost)!
+    let cost = refuels.map({ $0.totalSpent() }).min()!
+    return formatters.currencyFormatter.string(from: NSNumber(value: cost))!
   }
   
-  func totalSpentWorst(refuels:[Refuel]) -> String {
+  func totalSpentWorst(_ refuels:[Refuel]) -> String {
     if refuels.count < 1 {
       return "$0.00"
     }
     
-    let cost = refuels.map({ $0.totalSpent() }).maxElement()!
-    return formatters.currencyFormatter.stringFromNumber(cost)!
+    let cost = refuels.map({ $0.totalSpent() }).max()!
+    return formatters.currencyFormatter.string(from: NSNumber(value: cost))!
   }
   
-  func totalMiles(refuels : [Refuel]) -> String {
+  func totalMiles(_ refuels : [Refuel]) -> String {
     if refuels.count <= 1 {
       return "0"
     }
 
-    return formatters.numberFormatter.stringFromNumber(miles(refuels))!
+    return formatters.numberFormatter.string(from: NSNumber(value: miles(refuels)))!
   }
   
-  func totalMilesLongest(refuels:[Refuel]) -> String {
+  func totalMilesLongest(_ refuels:[Refuel]) -> String {
     if refuels.count <= 1 {
       return "0"
     }
     
-    let miles = milesPerTrip(refuels).maxElement()!
-    return formatters.numberFormatter.stringFromNumber(miles)!
+    let miles = milesPerTrip(refuels).max()!
+    return formatters.numberFormatter.string(from: NSNumber(value: miles))!
   }
   
-  func totalMilesShortest(refuels:[Refuel]) -> String {
+  func totalMilesShortest(_ refuels:[Refuel]) -> String {
     if refuels.count <= 1 {
       return "0"
     }
     
-    let miles = milesPerTrip(refuels).minElement()!
-    return formatters.numberFormatter.stringFromNumber(miles)!
+    let miles = milesPerTrip(refuels).min()!
+    return formatters.numberFormatter.string(from: NSNumber(value: miles))!
   }
   
-  func costPerMile(refuels: [Refuel]) -> String {
+  func costPerMile(_ refuels: [Refuel]) -> String {
     if refuels.count <= 1 {
       return "$0.00"
     }
     
     let _cpms = cpms(refuels)
-    let cpm = _cpms.reduce(0.0, combine: { $0 + $1 }) / Float(_cpms.count)
-    return formatters.currencyFormatter.stringFromNumber(cpm)!
+    let cpm = _cpms.reduce(0.0, { $0 + $1 }) / Float(_cpms.count)
+    return formatters.currencyFormatter.string(from: NSNumber(value: cpm))!
   }
   
-  func costPerMileBest(refuels: [Refuel]) -> String {
+  func costPerMileBest(_ refuels: [Refuel]) -> String {
     if refuels.count <= 1 {
       return "$0.00"
     }
     
-    let cpm = cpms(refuels).minElement()!
-    return formatters.currencyFormatter.stringFromNumber(cpm)!
+    let cpm = cpms(refuels).min()!
+    return formatters.currencyFormatter.string(from: NSNumber(value: cpm))!
   }
   
-  func costPerMileWorst(refuels: [Refuel]) -> String {
+  func costPerMileWorst(_ refuels: [Refuel]) -> String {
     if refuels.count <= 1 {
       return "$0.00"
     }
     
-    let cpm = cpms(refuels).maxElement()!
-    return formatters.currencyFormatter.stringFromNumber(cpm)!
+    let cpm = cpms(refuels).max()!
+    return formatters.currencyFormatter.string(from: NSNumber(value: cpm))!
   }
   
   // Helpers
   
-  func arrayFind<T>(f: T -> Bool, xs: [T]) -> T? {
-    for (_, x) in xs.enumerate() {
+  func arrayFind<T>(_ f: (T) -> Bool, xs: [T]) -> T? {
+    for (_, x) in xs.enumerated() {
       if f(x) {
         return x;
       }
@@ -161,8 +161,8 @@ class Dashboard {
     return nil
   }
   
-  func arrayFindRight<T>(f: T -> Bool, xs: [T]) -> T? {
-    for (var i = xs.count - 1; i >= 0; i -= 1) {
+  func arrayFindRight<T>(_ f: (T) -> Bool, xs: [T]) -> T? {
+    for i in (0...(xs.count - 1)).reversed() {
       if f(xs[i]) {
         return xs[i];
       }
@@ -171,8 +171,8 @@ class Dashboard {
     return nil
   }
   
-  func arraySliceFindRight<T>(f: T -> Bool, xs: ArraySlice<T>) -> T? {
-    for (var i = xs.count - 1; i >= 0; i -= 1) {
+  func arraySliceFindRight<T>(_ f: (T) -> Bool, xs: ArraySlice<T>) -> T? {
+    for i in (0...(xs.count - 1)).reversed() {
       if f(xs[i]) {
         return xs[i];
       }
@@ -181,8 +181,8 @@ class Dashboard {
     return nil
   }
   
-  func arraySliceFind<T>(f: T -> Bool, xs: ArraySlice<T>) -> T? {
-    for (_, x) in xs.enumerate() {
+  func arraySliceFind<T>(_ f: (T) -> Bool, xs: ArraySlice<T>) -> T? {
+    for (_, x) in xs.enumerated() {
       if f(x) {
         return x;
       }
@@ -191,10 +191,10 @@ class Dashboard {
     return nil
   }
   
-  let isFull: Refuel -> Bool = { !$0.isPartial() }
+  let isFull: (Refuel) -> Bool = { !$0.isPartial() }
   
-  func tripEnd(refuels: [Refuel], currentRefuel: Refuel) -> Refuel? {
-    if let currentRefuelIndex = refuels.indexOf({ $0 === currentRefuel }) {
+  func tripEnd(_ refuels: [Refuel], currentRefuel: Refuel) -> Refuel? {
+    if let currentRefuelIndex = refuels.index(where: { $0 === currentRefuel }) {
       return arraySliceFindRight(isFull,
         xs: refuels[0...currentRefuelIndex]
       )
@@ -203,8 +203,8 @@ class Dashboard {
     return refuels[0]
   }
   
-  func tripStart(refuels: [Refuel], currentRefuel: Refuel) -> Refuel {
-    if let currentRefuelIndex = refuels.indexOf({ $0 === currentRefuel }) {
+  func tripStart(_ refuels: [Refuel], currentRefuel: Refuel) -> Refuel {
+    if let currentRefuelIndex = refuels.index(where: { $0 === currentRefuel }) {
       let lastFull = arraySliceFind(isFull,
         xs: refuels[currentRefuelIndex + 1...refuels.count - 1]
       )
@@ -218,33 +218,33 @@ class Dashboard {
     return refuels.last!
   }
   
-  func mpgs(refuels: [Refuel]) -> [Int] {
+  func mpgs(_ refuels: [Refuel]) -> [Int] {
     if refuels.count <= 1 {
       return []
     }
     
     var firstFullRefuelIndex = 0
     if let firstFullRefuel = arrayFind(isFull, xs: refuels) {
-      firstFullRefuelIndex = refuels.indexOf({ $0 === firstFullRefuel })!
+      firstFullRefuelIndex = refuels.index(where: { $0 === firstFullRefuel })!
     }
     
-    return refuels[firstFullRefuelIndex...refuels.count - 2].enumerate().map({ (index, refuel) in
+    return refuels[firstFullRefuelIndex...refuels.count - 2].enumerated().map({ (index, refuel) in
       let start = tripStart(refuels, currentRefuel: refuel)
       let end = tripEnd(refuels, currentRefuel: refuel)!
       let miles = Float(end.odometer! - start.odometer!)
       
-      let startIndex = refuels.indexOf({ $0 === start })!
-      let endIndex = refuels.indexOf({ $0 === end })!
+      let startIndex = refuels.index(where: { $0 === start })!
+      let endIndex = refuels.index(where: { $0 === end })!
       let gallons = refuels[endIndex...startIndex - 1]
         .map({ $0.getGallons() })
-        .reduce(0, combine: +)
+        .reduce(0, +)
       
       return Int(miles / gallons)
     })
   }
   
-  private func cpms(refuels: [Refuel]) -> [Float] {
-    return refuels[0...refuels.count - 2].enumerate().map({ (index, refuel) in
+  fileprivate func cpms(_ refuels: [Refuel]) -> [Float] {
+    return refuels[0...refuels.count - 2].enumerated().map({ (index, refuel) in
       let previous = refuels[index+1]
       let cost = previous.totalSpent()
       let miles = Float(refuel.odometer! - previous.odometer!)
@@ -252,21 +252,21 @@ class Dashboard {
     })
   }
  
-  private func miles(refuels: [Refuel]) -> Float {
+  fileprivate func miles(_ refuels: [Refuel]) -> Float {
     return Float(refuels[0].odometer! - refuels[refuels.count-1].odometer!)
   }
   
-  func milesPerTrip(refuels: [Refuel]) -> [Int] {
+  func milesPerTrip(_ refuels: [Refuel]) -> [Int] {
     if refuels.count <= 1 {
       return []
     }
     
-    return refuels[0...refuels.count - 2].enumerate().map({(index,refuel) in
+    return refuels[0...refuels.count - 2].enumerated().map({(index,refuel) in
       return Int(refuel.odometer!) - Int(refuels[index+1].odometer!)
     })
   }
   
-  private func totalSpent(refuels: [Refuel]) -> Float {
-    return refuels.reduce(0, combine: { $0 + $1.totalSpent() })
+  fileprivate func totalSpent(_ refuels: [Refuel]) -> Float {
+    return refuels.reduce(0, { $0 + $1.totalSpent() })
   }
 }

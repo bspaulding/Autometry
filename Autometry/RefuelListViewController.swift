@@ -13,27 +13,27 @@ class RefuelListViewController : UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    tableView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+    tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
     let createdDateSorter : (Refuel,Refuel) -> Bool = {(a,b) in
       switch (a.createdDate,b.createdDate) {
-      case let (.Some(aDate), .Some(bDate)):
+      case let (.some(aDate), .some(bDate)):
         return aDate.timeIntervalSinceNow > bDate.timeIntervalSinceNow
-      case (.None, .Some(_)):
+      case (.none, .some(_)):
         return false
-      case (.Some(_), .None):
+      case (.some(_), .none):
         return true
-      case (.None, .None):
+      case (.none, .none):
         return false
       }
     }
 
-    refuels = refuelStore.all().sort(createdDateSorter)
+    refuels = refuelStore.all().sorted(by: createdDateSorter)
     mpgs = calculator.mpgs(refuels)
     milesPerTrip = calculator.milesPerTrip(refuels)
     
     refuelStore.register({
-      self.refuels = self.refuelStore.all().sort(createdDateSorter)
+      self.refuels = self.refuelStore.all().sorted(by: createdDateSorter)
       self.mpgs = self.calculator.mpgs(self.refuels)
       self.milesPerTrip = self.calculator.milesPerTrip(self.refuels)
       print(self.calculator.milesPerTrip(self.refuels))
@@ -41,11 +41,11 @@ class RefuelListViewController : UITableViewController {
     })
   }
   
-  @IBAction func cancel(segue: UIStoryboardSegue) {
+  @IBAction func cancel(_ segue: UIStoryboardSegue) {
   }
   
-  @IBAction func save(segue: UIStoryboardSegue) {
-    let source = segue.sourceViewController as! RefuelDetailViewController
+  @IBAction func save(_ segue: UIStoryboardSegue) {
+    let source = segue.source as! RefuelDetailViewController
     if let _ = source.refuel.id {
       refuelStore.update(source.refuel)
     } else {
@@ -53,28 +53,28 @@ class RefuelListViewController : UITableViewController {
     }
   }
   
-  override func prepareForSegue(segue:UIStoryboardSegue, sender:AnyObject?) {
+  override func prepare(for segue:UIStoryboardSegue, sender:Any?) {
     if segue.identifier == "ShowRefuelDetail" {
-      let destination = segue.destinationViewController as! RefuelDetailViewController
+      let destination = segue.destination as! RefuelDetailViewController
       destination.refuel = selectedRefuel!
     }
   }
   
   // TableViewDataSource interface
   
-  override func numberOfSectionsInTableView(tableView: UITableView) -> NSInteger {
+  override func numberOfSections(in tableView: UITableView) -> NSInteger {
     return 1;
   }
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return refuels.count;
   }
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("RefuelCellIdentifier", forIndexPath: indexPath) 
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "RefuelCellIdentifier", for: indexPath) 
     
     let refuel = refuels[indexPath.row]
     var text = ""
     if let date = refuel.createdDate {
-      text = formatters.dateFormatter.stringFromDate(date)
+      text = formatters.dateFormatter.string(from: date)
     } else {
       text = "Unknown Date"
     }
@@ -83,7 +83,7 @@ class RefuelListViewController : UITableViewController {
     let odometerLabel = cell.viewWithTag(3001) as! UILabel
     var odometerValue = ""
     if indexPath.row > 0 && indexPath.row - 1 < milesPerTrip.count {
-      let miles = formatters.numberFormatter.stringFromNumber(milesPerTrip[indexPath.row - 1])!
+      let miles = formatters.numberFormatter.string(from: NSNumber(value: milesPerTrip[indexPath.row - 1]))!
       odometerValue = "\(miles) miles"
     }
 
@@ -91,23 +91,23 @@ class RefuelListViewController : UITableViewController {
     if (refuels.count - indexPath.row - 1) < mpgs.count {
       mpgValue = "\(mpgs[refuels.count - indexPath.row - 1]) mpg"
     }
-    odometerLabel.text = compact([odometerValue, mpgValue]).joinWithSeparator(", ")
+    odometerLabel.text = compact([odometerValue, mpgValue]).joined(separator: ", ")
     odometerLabel.accessibilityValue = odometerValue
     
-    (cell.viewWithTag(3002) as! UILabel).text = formatters.currencyFormatter.stringFromNumber(refuel.pricePerGallon!)
+    (cell.viewWithTag(3002) as! UILabel).text = formatters.currencyFormatter.string(from: NSNumber(value: refuel.pricePerGallon!))
     let total = refuel.totalSpent()
-    (cell.viewWithTag(3004) as! UILabel).text = formatters.currencyFormatter.stringFromNumber(total)
+    (cell.viewWithTag(3004) as! UILabel).text = formatters.currencyFormatter.string(from: NSNumber(value: total))
 
     return cell
   }
-  override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+  override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     return true
   }
-  override func tableView(tableView: UITableView, commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath:NSIndexPath) {
-    if editingStyle == UITableViewCellEditingStyle.Delete {
+  override func tableView(_ tableView: UITableView, commit editingStyle:UITableViewCellEditingStyle, forRowAt indexPath:IndexPath) {
+    if editingStyle == UITableViewCellEditingStyle.delete {
       let refuel = refuels[indexPath.row]
       refuels = refuels.filter({ $0.id as! NSManagedObjectID != refuel.id as! NSManagedObjectID })
-      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Fade)
+      tableView.deleteRows(at: [indexPath], with:UITableViewRowAnimation.fade)
       refuelStore.delete(refuel)
     } else {
       print("Unhandled editing style: ", editingStyle);
@@ -116,8 +116,8 @@ class RefuelListViewController : UITableViewController {
   
   // TableViewDelegate protocol
   
-  override func tableView(tableView:UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
+  override func tableView(_ tableView:UITableView, didSelectRowAt indexPath:IndexPath) {
     selectedRefuel = refuels[indexPath.row]
-    performSegueWithIdentifier("ShowRefuelDetail", sender: self)
+    performSegue(withIdentifier: "ShowRefuelDetail", sender: self)
   }
 }

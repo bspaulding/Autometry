@@ -9,18 +9,18 @@
 import Foundation
 
 class DateHelpers {
-  class var calendar : NSCalendar? {
-    return NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+  class var calendar : Calendar? {
+    return Calendar(identifier: Calendar.Identifier.gregorian)
   }
   
-  class func dateWithYear(year:Int, month:Int, day:Int, hour:Int, minute:Int, tz:String) -> NSDate? {
-    let components = NSDateComponents()
+  class func dateWithYear(_ year:Int, month:Int, day:Int, hour:Int, minute:Int, tz:String) -> Date? {
+    var components = DateComponents()
     components.year = year
     components.month = month
     components.day = day
     components.hour = hour
     components.minute = minute
-    components.timeZone = NSTimeZone(abbreviation:tz)!
-    return calendar!.dateFromComponents(components)
+    (components as NSDateComponents).timeZone = TimeZone(abbreviation:tz)!
+    return calendar!.date(from: components)
   }
 }

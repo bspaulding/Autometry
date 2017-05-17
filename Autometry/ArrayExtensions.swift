@@ -1,5 +1,5 @@
-func arrayFind<T>(f: T -> Bool, xs: [T]) -> T? {
-  for (_, x) in xs.enumerate() {
+func arrayFind<T>(_ f: (T) -> Bool, xs: [T]) -> T? {
+  for (_, x) in xs.enumerated() {
     if f(x) {
       return x;
     }
@@ -8,9 +8,9 @@ func arrayFind<T>(f: T -> Bool, xs: [T]) -> T? {
   return nil
 }
 
-func arrayFindRight<T>(f: T -> Bool, xs: [T]) -> T? {
-  for (var i = xs.count - 1; i >= 0; i -= 1) {
-  if f(xs[i]) {
+func arrayFindRight<T>(_ f: (T) -> Bool, xs: [T]) -> T? {
+  for i in (0...(xs.count - 1)).reversed() {
+    if f(xs[i]) {
       return xs[i];
     }
   }
@@ -19,17 +19,17 @@ func arrayFindRight<T>(f: T -> Bool, xs: [T]) -> T? {
 }
 
 extension Array {
-  func find(f: Element -> Bool) -> Element? {
+  func find(_ f: (Element) -> Bool) -> Element? {
     return arrayFind(f, xs: self)
   }
   
-  func findRight(f: Element -> Bool) -> Element? {
+  func findRight(_ f: (Element) -> Bool) -> Element? {
     return arrayFindRight(f, xs: self)
   }
 }
 
-func arraySliceFind<T>(f: T -> Bool, xs: ArraySlice<T>) -> T? {
-  for (_, x) in xs.enumerate() {
+func arraySliceFind<T>(_ f: (T) -> Bool, xs: ArraySlice<T>) -> T? {
+  for (_, x) in xs.enumerated() {
     if f(x) {
       return x;
     }
@@ -38,8 +38,8 @@ func arraySliceFind<T>(f: T -> Bool, xs: ArraySlice<T>) -> T? {
   return nil
 }
 
-func arraySliceFindRight<T>(f: T -> Bool, xs: ArraySlice<T>) -> T? {
-  for (var i = xs.count - 1; i >= 0; i -= 1) {
+func arraySliceFindRight<T>(_ f: (T) -> Bool, xs: ArraySlice<T>) -> T? {
+  for i in (0...(xs.count - 1)).reversed() {
     if f(xs[i]) {
       return xs[i];
     }
@@ -49,11 +49,11 @@ func arraySliceFindRight<T>(f: T -> Bool, xs: ArraySlice<T>) -> T? {
 }
 
 extension ArraySlice {
-  func find(f: Element -> Bool) -> Element? {
+  func find(_ f: (Element) -> Bool) -> Element? {
     return arraySliceFind(f, xs: self)
   }
   
-  func findRight(f: Element -> Bool) -> Element? {
+  func findRight(_ f: (Element) -> Bool) -> Element? {
     return arraySliceFindRight(f, xs: self)
   }
 }

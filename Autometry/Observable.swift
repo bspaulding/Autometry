@@ -3,7 +3,7 @@ import Foundation
 class Observable : NSObject { // I wish this was a mixin! Gah!
   var listeners : [() -> ()] = []
 
-  func register(callback:()->()) {
+  func register(_ callback:@escaping ()->()) {
     listeners.append(callback)
   }
   

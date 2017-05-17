@@ -6,7 +6,7 @@ class RefuelCSVWrapperTests: XCTestCase {
   func testHeader() {
     let header = RefuelCSVWrapper.header
     print(header)
-    XCTAssertEqual(header, ["Date", "Odometer", "Price Per Gallon", "Gallons", "Octane", "Partial", "Location Name", "Latitude", "Longtidue", "Google Place ID"].joinWithSeparator(","))
+    XCTAssertEqual(header, ["Date", "Odometer", "Price Per Gallon", "Gallons", "Octane", "Partial", "Location Name", "Latitude", "Longtidue", "Google Place ID"].joined(separator: ","))
   }
   
   func testBlank() {
@@ -77,17 +77,17 @@ class RefuelCSVWrapperTests: XCTestCase {
   func testWrapAll() {
     let station = RefuellingStation(name: "Chevron", googlePlaceID: "GOOGLE_PLACE_ID", latitude:32.1245, longitude:-122.5436)
     let dateA = DateHelpers.dateWithYear(2015, month:1, day:1, hour:3, minute: 24, tz:"PST")!
-    let refuelA = Refuel(id: "1", odometer: 10000, pricePerGallon: 2.349, gallons: 10.9876, octane: 91, createdDate: dateA, partial: false)
+    let refuelA = Refuel(id: "1" as AnyObject, odometer: 10000, pricePerGallon: 2.349, gallons: 10.9876, octane: 91, createdDate: dateA, partial: false)
     refuelA.station = station
     let dateB = DateHelpers.dateWithYear(2015, month:2, day:1, hour:3, minute: 24, tz:"PST")!
-    let refuelB = Refuel(id: "2", odometer: 10833, pricePerGallon: 2.749, gallons: 11.6789, octane: 91, createdDate: dateB, partial: true)
+    let refuelB = Refuel(id: "2" as AnyObject, odometer: 10833, pricePerGallon: 2.749, gallons: 11.6789, octane: 91, createdDate: dateB, partial: true)
     refuelB.station = station
     let actual = RefuelCSVWrapper.wrapAll([refuelA, refuelB])
     let expected = [
       "Date,Odometer,Price Per Gallon,Gallons,Octane,Partial,Location Name,Latitude,Longtidue,Google Place ID",
       "2015-01-01T03:24-0800,10000,$2.349,10.9876,91,false,Chevron,32.1245,-122.5436,GOOGLE_PLACE_ID",
       "2015-02-01T03:24-0800,10833,$2.749,11.6789,91,true,Chevron,32.1245,-122.5436,GOOGLE_PLACE_ID"
-    ].joinWithSeparator("\n")
+    ].joined(separator: "\n")
     XCTAssertEqual(actual, expected)
   }
 }
