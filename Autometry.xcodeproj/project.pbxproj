@@ -351,7 +351,7 @@
 				65B4DE7C1AA7C57200FAC9ED /* Alamofire.framework */,
 				65B4DE801AA7C57200FAC9ED /* Alamofire iOS Tests.xctest */,
 				65B4DE7E1AA7C57200FAC9ED /* Alamofire.framework */,
-				65B4DE821AA7C57200FAC9ED /* Alamofire OSX Tests.xctest */,
+				65B4DE821AA7C57200FAC9ED /* Alamofire macOS Tests.xctest */,
 				65898CEC1ECCD8B20039B530 /* Alamofire.framework */,
 				65898CEE1ECCD8B20039B530 /* Alamofire tvOS Tests.xctest */,
 				657B00BC1BCA035900A964B5 /* Alamofire.framework */,
@@ -600,18 +600,22 @@
 				TargetAttributes = {
 					657B344B1C3DF8220067CB57 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = B92N87UYHH;
 						LastSwiftMigration = 0830;
 					};
 					657B34571C3DF8220067CB57 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = B92N87UYHH;
 						LastSwiftMigration = 0830;
 					};
 					65FDDC7A1AA5728C00EBF26E = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = B92N87UYHH;
 						LastSwiftMigration = 0830;
 					};
 					65FDDC8F1AA5728C00EBF26E = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = B92N87UYHH;
 						LastSwiftMigration = 0830;
 						TestTargetID = 65FDDC7A1AA5728C00EBF26E;
 					};
@@ -687,7 +691,7 @@
 			remoteRef = 65B4DE7F1AA7C57200FAC9ED /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		65B4DE821AA7C57200FAC9ED /* Alamofire OSX Tests.xctest */ = {
+		65B4DE821AA7C57200FAC9ED /* Alamofire macOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Alamofire macOS Tests.xctest";
@@ -872,6 +876,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = B92N87UYHH;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -893,6 +898,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = B92N87UYHH;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = Watch_Extension;
@@ -911,6 +917,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = B92N87UYHH;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
@@ -930,6 +937,7 @@
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = B92N87UYHH;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -1026,6 +1034,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B92N87UYHH;
 				INFOPLIST_FILE = Autometry/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1039,6 +1048,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = B92N87UYHH;
 				INFOPLIST_FILE = Autometry/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1052,6 +1062,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B92N87UYHH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1073,6 +1084,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = B92N87UYHH;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
