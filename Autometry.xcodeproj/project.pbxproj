@@ -14,7 +14,6 @@
 		651171AB1ACDA343005C4AE8 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651171AA1ACDA343005C4AE8 /* Dashboard.swift */; };
 		651171AC1ACDA4DF005C4AE8 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651171AA1ACDA343005C4AE8 /* Dashboard.swift */; };
 		651171AF1ACDA5C7005C4AE8 /* DashboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651171AE1ACDA5C7005C4AE8 /* DashboardTests.swift */; };
-		6520A4431ADEF27800C9ED99 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6520A4421ADEF27800C9ED99 /* iAd.framework */; };
 		6520A4481ADF0E6500C9ED99 /* AppIconTransparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 6520A4471ADF0E6500C9ED99 /* AppIconTransparent.png */; };
 		65269E0E1AAD66E500AA47D6 /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65269E0D1AAD66E500AA47D6 /* DateHelpers.swift */; };
 		653837A11AF3BF57003DEB52 /* compact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653837A01AF3BF57003DEB52 /* compact.swift */; };
@@ -37,6 +36,7 @@
 		657B34741C3E3FE40067CB57 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B34731C3E3FE40067CB57 /* WatchSessionManager.swift */; };
 		657B34771C3E423D0067CB57 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B34761C3E423D0067CB57 /* WatchSessionManager.swift */; };
 		657B34781C3E46CF0067CB57 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E4EFA1AB0AA5600AAE994 /* Observable.swift */; };
+		65898CFA1ECD0B2C0039B530 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65898CF91ECD0B2C0039B530 /* FBAudienceNetwork.framework */; };
 		659B08C61AE4395E004E94AF /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
 		65AAEC471AE416F900DD81A5 /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
 		65B4DE6F1AA787CC00FAC9ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */; };
@@ -205,7 +205,6 @@
 		65094A861AA8C65100B1FEB0 /* RefuelStore 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RefuelStore 2.xcdatamodel"; sourceTree = "<group>"; };
 		651171AA1ACDA343005C4AE8 /* Dashboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		651171AE1ACDA5C7005C4AE8 /* DashboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTests.swift; sourceTree = "<group>"; };
-		6520A4421ADEF27800C9ED99 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		6520A4471ADF0E6500C9ED99 /* AppIconTransparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconTransparent.png; sourceTree = "<group>"; };
 		65269E0D1AAD66E500AA47D6 /* DateHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
 		653837A01AF3BF57003DEB52 /* compact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = compact.swift; sourceTree = "<group>"; };
@@ -229,6 +228,7 @@
 		657B34631C3DF8220067CB57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		657B34731C3E3FE40067CB57 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		657B34761C3E423D0067CB57 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
+		65898CF91ECD0B2C0039B530 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNavigationView.swift; sourceTree = "<group>"; };
 		65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
@@ -272,9 +272,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6520A4431ADEF27800C9ED99 /* iAd.framework in Frameworks */,
 				65F96F291AAAF38A003EBDCF /* MessageUI.framework in Frameworks */,
 				65B4DE861AA7D4BC00FAC9ED /* Alamofire.framework in Frameworks */,
+				65898CFA1ECD0B2C0039B530 /* FBAudienceNetwork.framework in Frameworks */,
 				65B4DE6F1AA787CC00FAC9ED /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,7 +399,7 @@
 		65FDDC721AA5728C00EBF26E = {
 			isa = PBXGroup;
 			children = (
-				6520A4421ADEF27800C9ED99 /* iAd.framework */,
+				65898CF91ECD0B2C0039B530 /* FBAudienceNetwork.framework */,
 				65F96F281AAAF38A003EBDCF /* MessageUI.framework */,
 				65B4DE741AA7C57200FAC9ED /* Alamofire.xcodeproj */,
 				65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */,
@@ -1035,6 +1035,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B92N87UYHH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Autometry/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1049,6 +1053,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B92N87UYHH;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Autometry/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
