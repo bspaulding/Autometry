@@ -1,9 +1,9 @@
 import Foundation
 import UIKit
 import CoreLocation
-import iAd
+import FBAudienceNetwork
 
-class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, CLLocationManagerDelegate, ADBannerViewDelegate {
+class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, CLLocationManagerDelegate, FBAdViewDelegate {
   @IBOutlet weak var odometerField: UITextField!
   @IBOutlet weak var pricePerGallonField: UITextField!
   @IBOutlet weak var gallonsField: UITextField!
@@ -13,8 +13,10 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
   @IBOutlet weak var octaneField: UITextField!
   @IBOutlet weak var totalField: UITextField!
   @IBOutlet weak var partialSwitch: UISwitch! /* On = Full = false, Off = Partial = true */
-  @IBOutlet weak var bannerView: ADBannerView!
+  @IBOutlet weak var adCellContentView: UIView!
+  var bannerView: FBAdView!
   
+  let FacebookPlacementID = "665366400294875_806392526192261"
   let keyboardNavigationView = KeyboardNavigationView()
   
   var refuel = Refuel()
@@ -66,7 +68,17 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     
     currencyFormatter.numberStyle = .currency
     
+    bannerView = FBAdView(
+      placementID: FacebookPlacementID,
+      adSize: kFBAdSizeHeight50Banner,
+      rootViewController: self
+    )
     bannerView.delegate = self
+    bannerView.isHidden = false
+    bannerView.frame = adCellContentView.frame
+    adCellContentView.addSubview(bannerView)
+    
+    bannerView.loadAd()
     
     update()
   }
@@ -320,7 +332,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     locationActivityIndicator.stopAnimating()
   }
   
-  // ADBannerView Delegate Protocol
+  // FBAdViewDelegate Protocol
   
   func restoringFirstResponder(_ callback:()->()) {
     let _currentResponder = currentResponder()
@@ -334,14 +346,14 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
   
   var showAd = false
   
-  func bannerViewDidLoadAd(_ banner: ADBannerView) {
+  func adViewDidLoad(_ adView: FBAdView) {
     showAd = true
     restoringFirstResponder({
       self.tableView.reloadSections(IndexSet(integer: 0), with:UITableViewRowAnimation.fade)
     })
   }
   
-  func bannerView(_ banner:ADBannerView, didFailToReceiveAdWithError error:Error) {
+  func adView(_ adView: FBAdView, didFailWithError error: Error) {
     showAd = false
     restoringFirstResponder({
       self.tableView.reloadSections(IndexSet(integer: 0), with:UITableViewRowAnimation.fade)
