@@ -75,6 +75,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     )
     bannerView.delegate = self
     bannerView.isHidden = false
+    adCellContentView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
     bannerView.frame = adCellContentView.frame
     adCellContentView.addSubview(bannerView)
     
