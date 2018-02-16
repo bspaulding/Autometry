@@ -355,6 +355,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
   }
   
   func adView(_ adView: FBAdView, didFailWithError error: Error) {
+    print("adViewdidFailWithError \(error)")
     showAd = false
     restoringFirstResponder({
       self.tableView.reloadSections(IndexSet(integer: 0), with:UITableViewRowAnimation.fade)
