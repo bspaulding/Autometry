@@ -79,7 +79,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     bannerView.frame = adCellContentView.frame
     adCellContentView.addSubview(bannerView)
     
-    bannerView.loadAd()
+    //bannerView.loadAd()
     
     update()
   }
