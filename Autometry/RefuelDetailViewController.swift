@@ -1,9 +1,8 @@
 import Foundation
 import UIKit
 import CoreLocation
-import FBAudienceNetwork
 
-class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, CLLocationManagerDelegate, FBAdViewDelegate {
+class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, CLLocationManagerDelegate {
   @IBOutlet weak var odometerField: UITextField!
   @IBOutlet weak var pricePerGallonField: UITextField!
   @IBOutlet weak var gallonsField: UITextField!
@@ -14,9 +13,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
   @IBOutlet weak var totalField: UITextField!
   @IBOutlet weak var partialSwitch: UISwitch! /* On = Full = false, Off = Partial = true */
   @IBOutlet weak var adCellContentView: UIView!
-  var bannerView: FBAdView!
   
-  let FacebookPlacementID = "665366400294875_806392526192261"
   let keyboardNavigationView = KeyboardNavigationView()
   
   var refuel = Refuel()
@@ -67,19 +64,6 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     })
     
     currencyFormatter.numberStyle = .currency
-    
-    bannerView = FBAdView(
-      placementID: FacebookPlacementID,
-      adSize: kFBAdSizeHeight50Banner,
-      rootViewController: self
-    )
-    bannerView.delegate = self
-    bannerView.isHidden = false
-    adCellContentView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50)
-    bannerView.frame = adCellContentView.frame
-    adCellContentView.addSubview(bannerView)
-    
-    //bannerView.loadAd()
     
     update()
   }
@@ -333,8 +317,6 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     locationActivityIndicator.stopAnimating()
   }
   
-  // FBAdViewDelegate Protocol
-  
   func restoringFirstResponder(_ callback:()->()) {
     let _currentResponder = currentResponder()
     
@@ -343,39 +325,5 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     if let responder = _currentResponder {
       responder.becomeFirstResponder()
     }
- }
-  
-  var showAd = false
-  
-  func adViewDidLoad(_ adView: FBAdView) {
-    showAd = true
-    restoringFirstResponder({
-      self.tableView.reloadSections(IndexSet(integer: 0), with:UITableViewRowAnimation.fade)
-    })
-  }
-  
-  func adView(_ adView: FBAdView, didFailWithError error: Error) {
-    showAd = false
-    restoringFirstResponder({
-      self.tableView.reloadSections(IndexSet(integer: 0), with:UITableViewRowAnimation.fade)
-    })
-  }
-  
-  // TableView Delegate
-  
-  override func tableView(_ tableView:UITableView, numberOfRowsInSection section:NSInteger) -> NSInteger {
-    if section == 0 && !showAd {
-      return 0
-    }
-    
-    return super.tableView(tableView, numberOfRowsInSection:section)
-  }
-  
-  override func tableView(_ tableView:UITableView, heightForHeaderInSection section:NSInteger) -> CGFloat {
-    if section == 0 && !showAd {
-      return 1
-    }
-    
-    return super.tableView(tableView, heightForHeaderInSection:section)
   }
 }

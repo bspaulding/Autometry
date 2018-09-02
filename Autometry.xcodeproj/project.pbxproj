@@ -37,7 +37,6 @@
 		657B34741C3E3FE40067CB57 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B34731C3E3FE40067CB57 /* WatchSessionManager.swift */; };
 		657B34771C3E423D0067CB57 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657B34761C3E423D0067CB57 /* WatchSessionManager.swift */; };
 		657B34781C3E46CF0067CB57 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654E4EFA1AB0AA5600AAE994 /* Observable.swift */; };
-		65898CFA1ECD0B2C0039B530 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65898CF91ECD0B2C0039B530 /* FBAudienceNetwork.framework */; };
 		659B08C61AE4395E004E94AF /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
 		65AAEC471AE416F900DD81A5 /* KeyboardNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */; };
 		65B4DE6F1AA787CC00FAC9ED /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */; };
@@ -219,7 +218,6 @@
 		657B34631C3DF8220067CB57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		657B34731C3E3FE40067CB57 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		657B34761C3E423D0067CB57 /* WatchSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
-		65898CF91ECD0B2C0039B530 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		65AAEC461AE416F900DD81A5 /* KeyboardNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNavigationView.swift; sourceTree = "<group>"; };
 		65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		65B4DE701AA7C14000FAC9ED /* RefuellingStationStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStore.swift; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 			files = (
 				65345CAB213B830A00BF00B8 /* Alamofire.framework in Frameworks */,
 				65F96F291AAAF38A003EBDCF /* MessageUI.framework in Frameworks */,
-				65898CFA1ECD0B2C0039B530 /* FBAudienceNetwork.framework in Frameworks */,
 				65B4DE6F1AA787CC00FAC9ED /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,7 +394,6 @@
 		65FDDC721AA5728C00EBF26E = {
 			isa = PBXGroup;
 			children = (
-				65898CF91ECD0B2C0039B530 /* FBAudienceNetwork.framework */,
 				65F96F281AAAF38A003EBDCF /* MessageUI.framework */,
 				65B4DE741AA7C57200FAC9ED /* Alamofire.xcodeproj */,
 				65B4DE6E1AA787CC00FAC9ED /* CoreLocation.framework */,
