@@ -9,12 +9,13 @@ class KeyboardNavigationView : UIToolbar {
   
   override init(frame:CGRect) {
     navButtons = UISegmentedControl(items: navButtonItems)
+    navButtons.setWidth(80.0, forSegmentAt: 0)
+    navButtons.setWidth(80.0, forSegmentAt: 1)
 
     super.init(frame:frame)
 
     navButtons.isMomentary = true
     navButtons.addTarget(self, action:#selector(KeyboardNavigationView.navButtonsChanged), for:UIControlEvents.valueChanged)
-
     
     items = [UIBarButtonItem(customView:navButtons)]
     
