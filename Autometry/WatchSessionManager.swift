@@ -11,7 +11,7 @@ class WatchSessionManager: NSObject, WCSessionDelegate {
   
   // Keep a reference for the session,
   // which will be used later for sending / receiving data
-  fileprivate let session: WCSession? = WCSession.isSupported() ? WCSession.default() : nil
+  fileprivate let session: WCSession? = WCSession.isSupported() ? WCSession.default : nil
   
   fileprivate var validSession: WCSession? {
     if let session = session, session.isPaired && session.isWatchAppInstalled {

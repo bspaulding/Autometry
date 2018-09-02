@@ -40,7 +40,7 @@ class CoreDataStore: Observable {
       // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
       print("Failed to initialize the application's saved data")
       print(failureReason)
-      print(error)
+      print(error as Any)
       abort()
     } catch {
       fatalError()
@@ -110,7 +110,7 @@ class CoreDataStore: Observable {
   }
   
   // call back function by saveContext, support multi-thread
-  func contextDidSaveContext(_ notification: Notification) {
+  @objc func contextDidSaveContext(_ notification: Notification) {
     let sender = notification.object as! NSManagedObjectContext
     if sender === self.managedObjectContext {
       NSLog("******** Saved main Context in this thread")

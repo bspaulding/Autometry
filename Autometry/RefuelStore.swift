@@ -22,7 +22,7 @@ class RefuelStore : CoreDataStore {
     let refuel = Refuel(
       id: object.objectID,
       odometer: object.value(forKey: "odometer") as! Int,
-      pricePerGallon: object.value(forKey: "pricePerGallon") as! Float,
+      pricePerGallon: (object.value(forKey: "pricePerGallon") as! NSNumber).floatValue,
       gallons: object.value(forKey: "gallons") as! Float,
       octane: object.value(forKey: "octane") as? Int,
       createdDate: object.value(forKey: "date") as? Date,
@@ -42,7 +42,7 @@ class RefuelStore : CoreDataStore {
     return refuel
   }
   
-  fileprivate var wrap : (Refuel, NSManagedObject) -> (NSManagedObject) = {refuel, object in
+  fileprivate var wrap : (Refuel, NSManagedObject) -> Void = {refuel, object in
     if let odometer = refuel.odometer {
       object.setValue(odometer, forKey: "odometer")
     }
@@ -64,8 +64,6 @@ class RefuelStore : CoreDataStore {
       object.setValue(station.latitude, forKey: "latitude")
       object.setValue(station.longitude, forKey: "longitude")
     }
-    
-    return object
   }
   
   fileprivate override init() {

@@ -137,7 +137,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
   }
   
   func canSave() -> Bool {
-    return odometerField.text!.characters.count > 0 && pricePerGallonField.text!.characters.count > 0 && gallonsField.text!.characters.count > 0
+    return odometerField.text!.count > 0 && pricePerGallonField.text!.count > 0 && gallonsField.text!.count > 0
   }
   
   func currentResponder() -> UITextField? {
@@ -161,7 +161,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     return currencyFormatter.string(from: NSNumber(value: total))!
   }
   
-  func textChanged() {
+  @objc func textChanged() {
     saveButton.isEnabled = canSave()
     totalField.text = total()
   }
@@ -235,7 +235,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
   
   func digitize(_ string:String) -> String {
     var currentString = ""
-    for character in string.characters {
+    for character in string {
       if isDigit(character) {
         currentString.append(character)
       }
@@ -295,8 +295,8 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     
     // if the cursor was not at the end of the string being entered, restore cursor position
     if cursorOffset != currentLength {
-      let lengthDelta = newString.characters.count - currentLength
-      let newCursorOffset = max(0, min(newString.characters.count, cursorOffset + lengthDelta))
+      let lengthDelta = newString.count - currentLength
+      let newCursorOffset = max(0, min(newString.count, cursorOffset + lengthDelta))
       let newPosition = textField.position(from: textField.beginningOfDocument, offset:newCursorOffset)!
       let newRange = textField.textRange(from: newPosition, to:newPosition)
       textField.selectedTextRange = newRange

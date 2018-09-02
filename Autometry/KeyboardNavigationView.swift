@@ -34,7 +34,7 @@ class KeyboardNavigationView : UIToolbar {
     fatalError("This class does not support NSCoding")
   }
   
-  func navButtonsChanged() {
+  @objc func navButtonsChanged() {
     switch navButtonItems[navButtons.selectedSegmentIndex] {
     case "Previous":
       onPrevious()

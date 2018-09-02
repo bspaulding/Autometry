@@ -18,7 +18,7 @@ class WatchSessionManager: Observable, WCSessionDelegate {
   
   // Keep a reference for the session,
   // which will be used later for sending / receiving data
-  fileprivate let session = WCSession.default()
+  fileprivate let session = WCSession.default
   
   // Activate Session
   // This needs to be called to activate the session before first use!
