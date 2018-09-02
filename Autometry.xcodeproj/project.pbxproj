@@ -234,6 +234,7 @@
 		65F96F231AAA1531003EBDCF /* RefuellingStationStoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefuellingStationStoreTests.swift; sourceTree = "<group>"; };
 		65F96F261AAA15A9003EBDCF /* GoogleMapsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsAPI.swift; sourceTree = "<group>"; };
 		65F96F281AAAF38A003EBDCF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		65FDB744213C691500D9D599 /* Autometry.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Autometry.entitlements; sourceTree = "<group>"; };
 		65FDDC7B1AA5728C00EBF26E /* Autometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65FDDC7F1AA5728C00EBF26E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65FDDC801AA5728C00EBF26E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -421,6 +422,7 @@
 		65FDDC7D1AA5728C00EBF26E /* Autometry */ = {
 			isa = PBXGroup;
 			children = (
+				65FDB744213C691500D9D599 /* Autometry.entitlements */,
 				65AAEC421AE416E700DD81A5 /* views */,
 				65C5AEFA1AABC25200F97447 /* utils */,
 				65F96F251AAA1597003EBDCF /* api */,
@@ -606,6 +608,11 @@
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = B92N87UYHH;
 						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					65FDDC8F1AA5728C00EBF26E = {
 						CreatedOnToolsVersion = 6.1.1;
