@@ -28,7 +28,7 @@ class RefuelDetailViewController : UITableViewController, UITextFieldDelegate, C
     
     keyboardNavigationView.tintColor = UIColor.white
     keyboardNavigationView.barTintColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
-    let totalIndexPath = IndexPath(row:3, section:4)
+    let totalIndexPath = IndexPath(row:3, section:3)
     keyboardNavigationView.onPrevious = {
       if let responder = self.previousField() {
         responder.becomeFirstResponder()

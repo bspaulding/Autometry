@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pgQ-0y-W3k">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pgQ-0y-W3k">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -20,7 +21,7 @@
                         <viewControllerLayoutGuide type="bottom" id="BZs-AN-yfr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wyh-P8-NmK" userLabel="Root View">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VMq-Qz-pNt">
@@ -520,7 +521,7 @@ Record a refuel to see statistics.</string>
             <objects>
                 <tableViewController id="PJL-dB-rEM" customClass="RefuelListViewController" customModule="Autometry" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="22" sectionFooterHeight="22" id="Jvo-k3-LzB">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
@@ -571,7 +572,7 @@ Record a refuel to see statistics.</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10000 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXX-OJ-UZY">
-                                            <rect key="frame" x="13" y="48" width="88" height="21"/>
+                                            <rect key="frame" x="21" y="48" width="88" height="21"/>
                                             <accessibility key="accessibilityConfiguration" label="odometerLabel"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Sum-V3-4PA"/>
@@ -681,27 +682,12 @@ Record a refuel to see statistics.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
-                            <tableViewSection id="ha0-UC-XtN">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="51" id="8Ee-Vj-K5Q">
-                                        <rect key="frame" x="0.0" y="35" width="375" height="51"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Ee-Vj-K5Q" id="6eK-l9-3OF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" label="odometerCell">
-                                            <bool key="isElement" value="YES"/>
-                                        </accessibility>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                             <tableViewSection id="Wb8-xp-K4O">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="gq2-nR-tUh">
-                                        <rect key="frame" x="0.0" y="106" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gq2-nR-tUh" id="sNa-eG-f2A">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="gq2-nR-tUh" id="sNa-eG-f2A">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -712,7 +698,7 @@ Record a refuel to see statistics.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="miles" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="2GD-Y3-3Fp">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="miles" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="2GD-Y3-3Fp">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
                                                     <accessibility key="accessibilityConfiguration" label="odometerField"/>
                                                     <constraints>
@@ -722,7 +708,7 @@ Record a refuel to see statistics.</string>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UzI-S5-dk9">
-                                                    <rect key="frame" x="8" y="11" width="78" height="21"/>
+                                                    <rect key="frame" x="16" y="-11" width="78" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="78" id="brR-9z-pG3"/>
                                                     </constraints>
@@ -750,10 +736,10 @@ Record a refuel to see statistics.</string>
                             <tableViewSection id="ZZz-Ha-CwG">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="r6L-f9-DFa">
-                                        <rect key="frame" x="0.0" y="170" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="r6L-f9-DFa" id="gba-px-xdQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R04-Ly-PRI">
@@ -773,7 +759,7 @@ Record a refuel to see statistics.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="c1K-mL-Osb">
-                                                    <rect key="frame" x="319" y="12" width="20" height="20"/>
+                                                    <rect key="frame" x="318" y="12" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="LQs-26-IbT"/>
                                                         <constraint firstAttribute="height" constant="20" id="ecb-zj-9by"/>
@@ -807,7 +793,7 @@ Record a refuel to see statistics.</string>
                             <tableViewSection id="aXZ-YQ-mwx">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="oHN-Gj-RrE">
-                                        <rect key="frame" x="0.0" y="234" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="163" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oHN-Gj-RrE" id="iux-Hb-63T">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -821,7 +807,7 @@ Record a refuel to see statistics.</string>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN7-Ex-UlR">
-                                                    <rect key="frame" x="8" y="11.5" width="30" height="20.5"/>
+                                                    <rect key="frame" x="16" y="11.5" width="30" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="113" id="A1W-Ji-1IK"/>
                                                         <constraint firstAttribute="width" constant="78" id="YdQ-Rw-Wsm"/>
@@ -838,7 +824,7 @@ Record a refuel to see statistics.</string>
                                                     </variation>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5C-8s-zgj">
-                                                    <rect key="frame" x="318" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="310" y="6" width="51" height="31"/>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -857,9 +843,9 @@ Record a refuel to see statistics.</string>
                             <tableViewSection id="YFg-yV-kRP">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="l3W-EC-MzQ">
-                                        <rect key="frame" x="0.0" y="298" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="227" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l3W-EC-MzQ" id="Ghi-eZ-Nx6">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="l3W-EC-MzQ" id="Ghi-eZ-Nx6">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -870,7 +856,7 @@ Record a refuel to see statistics.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="level" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="jhz-oi-oX9">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" placeholder="level" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="jhz-oi-oX9">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
                                                     <accessibility key="accessibilityConfiguration" label="octaneField"/>
                                                     <constraints>
@@ -903,9 +889,9 @@ Record a refuel to see statistics.</string>
                                         </accessibility>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="J8M-a7-Jl3">
-                                        <rect key="frame" x="0.0" y="342" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="271" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="J8M-a7-Jl3" id="A8s-Lx-0vL">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="J8M-a7-Jl3" id="A8s-Lx-0vL">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -916,7 +902,7 @@ Record a refuel to see statistics.</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dollars" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="bQK-zR-6Uc">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dollars" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="bQK-zR-6Uc">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
                                                     <accessibility key="accessibilityConfiguration" label="pricePerGallonField"/>
                                                     <constraints>
@@ -926,7 +912,7 @@ Record a refuel to see statistics.</string>
                                                     <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Per Gallon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-rB-WHM">
-                                                    <rect key="frame" x="8" y="11" width="124" height="21"/>
+                                                    <rect key="frame" x="16" y="-11" width="124" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="124" id="TR0-Yp-NAq"/>
                                                     </constraints>
@@ -949,9 +935,9 @@ Record a refuel to see statistics.</string>
                                         </accessibility>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="pai-4b-9hP">
-                                        <rect key="frame" x="0.0" y="386" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="315" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pai-4b-9hP" id="DRW-N3-6DI">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="pai-4b-9hP" id="DRW-N3-6DI">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -963,7 +949,7 @@ Record a refuel to see statistics.</string>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gallons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQQ-NZ-pU0">
-                                                    <rect key="frame" x="8" y="11" width="58" height="21"/>
+                                                    <rect key="frame" x="16" y="-11" width="58" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="58" id="sQK-Mv-8cg"/>
                                                     </constraints>
@@ -971,7 +957,7 @@ Record a refuel to see statistics.</string>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="gallons" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="3JA-0q-eAz">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="gallons" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="3JA-0q-eAz">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
                                                     <accessibility key="accessibilityConfiguration" label="gallonsField"/>
                                                     <constraints>
@@ -995,9 +981,9 @@ Record a refuel to see statistics.</string>
                                         </accessibility>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="VXT-2Q-S2a">
-                                        <rect key="frame" x="0.0" y="430" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="359" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VXT-2Q-S2a" id="Nmb-F1-2nW">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="VXT-2Q-S2a" id="Nmb-F1-2nW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -1017,7 +1003,7 @@ Record a refuel to see statistics.</string>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dollars" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="IAm-Xe-8tF">
+                                                <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dollars" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="IAm-Xe-8tF">
                                                     <rect key="frame" x="301" y="7" width="291" height="30"/>
                                                     <accessibility key="accessibilityConfiguration" label="totalField"/>
                                                     <constraints>
@@ -1061,7 +1047,6 @@ Record a refuel to see statistics.</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="adCellContentView" destination="6eK-l9-3OF" id="BHG-iP-p6i"/>
                         <outlet property="gallonsField" destination="3JA-0q-eAz" id="ceW-Dn-Tey"/>
                         <outlet property="locationActivityIndicator" destination="c1K-mL-Osb" id="4lL-a5-EU3"/>
                         <outlet property="locationDescriptionField" destination="byq-Hz-FsI" id="Y8o-Ft-QLn"/>
@@ -1091,7 +1076,7 @@ Record a refuel to see statistics.</string>
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k6i-V0-zx3" id="IGa-Wh-6Fm">
-                                    <rect key="frame" x="0.0" y="0.0" width="336" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1116,7 +1101,7 @@ Record a refuel to see statistics.</string>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Deu-gI-z6U">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1134,7 +1119,7 @@ Record a refuel to see statistics.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jZ6-9K-vxr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zZv-PF-S0Q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1166,6 +1151,7 @@ Record a refuel to see statistics.</string>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="9lH-Fk-2I2">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
