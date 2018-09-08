@@ -23,7 +23,7 @@ class RefuelStore : CoreDataStore {
       id: object.objectID,
       odometer: object.value(forKey: "odometer") as! Int,
       pricePerGallon: (object.value(forKey: "pricePerGallon") as! NSNumber).floatValue,
-      gallons: object.value(forKey: "gallons") as! Float,
+      gallons: (object.value(forKey: "gallons") as! NSNumber).floatValue,
       octane: object.value(forKey: "octane") as? Int,
       createdDate: object.value(forKey: "date") as? Date,
       partial: object.value(forKey: "partial") as? Bool
